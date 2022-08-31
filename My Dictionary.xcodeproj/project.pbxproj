@@ -76,7 +76,6 @@
 			children = (
 				34F62BD028BF5A740052488C /* Modifiers */,
 				A464979428BE53D4004A5070 /* Helper */,
-				A464979328BE53CB004A5070 /* Modifier */,
 				A464978A28BE4B07004A5070 /* View */,
 				A464978928BE4B02004A5070 /* Model */,
 				A464978828BE4AF0004A5070 /* ViewModel */,
@@ -120,13 +119,6 @@
 				34F62BCE28BF53390052488C /* RegistrationView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		A464979328BE53CB004A5070 /* Modifier */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Modifier;
 			sourceTree = "<group>";
 		};
 		A464979428BE53D4004A5070 /* Helper */ = {
