@@ -15,12 +15,15 @@ struct MainView: View {
         NavigationView{
             ScrollView{
                 VStack{
+                    Spacer()
+                        .frame(height: 100)
                     ZStack{
                         Image("background")
                         VStack{
                             SearchBlock(name: $name, word: $input)
                         }
                     }.background(Color("Hard-purple")).cornerRadius(20).foregroundColor(Color("White"))
+                    
                     VStack(alignment: .leading){
                         Text("Word of the day").fontWeight(.bold).font(.custom("Inter", size: 25)).padding(.top, 40).padding(.horizontal, 40).padding(.bottom, 20)
                         TopWord(word: word)
