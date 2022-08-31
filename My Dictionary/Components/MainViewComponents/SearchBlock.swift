@@ -13,8 +13,8 @@ struct SearchBlock: View {
     var body: some View {
         VStack{
             Spacer()
-            Text("Welcome back").font(.custom("Inter", size: 30)).fontWeight(.bold)
-            Text(name).font(.custom("Inter", size: 30)).fontWeight(.bold)
+            Text("Welcome back").font(.custom("Inter", size: 40)).fontWeight(.bold)
+            Text(name).font(.custom("Inter", size: 40)).fontWeight(.bold)
             Spacer()
             SearchBar(word: $word)
             Spacer()

@@ -38,7 +38,7 @@ struct MainView: View {
                             SearchHistory()
                         }.padding(.vertical)
                         
-                    }
+                    }.navigationBarHidden(true)
                 }.frame(maxHeight: .infinity).background(Color("Purple")).edgesIgnoringSafeArea(.all)
             }
     }

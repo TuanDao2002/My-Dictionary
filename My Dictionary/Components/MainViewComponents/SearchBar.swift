@@ -12,7 +12,7 @@ struct SearchBar: View {
     var body: some View {
         HStack{
             Image(systemName: "magnifyingglass").frame(width: 30, height: 30).foregroundColor(Color("Hard-purple")).background(Color("Purple")).cornerRadius(5).padding(.horizontal)
-            TextField("Search here", text: $word)
+            TextField("Search here", text: $word).foregroundColor(.black)
         }.frame(width: 270, height: 60).background(Color("White")).cornerRadius(15)
     }
 }
