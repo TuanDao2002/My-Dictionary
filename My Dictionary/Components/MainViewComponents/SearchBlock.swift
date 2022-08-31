@@ -12,9 +12,12 @@ struct SearchBlock: View {
     @Binding var word: String
     var body: some View {
         VStack{
+            Spacer()
             Text("Welcome back").font(.custom("Inter", size: 30)).fontWeight(.bold)
             Text(name).font(.custom("Inter", size: 30)).fontWeight(.bold)
+            Spacer()
             SearchBar(word: $word)
+            Spacer()
         }
     }
 }

@@ -11,7 +11,7 @@ struct SearchBar: View {
     @Binding var word: String
     var body: some View {
         HStack{
-            Image(systemName: "magnifyingglass").frame(width: 30, height: 30).foregroundColor(Color("Soft-purple")).background(Color("Purple")).cornerRadius(5).padding(.horizontal)
+            Image(systemName: "magnifyingglass").frame(width: 30, height: 30).foregroundColor(Color("Hard-purple")).background(Color("Purple")).cornerRadius(5).padding(.horizontal)
             TextField("Search here", text: $word)
         }.frame(width: 270, height: 60).background(Color("White")).cornerRadius(15)
     }

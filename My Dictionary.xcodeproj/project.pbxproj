@@ -10,6 +10,10 @@
 		2EFB6F1728BF68AB006FD046 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB6F1628BF68AB006FD046 /* MainView.swift */; };
 		2EFB6F1A28BF6AC5006FD046 /* SearchBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB6F1928BF6AC5006FD046 /* SearchBlock.swift */; };
 		2EFB6F1E28BF76B7006FD046 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB6F1D28BF76B7006FD046 /* SearchBar.swift */; };
+		2EFB6F2028BF93BF006FD046 /* TopWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB6F1F28BF93BF006FD046 /* TopWord.swift */; };
+		2EFB6F2328BFA9DA006FD046 /* SearchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB6F2228BFA9DA006FD046 /* SearchHistory.swift */; };
+		2EFB6F2528BFBF6E006FD046 /* WordContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB6F2428BFBF6E006FD046 /* WordContentView.swift */; };
+		2EFB6F2728BFC017006FD046 /* WordListHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB6F2628BFC017006FD046 /* WordListHistory.swift */; };
 		34F62BCF28BF53390052488C /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BCE28BF53390052488C /* RegistrationView.swift */; };
 		34F62BD328BF5A990052488C /* TextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BD228BF5A990052488C /* TextModifier.swift */; };
 		34F62BD528BF5B1D0052488C /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BD428BF5B1D0052488C /* TextFieldModifier.swift */; };
@@ -27,6 +31,10 @@
 		2EFB6F1628BF68AB006FD046 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		2EFB6F1928BF6AC5006FD046 /* SearchBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBlock.swift; sourceTree = "<group>"; };
 		2EFB6F1D28BF76B7006FD046 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		2EFB6F1F28BF93BF006FD046 /* TopWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopWord.swift; sourceTree = "<group>"; };
+		2EFB6F2228BFA9DA006FD046 /* SearchHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistory.swift; sourceTree = "<group>"; };
+		2EFB6F2428BFBF6E006FD046 /* WordContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordContentView.swift; sourceTree = "<group>"; };
+		2EFB6F2628BFC017006FD046 /* WordListHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListHistory.swift; sourceTree = "<group>"; };
 		34F62BCE28BF53390052488C /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		34F62BD228BF5A990052488C /* TextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifier.swift; sourceTree = "<group>"; };
 		34F62BD428BF5B1D0052488C /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
@@ -55,10 +63,20 @@
 		2EFB6F1828BF68E4006FD046 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				2EFB6F1928BF6AC5006FD046 /* SearchBlock.swift */,
-				2EFB6F1D28BF76B7006FD046 /* SearchBar.swift */,
+				2EFB6F2128BFA9BD006FD046 /* MainViewComponents */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		2EFB6F2128BFA9BD006FD046 /* MainViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				2EFB6F1928BF6AC5006FD046 /* SearchBlock.swift */,
+				2EFB6F1D28BF76B7006FD046 /* SearchBar.swift */,
+				2EFB6F1F28BF93BF006FD046 /* TopWord.swift */,
+				2EFB6F2228BFA9DA006FD046 /* SearchHistory.swift */,
+			);
+			path = MainViewComponents;
 			sourceTree = "<group>";
 		};
 		34F62BD028BF5A740052488C /* Modifiers */ = {
@@ -134,6 +152,8 @@
 				A464977C28BE4A1E004A5070 /* ContentView.swift */,
 				34F62BCE28BF53390052488C /* RegistrationView.swift */,
 				2EFB6F1628BF68AB006FD046 /* MainView.swift */,
+				2EFB6F2428BFBF6E006FD046 /* WordContentView.swift */,
+				2EFB6F2628BFC017006FD046 /* WordListHistory.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -215,15 +235,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EFB6F2528BFBF6E006FD046 /* WordContentView.swift in Sources */,
 				A464977D28BE4A1E004A5070 /* ContentView.swift in Sources */,
 				A464978C28BE52C7004A5070 /* UserViewModel.swift in Sources */,
+				2EFB6F2028BF93BF006FD046 /* TopWord.swift in Sources */,
 				34F62BD328BF5A990052488C /* TextModifier.swift in Sources */,
 				2EFB6F1A28BF6AC5006FD046 /* SearchBlock.swift in Sources */,
 				2EFB6F1728BF68AB006FD046 /* MainView.swift in Sources */,
 				2EFB6F1E28BF76B7006FD046 /* SearchBar.swift in Sources */,
 				A464978E28BE52DD004A5070 /* WordViewModel.swift in Sources */,
 				34F62BCF28BF53390052488C /* RegistrationView.swift in Sources */,
+				2EFB6F2728BFC017006FD046 /* WordListHistory.swift in Sources */,
 				A464979028BE532C004A5070 /* User.swift in Sources */,
+				2EFB6F2328BFA9DA006FD046 /* SearchHistory.swift in Sources */,
 				34F62BD528BF5B1D0052488C /* TextFieldModifier.swift in Sources */,
 				A464977B28BE4A1E004A5070 /* My_DictionaryApp.swift in Sources */,
 				A464979228BE533E004A5070 /* Word.swift in Sources */,

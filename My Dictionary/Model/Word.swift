@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Word: Identifiable{
+    var id = UUID()
+    var title: String
+}
