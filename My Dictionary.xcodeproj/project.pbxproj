@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EFB6F1728BF68AB006FD046 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB6F1628BF68AB006FD046 /* MainView.swift */; };
+		2EFB6F1A28BF6AC5006FD046 /* SearchBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB6F1928BF6AC5006FD046 /* SearchBlock.swift */; };
+		2EFB6F1E28BF76B7006FD046 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB6F1D28BF76B7006FD046 /* SearchBar.swift */; };
 		34F62BCF28BF53390052488C /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BCE28BF53390052488C /* RegistrationView.swift */; };
 		34F62BD328BF5A990052488C /* TextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BD228BF5A990052488C /* TextModifier.swift */; };
 		34F62BD528BF5B1D0052488C /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BD428BF5B1D0052488C /* TextFieldModifier.swift */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2EFB6F1628BF68AB006FD046 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		2EFB6F1928BF6AC5006FD046 /* SearchBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBlock.swift; sourceTree = "<group>"; };
+		2EFB6F1D28BF76B7006FD046 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		34F62BCE28BF53390052488C /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		34F62BD228BF5A990052488C /* TextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifier.swift; sourceTree = "<group>"; };
 		34F62BD428BF5B1D0052488C /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
@@ -46,6 +52,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2EFB6F1828BF68E4006FD046 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2EFB6F1928BF6AC5006FD046 /* SearchBlock.swift */,
+				2EFB6F1D28BF76B7006FD046 /* SearchBar.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		34F62BD028BF5A740052488C /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +89,7 @@
 		A464977928BE4A1E004A5070 /* My Dictionary */ = {
 			isa = PBXGroup;
 			children = (
+				2EFB6F1828BF68E4006FD046 /* Components */,
 				34F62BD028BF5A740052488C /* Modifiers */,
 				A464979428BE53D4004A5070 /* Helper */,
 				A464978A28BE4B07004A5070 /* View */,
@@ -117,6 +133,7 @@
 			children = (
 				A464977C28BE4A1E004A5070 /* ContentView.swift */,
 				34F62BCE28BF53390052488C /* RegistrationView.swift */,
+				2EFB6F1628BF68AB006FD046 /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,6 +218,9 @@
 				A464977D28BE4A1E004A5070 /* ContentView.swift in Sources */,
 				A464978C28BE52C7004A5070 /* UserViewModel.swift in Sources */,
 				34F62BD328BF5A990052488C /* TextModifier.swift in Sources */,
+				2EFB6F1A28BF6AC5006FD046 /* SearchBlock.swift in Sources */,
+				2EFB6F1728BF68AB006FD046 /* MainView.swift in Sources */,
+				2EFB6F1E28BF76B7006FD046 /* SearchBar.swift in Sources */,
 				A464978E28BE52DD004A5070 /* WordViewModel.swift in Sources */,
 				34F62BCF28BF53390052488C /* RegistrationView.swift in Sources */,
 				A464979028BE532C004A5070 /* User.swift in Sources */,
