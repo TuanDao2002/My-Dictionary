@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34F62BCF28BF53390052488C /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BCE28BF53390052488C /* RegistrationView.swift */; };
+		34F62BD328BF5A990052488C /* TextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BD228BF5A990052488C /* TextModifier.swift */; };
+		34F62BD528BF5B1D0052488C /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BD428BF5B1D0052488C /* TextFieldModifier.swift */; };
 		A464977B28BE4A1E004A5070 /* My_DictionaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464977A28BE4A1E004A5070 /* My_DictionaryApp.swift */; };
 		A464977D28BE4A1E004A5070 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464977C28BE4A1E004A5070 /* ContentView.swift */; };
 		A464977F28BE4A21004A5070 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A464977E28BE4A21004A5070 /* Assets.xcassets */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34F62BCE28BF53390052488C /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		34F62BD228BF5A990052488C /* TextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifier.swift; sourceTree = "<group>"; };
+		34F62BD428BF5B1D0052488C /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
 		A464977728BE4A1E004A5070 /* My Dictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Dictionary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A464977A28BE4A1E004A5070 /* My_DictionaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_DictionaryApp.swift; sourceTree = "<group>"; };
 		A464977C28BE4A1E004A5070 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,6 +46,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34F62BD028BF5A740052488C /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				34F62BD228BF5A990052488C /* TextModifier.swift */,
+				34F62BD428BF5B1D0052488C /* TextFieldModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		A464976E28BE4A1E004A5070 = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +74,7 @@
 		A464977928BE4A1E004A5070 /* My Dictionary */ = {
 			isa = PBXGroup;
 			children = (
+				34F62BD028BF5A740052488C /* Modifiers */,
 				A464979428BE53D4004A5070 /* Helper */,
 				A464979328BE53CB004A5070 /* Modifier */,
 				A464978A28BE4B07004A5070 /* View */,
@@ -101,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				A464977C28BE4A1E004A5070 /* ContentView.swift */,
+				34F62BCE28BF53390052488C /* RegistrationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -191,8 +208,11 @@
 			files = (
 				A464977D28BE4A1E004A5070 /* ContentView.swift in Sources */,
 				A464978C28BE52C7004A5070 /* UserViewModel.swift in Sources */,
+				34F62BD328BF5A990052488C /* TextModifier.swift in Sources */,
 				A464978E28BE52DD004A5070 /* WordViewModel.swift in Sources */,
+				34F62BCF28BF53390052488C /* RegistrationView.swift in Sources */,
 				A464979028BE532C004A5070 /* User.swift in Sources */,
+				34F62BD528BF5B1D0052488C /* TextFieldModifier.swift in Sources */,
 				A464977B28BE4A1E004A5070 /* My_DictionaryApp.swift in Sources */,
 				A464979228BE533E004A5070 /* Word.swift in Sources */,
 			);
