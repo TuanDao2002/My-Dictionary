@@ -23,7 +23,7 @@ extension Text {
     }
     
     func textFieldHeader() -> some View {
-        self.font(.custom("SpaceGrotesk-Regular", size: 20))
+        self.font(.custom("SpaceGrotesk-SemiBold", size: 20))
             .foregroundColor(.white)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.leading)

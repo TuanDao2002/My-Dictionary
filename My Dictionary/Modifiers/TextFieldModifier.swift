@@ -11,11 +11,12 @@ struct TextFieldModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .textFieldStyle(PlainTextFieldStyle())
-            .padding()
-            .background(Color("Retro-Gray"))
+            .padding(.horizontal)
+            .padding(.vertical, 13)
             .accentColor(Color("Hard-purple"))
-            .foregroundColor(Color("Retro-Red"))
-            .font(.subheadline)
-            .cornerRadius(10)
+            .font(.custom("SpaceGrotesk-Regular", size: 20))
+            .foregroundColor(.white)
+            .cornerRadius(50)
+            .overlay(RoundedRectangle(cornerRadius: 50).stroke(.black, lineWidth: 2))
     }
 }
