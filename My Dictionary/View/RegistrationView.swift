@@ -33,9 +33,9 @@ struct RegistrationView: View {
                     
                     Text("New user? Register here")
                         .modifier(RightAlign())
-                        .font(.body)
+                        .font(.callout)
                         .foregroundColor(Color("Retro-Gray"))
-                        .padding(.top)
+                        .padding(.top, 5)
                     Spacer()
                         .frame(height: 50)
                     

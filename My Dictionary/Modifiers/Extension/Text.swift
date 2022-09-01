@@ -16,14 +16,14 @@ extension Text {
     }
 
     func buttonText() -> some View {
-        self.font(.custom("SpaceGrotesk-Regular", size: 20))
+        self.font(.custom("SpaceGrotesk-SemiBold", size: 17))
             .foregroundColor(.white)
             .padding(.vertical, 15)
-            .padding(.horizontal, 20)
+            .padding(.horizontal, 40)
     }
     
     func textFieldHeader() -> some View {
-        self.font(.custom("SpaceGrotesk-SemiBold", size: 20))
+        self.font(.custom("SpaceGrotesk-SemiBold", size: 17))
             .foregroundColor(.white)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.leading)
