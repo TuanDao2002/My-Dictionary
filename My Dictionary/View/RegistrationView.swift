@@ -33,7 +33,7 @@ struct RegistrationView: View {
                     
                     Text("New user? Register here")
                         .modifier(RightAlign())
-                        .font(.callout)
+                        .font(.custom("SpaceGrotesk-Regular", size: 15))
                         .foregroundColor(Color("Retro-Gray"))
                         .padding(.top, 5)
                     Spacer()
