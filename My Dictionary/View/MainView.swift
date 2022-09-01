@@ -33,7 +33,8 @@ struct MainView: View {
                         HStack{
                             Text("Search history").fontWeight(.bold).font(.custom("Inter", size: 25)).padding().padding(.horizontal, 20.0)
                             Spacer()
-                            NavigationLink(destination: WordListHistory(), label: {
+                            // for testing view
+                            NavigationLink(destination: WordListHistory(user: User(id: "1", username: "Phi", searchedWords: ["favorite", "content", "word"], favoriteWords: [])), label: {
                                 Text("See more >>").foregroundColor(Color("Soft-purple"))
                             }).padding(.horizontal)
                         }

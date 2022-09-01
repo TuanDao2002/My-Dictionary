@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct User: Codable {
+struct User: Codable, Identifiable {
     var id: String
     var username: String
     var searchedWords: [String]
