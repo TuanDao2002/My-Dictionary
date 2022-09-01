@@ -16,7 +16,7 @@ struct TextFieldModifier: ViewModifier {
             .accentColor(Color("Hard-purple"))
             .font(.custom("SpaceGrotesk-Regular", size: 15))
             .foregroundColor(.white)
-            .cornerRadius(20)
-            .overlay(RoundedRectangle(cornerRadius: 20).stroke(.black, lineWidth: 2))
+            .cornerRadius(10)
+            .overlay(RoundedRectangle(cornerRadius: 10).stroke(.black, lineWidth: 2))
     }
 }
