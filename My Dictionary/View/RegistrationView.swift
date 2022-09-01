@@ -23,13 +23,13 @@ struct RegistrationView: View {
                         .frame(height: 60)
                     
                     //Username
-                    InputField(header: "Username", textFieldName: "Enter your username", name: $name)
+                    InputField(header: "Username", textFieldName: "", name: $name)
                     
                     Spacer()
                         .frame(height: 50)
                     
                     //Password
-                    InputField(header: "Password", textFieldName: "Enter your password", name: $name)
+                    InputField(header: "Password", textFieldName: "", name: $name)
                     
                     Text("New user? Register here")
                         .modifier(RightAlign())
