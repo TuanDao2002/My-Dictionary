@@ -8,10 +8,14 @@
 import SwiftUI
 
 //Text modifiers for main text
-struct TextModifier: ViewModifier {
+struct RightAlign: ViewModifier {
     func body(content: Content) -> some View {
-        content
-            .font(.title3)
-            .foregroundColor(.white) 
+        content.frame(maxWidth: .infinity, alignment: .trailing)
+    }
+}
+
+struct LeftAlign: ViewModifier {
+    func body(content: Content) -> some View {
+        content.frame(maxWidth: .infinity, alignment: .leading)
     }
 }

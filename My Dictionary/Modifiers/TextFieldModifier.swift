@@ -13,9 +13,9 @@ struct TextFieldModifier: ViewModifier {
             .textFieldStyle(PlainTextFieldStyle())
             .padding()
             .background(Color("Retro-Gray"))
-            .accentColor(Color("Soft-purple"))
-            .foregroundColor(Color("Hard-purple"))
-            .font(.body)
+            .accentColor(Color("Hard-purple"))
+            .foregroundColor(Color("Retro-Red"))
+            .font(.subheadline)
             .cornerRadius(10)
     }
 }

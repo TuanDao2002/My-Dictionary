@@ -17,26 +17,24 @@ struct RegistrationView: View {
                     .ignoresSafeArea()
                 VStack {
                     Text("User Registration")
-                        .foregroundColor(.white)
-                        .fontWeight(.medium)
-                        .font(.largeTitle)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .title()
+                        .modifier(LeftAlign())
                     Spacer()
-                        .frame(height: 100)
+                        .frame(height: 60)
                     
                     //Username
-                    Header(header: "Username", textFieldName: "Enter your username", name: $name)
+                    InputField(header: "Username", textFieldName: "Enter your username", name: $name)
                     
                     Spacer()
                         .frame(height: 50)
                     
                     //Password
-                    Header(header: "Password", textFieldName: "Enter your password", name: $name)
+                    InputField(header: "Password", textFieldName: "Enter your password", name: $name)
                     
                     Text("New user? Register here")
-                        .frame(maxWidth: .infinity, alignment: .trailing)
+                        .modifier(RightAlign())
                         .font(.body)
-                        .foregroundColor(.gray)
+                        .foregroundColor(Color("Retro-Gray"))
                         .padding(.top)
                     Spacer()
                         .frame(height: 50)
@@ -45,10 +43,8 @@ struct RegistrationView: View {
                         
                     } label: {
                         Text("Register")
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                            .padding()
-                            .foregroundColor(.black)
+                            .buttonText()
+                            
                     }
                     .background(Color("Retro-Yellow"))
                     .cornerRadius(15)
@@ -61,20 +57,16 @@ struct RegistrationView: View {
     }
 }
 
-struct Header: View {
+struct InputField: View {
     var header: String
     var textFieldName: String
     @Binding var name: String
     
     var body: some View {
         Text("\(header):")
-                .fontWeight(.medium)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .modifier(TextModifier())
-                .padding(.leading)
-            TextField("\(textFieldName)", text: $name)
-                .frame(width: .infinity, height: 15)
-                .modifier(TextFieldModifier())
+            .textFieldHeader()
+        TextField("\(textFieldName)", text: $name)
+            .modifier(TextFieldModifier())
     }
 }
 struct RegistrationView_Previews: PreviewProvider {

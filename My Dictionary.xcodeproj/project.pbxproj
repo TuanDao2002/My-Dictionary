@@ -17,6 +17,10 @@
 		34F62BCF28BF53390052488C /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BCE28BF53390052488C /* RegistrationView.swift */; };
 		34F62BD328BF5A990052488C /* TextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BD228BF5A990052488C /* TextModifier.swift */; };
 		34F62BD528BF5B1D0052488C /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BD428BF5B1D0052488C /* TextFieldModifier.swift */; };
+		34F62BDF28C082EC0052488C /* SpaceGrotesk-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34F62BDE28C082EC0052488C /* SpaceGrotesk-Regular.ttf */; };
+		34F62BE128C083C70052488C /* SpaceGrotesk-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34F62BE028C083C70052488C /* SpaceGrotesk-Medium.ttf */; };
+		34F62BE428C0846C0052488C /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BE328C0846C0052488C /* Text.swift */; };
+		34F62BE628C08AB70052488C /* SpaceGrotesk-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34F62BE528C08AB70052488C /* SpaceGrotesk-SemiBold.ttf */; };
 		A464977B28BE4A1E004A5070 /* My_DictionaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464977A28BE4A1E004A5070 /* My_DictionaryApp.swift */; };
 		A464977D28BE4A1E004A5070 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464977C28BE4A1E004A5070 /* ContentView.swift */; };
 		A464977F28BE4A21004A5070 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A464977E28BE4A21004A5070 /* Assets.xcassets */; };
@@ -39,6 +43,10 @@
 		34F62BCE28BF53390052488C /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		34F62BD228BF5A990052488C /* TextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifier.swift; sourceTree = "<group>"; };
 		34F62BD428BF5B1D0052488C /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
+		34F62BDE28C082EC0052488C /* SpaceGrotesk-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-Regular.ttf"; sourceTree = "<group>"; };
+		34F62BE028C083C70052488C /* SpaceGrotesk-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-Medium.ttf"; sourceTree = "<group>"; };
+		34F62BE328C0846C0052488C /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		34F62BE528C08AB70052488C /* SpaceGrotesk-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-SemiBold.ttf"; sourceTree = "<group>"; };
 		A464977728BE4A1E004A5070 /* My Dictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Dictionary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A464977A28BE4A1E004A5070 /* My_DictionaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_DictionaryApp.swift; sourceTree = "<group>"; };
 		A464977C28BE4A1E004A5070 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,10 +92,29 @@
 		34F62BD028BF5A740052488C /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
+				34F62BE228C0845C0052488C /* Extension */,
 				34F62BD228BF5A990052488C /* TextModifier.swift */,
 				34F62BD428BF5B1D0052488C /* TextFieldModifier.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		34F62BD628C07BBA0052488C /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				34F62BDE28C082EC0052488C /* SpaceGrotesk-Regular.ttf */,
+				34F62BE528C08AB70052488C /* SpaceGrotesk-SemiBold.ttf */,
+				34F62BE028C083C70052488C /* SpaceGrotesk-Medium.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		34F62BE228C0845C0052488C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				34F62BE328C0846C0052488C /* Text.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		A464976E28BE4A1E004A5070 = {
@@ -109,6 +136,7 @@
 		A464977928BE4A1E004A5070 /* My Dictionary */ = {
 			isa = PBXGroup;
 			children = (
+				34F62BD628C07BBA0052488C /* Font */,
 				2EFB6F1828BF68E4006FD046 /* Components */,
 				34F62BD028BF5A740052488C /* Modifiers */,
 				A464979428BE53D4004A5070 /* Helper */,
@@ -226,8 +254,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34F62BE628C08AB70052488C /* SpaceGrotesk-SemiBold.ttf in Resources */,
+				34F62BE128C083C70052488C /* SpaceGrotesk-Medium.ttf in Resources */,
 				A464978228BE4A21004A5070 /* Preview Assets.xcassets in Resources */,
 				A464977F28BE4A21004A5070 /* Assets.xcassets in Resources */,
+				34F62BDF28C082EC0052488C /* SpaceGrotesk-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +273,7 @@
 				A464977D28BE4A1E004A5070 /* ContentView.swift in Sources */,
 				A464978C28BE52C7004A5070 /* UserViewModel.swift in Sources */,
 				2EFB6F2028BF93BF006FD046 /* TopWord.swift in Sources */,
+				34F62BE428C0846C0052488C /* Text.swift in Sources */,
 				A46BE05D28C0667200BB542E /* Test.swift in Sources */,
 				34F62BD328BF5A990052488C /* TextModifier.swift in Sources */,
 				2EFB6F1A28BF6AC5006FD046 /* SearchBlock.swift in Sources */,
@@ -386,6 +418,8 @@
 				DEVELOPMENT_TEAM = 7776796UCW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "My-Dictionary-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -415,6 +449,8 @@
 				DEVELOPMENT_TEAM = 7776796UCW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "My-Dictionary-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
