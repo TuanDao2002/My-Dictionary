@@ -12,7 +12,7 @@ struct TextFieldModifier: ViewModifier {
         content
             .textFieldStyle(PlainTextFieldStyle())
             .padding()
-            .background(Color("White"))
+            .background(Color("Retro-Gray"))
             .accentColor(Color("Soft-purple"))
             .foregroundColor(Color("Hard-purple"))
             .font(.body)

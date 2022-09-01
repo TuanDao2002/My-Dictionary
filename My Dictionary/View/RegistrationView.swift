@@ -13,12 +13,12 @@ struct RegistrationView: View {
     var body: some View {
         NavigationView{
             ZStack{
-                Color("Hard-purple")
+                Color("Retro-Brown")
                     .ignoresSafeArea()
                 VStack {
                     Text("User Registration")
                         .foregroundColor(.white)
-                        .fontWeight(.bold)
+                        .fontWeight(.medium)
                         .font(.largeTitle)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Spacer()
@@ -48,9 +48,9 @@ struct RegistrationView: View {
                             .font(.title3)
                             .fontWeight(.semibold)
                             .padding()
-                            .foregroundColor(Color("Hard-purple"))
+                            .foregroundColor(.black)
                     }
-                    .background(Color("Purple"))
+                    .background(Color("Retro-Yellow"))
                     .cornerRadius(15)
                     Spacer()
                     
