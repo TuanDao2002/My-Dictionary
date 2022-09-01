@@ -25,6 +25,7 @@
 		A464978E28BE52DD004A5070 /* WordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464978D28BE52DD004A5070 /* WordViewModel.swift */; };
 		A464979028BE532C004A5070 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464978F28BE532C004A5070 /* User.swift */; };
 		A464979228BE533E004A5070 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464979128BE533E004A5070 /* Word.swift */; };
+		A46BE05D28C0667200BB542E /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46BE05C28C0667200BB542E /* Test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		A464978D28BE52DD004A5070 /* WordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewModel.swift; sourceTree = "<group>"; };
 		A464978F28BE532C004A5070 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A464979128BE533E004A5070 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		A46BE05C28C0667200BB542E /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			children = (
 				A464978B28BE52C7004A5070 /* UserViewModel.swift */,
 				A464978D28BE52DD004A5070 /* WordViewModel.swift */,
+				A46BE05C28C0667200BB542E /* Test.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				A464977D28BE4A1E004A5070 /* ContentView.swift in Sources */,
 				A464978C28BE52C7004A5070 /* UserViewModel.swift in Sources */,
 				2EFB6F2028BF93BF006FD046 /* TopWord.swift in Sources */,
+				A46BE05D28C0667200BB542E /* Test.swift in Sources */,
 				34F62BD328BF5A990052488C /* TextModifier.swift in Sources */,
 				2EFB6F1A28BF6AC5006FD046 /* SearchBlock.swift in Sources */,
 				2EFB6F1728BF68AB006FD046 /* MainView.swift in Sources */,
