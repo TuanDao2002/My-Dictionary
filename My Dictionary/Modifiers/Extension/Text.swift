@@ -15,10 +15,10 @@ extension Text {
             .foregroundColor(.white)
     }
     
-    func headline() -> some View {
-        self.font(.custom("SpaceGrotesk-Medium", size: 40))
-            .foregroundColor(.white)
-    }
+//    func headline() -> some View {
+//        self.font(.custom("SpaceGrotesk-Medium", size: 40))
+//            .foregroundColor(.white)
+//    }
 
     func buttonText() -> some View {
         self.font(.custom("SpaceGrotesk-SemiBold", size: 17))

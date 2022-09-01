@@ -15,16 +15,14 @@ struct WordListHistory: View {
 
         VStack {
             ZStack {
-                Color("Retro-Yellow").edgesIgnoringSafeArea(.all)
+                Color("Retro-Red").edgesIgnoringSafeArea(.all)
                 
                 VStack (alignment: .leading, spacing: 0){
                     Text("Search History")
-                        .headline()
+                        .title()
                         .modifier(LeftAlign())
-                        .foregroundColor(Color("Soft-purple"))
-                        .padding(.leading, 40)
-                        .padding(.vertical, 20)
-                    
+                    Spacer()
+                        .frame(height: 60)
                     ForEach(searchedWords, id: \.self) { word in
                         Button(action: {
                             WordContentView(word: Word(title: word))
@@ -34,7 +32,7 @@ struct WordListHistory: View {
                     }
                     Spacer()
                 }
-                .padding(.top, 20)
+                .padding(30)
             }
         }
     }

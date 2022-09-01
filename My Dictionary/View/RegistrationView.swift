@@ -11,48 +11,45 @@ struct RegistrationView: View {
     @State private var name = ""
     
     var body: some View {
-        NavigationView{
-            ZStack{
-                Color("Retro-Brown")
-                    .ignoresSafeArea()
-                VStack {
-                    Text("User Registration")
-                        .title()
-                        .modifier(LeftAlign())
-                    Spacer()
-                        .frame(height: 60)
+        ZStack{
+            Color("Retro-Brown")
+                .ignoresSafeArea()
+            VStack {
+                Text("User Registration")
+                    .title()
+                    .modifier(LeftAlign())
+                Spacer()
+                
+                //Username
+                InputField(header: "Username", textFieldName: "", name: $name)
+                
+                Spacer()
+                    .frame(height: 50)
+                
+                //Password
+                InputField(header: "Password", textFieldName: "", name: $name)
+                
+                Text("New user? Register here")
+                    .modifier(RightAlign())
+                    .font(.custom("SpaceGrotesk-Regular", size: 15))
+                    .foregroundColor(Color("Retro-Gray"))
+                    .padding(.top, 5)
+                Spacer()
+                    .frame(height: 50)
+                
+                Button() {
                     
-                    //Username
-                    InputField(header: "Username", textFieldName: "", name: $name)
-                    
-                    Spacer()
-                        .frame(height: 50)
-                    
-                    //Password
-                    InputField(header: "Password", textFieldName: "", name: $name)
-                    
-                    Text("New user? Register here")
-                        .modifier(RightAlign())
-                        .font(.custom("SpaceGrotesk-Regular", size: 15))
-                        .foregroundColor(Color("Retro-Gray"))
-                        .padding(.top, 5)
-                    Spacer()
-                        .frame(height: 50)
-                    
-                    Button() {
+                } label: {
+                    Text("Register")
+                        .buttonText()
                         
-                    } label: {
-                        Text("Register")
-                            .buttonText()
-                            
-                    }
-                    .background(Color("Retro-Yellow"))
-                    .cornerRadius(15)
-                    Spacer()
-                    
                 }
-                .padding(30)
+                .background(Color("Retro-Yellow"))
+                .cornerRadius(15)
+                Spacer()
+                
             }
+            .padding(30)
         }
     }
 }
