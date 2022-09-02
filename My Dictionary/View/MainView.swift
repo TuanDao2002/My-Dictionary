@@ -23,10 +23,12 @@ struct MainView: View {
                     .foregroundColor(Color("Retro-Gray"))
                 Spacer()
             }
+            .navigationBarHidden(true)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             .background(Color("Hard-purple"))
             .edgesIgnoringSafeArea(.all)
         }
+        
     }
 }
 
