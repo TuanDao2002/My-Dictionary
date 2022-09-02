@@ -8,31 +8,24 @@
 import SwiftUI
 
 struct WordListHistory: View {
-    @State var user: User
-    
+    @Binding var user: User
+//    let searchedWords = user.searchedWords
     var body: some View {
-        let searchedWords = user.searchedWords
-
         VStack {
             ZStack {
                 Color("Retro-Red").edgesIgnoringSafeArea(.all)
-                
-                VStack (alignment: .leading, spacing: 0){
-                    Text("Search History")
-                        .title()
-                        .modifier(LeftAlign())
-                    Spacer()
-                        .frame(height: 60)
-                    ForEach(searchedWords, id: \.self) { word in
-                        Button(action: {
-                            WordContentView(word: Word(title: word))
-                        }, label: {
-                            TopWord(word: Word(title: word))
-                        })
+                ScrollView{
+                    VStack (alignment: .leading, spacing: 10){
+                        Text("Search History")
+                            .title()
+                            .modifier(LeftAlign())
+                        Spacer()
+                            .frame(height: 60)
+                        SearchHistory(searchedWords: $user.searchedWords)
+                        Spacer()
                     }
-                    Spacer()
+                    .padding(30)
                 }
-                .padding(30)
             }
         }
     }
@@ -40,6 +33,6 @@ struct WordListHistory: View {
 
 struct WordListHistory_Previews: PreviewProvider {
     static var previews: some View {
-        WordListHistory(user: User(id: "1", username: "Phi", searchedWords: ["favorite", "content", "word"], favoriteWords: []))
+        WordListHistory(user: .constant(User(id: "1", username: "Phi", searchedWords: ["favorite", "content", "word"], favoriteWords: [])))
     }
 }
