@@ -14,6 +14,8 @@ struct Response: Decodable {
 let api = "https://cosc2659dictionary.herokuapp.com/api"
 
 final class UserViewModel: ObservableObject {
+    @Published var user: User?
+    
     func getUser() -> User?{
         if let userData = UserDefaults.standard.data(forKey: "user") {
             do {
@@ -27,30 +29,21 @@ final class UserViewModel: ObservableObject {
     }
     
     func saveUser(user: User?) {
-        if (user == nil) {
-            return
-        }
         do {
             let userData = try JSONEncoder().encode(user)
             UserDefaults.standard.set(userData, forKey: "user")
+            
+            self.user = user
         } catch {
             print(error.localizedDescription)
         }
     }
     
     func register(username: String, password: String, completion: @escaping(String, Int) -> ()) {
-        let url = URL(string: api + "/auth/register")!
-        var request = URLRequest(url: url)
-        
         let json: [String: Any] = ["username": username, "password": password]
-        let jsonData = try? JSONSerialization.data(withJSONObject: json)
-        
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = jsonData
-                
+        let postRequest = postRequest(endpoint: "/auth/register", json: json)
         let session = URLSession.shared
-        session.dataTask(with: request) { (data, response, error) in
+        session.dataTask(with: postRequest) { (data, response, error) in
             if error == nil, let data = data, let response = response as? HTTPURLResponse {
                 let apiResponse = try? JSONDecoder().decode(Response.self, from: data)
                 completion(apiResponse!.msg, response.statusCode)
@@ -61,19 +54,11 @@ final class UserViewModel: ObservableObject {
     }
     
     func login(username: String, password: String, completion: @escaping(String, Int, User?) -> ()) {
-        let url = URL(string: api + "/auth/login")!
-        var request = URLRequest(url: url)
-        
         let json: [String: Any] = ["username": username, "password": password]
-        let jsonData = try? JSONSerialization.data(withJSONObject: json)
-        
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = jsonData
-                
+        let postRequest = postRequest(endpoint: "/auth/login", json: json)
         var user: User?
         let session = URLSession.shared
-        session.dataTask(with: request) { (data, response, error) in
+        session.dataTask(with: postRequest) { (data, response, error) in
             if error == nil, let data = data, let response = response as? HTTPURLResponse {
                 
                 if (response.statusCode != 200) {
@@ -89,7 +74,17 @@ final class UserViewModel: ObservableObject {
                 completion(error!.localizedDescription, 404, nil)
             }
         }.resume()
-        
-        saveUser(user: user)
+    }
+    
+    func logout() {
+        saveUser(user: nil)
+    }
+    
+    func getUserSearchedWords() -> [String]{
+        return user?.searchedWords ?? []
+    }
+    
+    func getUserFavoriteWords() -> [String]{
+        return user?.favoriteWords ?? []
     }
 }

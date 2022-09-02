@@ -21,6 +21,7 @@
 		34F62BE128C083C70052488C /* SpaceGrotesk-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34F62BE028C083C70052488C /* SpaceGrotesk-Medium.ttf */; };
 		34F62BE428C0846C0052488C /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BE328C0846C0052488C /* Text.swift */; };
 		34F62BE628C08AB70052488C /* SpaceGrotesk-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34F62BE528C08AB70052488C /* SpaceGrotesk-SemiBold.ttf */; };
+		A459574728C1AF9C00212031 /* PostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459574628C1AF9C00212031 /* PostRequest.swift */; };
 		A464977B28BE4A1E004A5070 /* My_DictionaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464977A28BE4A1E004A5070 /* My_DictionaryApp.swift */; };
 		A464977D28BE4A1E004A5070 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464977C28BE4A1E004A5070 /* ContentView.swift */; };
 		A464977F28BE4A21004A5070 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A464977E28BE4A21004A5070 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		34F62BE028C083C70052488C /* SpaceGrotesk-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-Medium.ttf"; sourceTree = "<group>"; };
 		34F62BE328C0846C0052488C /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		34F62BE528C08AB70052488C /* SpaceGrotesk-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-SemiBold.ttf"; sourceTree = "<group>"; };
+		A459574628C1AF9C00212031 /* PostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostRequest.swift; path = "My Dictionary/Model/PostRequest.swift"; sourceTree = SOURCE_ROOT; };
 		A464977728BE4A1E004A5070 /* My Dictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Dictionary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A464977A28BE4A1E004A5070 /* My_DictionaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_DictionaryApp.swift; sourceTree = "<group>"; };
 		A464977C28BE4A1E004A5070 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 		A464979428BE53D4004A5070 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				A459574628C1AF9C00212031 /* PostRequest.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				A464978C28BE52C7004A5070 /* UserViewModel.swift in Sources */,
 				2EFB6F2028BF93BF006FD046 /* Wordrow.swift in Sources */,
 				34F62BE428C0846C0052488C /* Text.swift in Sources */,
+				A459574728C1AF9C00212031 /* PostRequest.swift in Sources */,
 				A46BE05D28C0667200BB542E /* Test.swift in Sources */,
 				34F62BD328BF5A990052488C /* TextModifier.swift in Sources */,
 				2EFB6F1A28BF6AC5006FD046 /* Header.swift in Sources */,
