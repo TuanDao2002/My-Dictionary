@@ -17,10 +17,15 @@ struct MainView: View {
                 Spacer()
                 Header(name: $name)
                 Spacer()
+                    .frame(height: 60)
                 SearchBar(word: $input)
-                NavigationLink("Search history >>", destination: WordListHistory(user: $user)).foregroundColor(Color("Retro-Gray")).padding(.vertical)
+                NavigationLink("Search history >>", destination: WordListHistory(user: $user))
+                    .foregroundColor(Color("Retro-Gray"))
                 Spacer()
-            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center).background(Color("Hard-purple")).edgesIgnoringSafeArea(.all)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+            .background(Color("Hard-purple"))
+            .edgesIgnoringSafeArea(.all)
         }
     }
 }
