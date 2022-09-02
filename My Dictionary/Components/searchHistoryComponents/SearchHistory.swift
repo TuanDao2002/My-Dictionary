@@ -20,7 +20,7 @@ struct SearchHistory: View {
 //        }
         ForEach(searchedWords, id: \.self) { word in
             Button(action: {
-                WordContentView(word: Word(title: word))
+                WordContentView()
             }, label: {
                 WordRow(title: word)
             })
