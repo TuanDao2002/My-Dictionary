@@ -12,9 +12,9 @@
 		2E9885E228C20C1600C73C6E /* DefinationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9885DE28C20C1600C73C6E /* DefinationCard.swift */; };
 		2E9885E328C20C1600C73C6E /* Defination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9885DF28C20C1600C73C6E /* Defination.swift */; };
 		2E9885E428C20C1600C73C6E /* WordContentHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9885E028C20C1600C73C6E /* WordContentHeader.swift */; };
+		2E9885E628C20D5800C73C6E /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9885E528C20D5800C73C6E /* SearchBar.swift */; };
 		2EFB6F1728BF68AB006FD046 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB6F1628BF68AB006FD046 /* MainView.swift */; };
 		2EFB6F1A28BF6AC5006FD046 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB6F1928BF6AC5006FD046 /* Header.swift */; };
-		2EFB6F1E28BF76B7006FD046 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB6F1D28BF76B7006FD046 /* SearchBar.swift */; };
 		2EFB6F2028BF93BF006FD046 /* Wordrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB6F1F28BF93BF006FD046 /* Wordrow.swift */; };
 		2EFB6F2328BFA9DA006FD046 /* SearchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB6F2228BFA9DA006FD046 /* SearchHistory.swift */; };
 		2EFB6F2728BFC017006FD046 /* WordListHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB6F2628BFC017006FD046 /* WordListHistory.swift */; };
@@ -43,9 +43,9 @@
 		2E9885DE28C20C1600C73C6E /* DefinationCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefinationCard.swift; sourceTree = "<group>"; };
 		2E9885DF28C20C1600C73C6E /* Defination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defination.swift; sourceTree = "<group>"; };
 		2E9885E028C20C1600C73C6E /* WordContentHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordContentHeader.swift; sourceTree = "<group>"; };
+		2E9885E528C20D5800C73C6E /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		2EFB6F1628BF68AB006FD046 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		2EFB6F1928BF6AC5006FD046 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
-		2EFB6F1D28BF76B7006FD046 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		2EFB6F1F28BF93BF006FD046 /* Wordrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wordrow.swift; sourceTree = "<group>"; };
 		2EFB6F2228BFA9DA006FD046 /* SearchHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistory.swift; sourceTree = "<group>"; };
 		2EFB6F2628BFC017006FD046 /* WordListHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListHistory.swift; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				2EFB6F1928BF6AC5006FD046 /* Header.swift */,
-				2EFB6F1D28BF76B7006FD046 /* SearchBar.swift */,
+				2E9885E528C20D5800C73C6E /* SearchBar.swift */,
 			);
 			path = mainViewComponents;
 			sourceTree = "<group>";
@@ -312,11 +312,11 @@
 				34F62BD328BF5A990052488C /* TextModifier.swift in Sources */,
 				2EFB6F1A28BF6AC5006FD046 /* Header.swift in Sources */,
 				2EFB6F1728BF68AB006FD046 /* MainView.swift in Sources */,
-				2EFB6F1E28BF76B7006FD046 /* SearchBar.swift in Sources */,
 				2E9885E128C20C1600C73C6E /* DropdownMenu.swift in Sources */,
 				2E9885E428C20C1600C73C6E /* WordContentHeader.swift in Sources */,
 				A464978E28BE52DD004A5070 /* WordViewModel.swift in Sources */,
 				34F62BCF28BF53390052488C /* RegistrationView.swift in Sources */,
+				2E9885E628C20D5800C73C6E /* SearchBar.swift in Sources */,
 				2EFB6F2728BFC017006FD046 /* WordListHistory.swift in Sources */,
 				A464979028BE532C004A5070 /* User.swift in Sources */,
 				2EFB6F2328BFA9DA006FD046 /* SearchHistory.swift in Sources */,
