@@ -11,15 +11,14 @@ struct SearchBar: View {
     @Binding var word: String
     var body: some View {
         HStack{
-            Image(systemName: "magnifyingglass").frame(width: 30, height: 30)
-                .foregroundColor(Color("Retro-Red"))
+            Image(systemName: "magnifyingglass")
+                .frame(width: 30, height: 30).foregroundColor(Color("Retro-Red"))
                 .padding(.horizontal)
             TextField("Search here", text: $word)
                 .foregroundColor(.black)
         }
-            .frame(width:.infinity, height: 60)
-            .background(Color("Retro-Gray"))
-            .cornerRadius(15)
+        .frame(width: .infinity, height: 60)
+            .background(Color("Retro-Gray")).cornerRadius(15)
             .padding(20)
     }
 }
