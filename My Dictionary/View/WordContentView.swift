@@ -9,13 +9,34 @@ import SwiftUI
 
 struct WordContentView: View {
     var body: some View {
-        ScrollView{
-            VStack(spacing: 50){
-                WordContentHeader()
-                Defination()
-                DefinationCard()
-            }.padding(40).frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        }.background(Color("Retro-Green"))
+        ZStack {
+            Color("Retro-Green")
+                .ignoresSafeArea()
+            VStack {
+                WordContentNavigation()
+                    .modifier(Padding())
+                    .padding(.top, 30)
+                GeometryReader {
+                    geo in
+                    ScrollView{
+                        VStack{
+                            Spacer()
+                                .frame(height: 30)
+                            WordContentHeader()
+                                .modifier(Padding())
+                            Spacer()
+                                .frame(height: 100)
+                            Definition()
+                            Spacer()
+                                .frame(height: 70)
+                            DefinitionCardCollection(width: geo.size.width)
+                        }
+                        
+                    }
+                    
+                }
+            }
+        }
     }
 }
 

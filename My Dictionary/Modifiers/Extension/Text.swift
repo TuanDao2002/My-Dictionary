@@ -15,11 +15,16 @@ extension Text {
             .foregroundColor(.white)
     }
     
-//    func headline() -> some View {
-//        self.font(.custom("SpaceGrotesk-Medium", size: 40))
-//            .foregroundColor(.white)
-//    }
-
+    func blackTitle() -> some View {
+        self.font(.custom("SpaceGrotesk-Medium", size: 50))
+            .foregroundColor(.black)
+    }
+    
+    func blackDefinition() -> some View {
+        self.font(.custom("SpaceGrotesk-Medium", size: 30))
+            .foregroundColor(.black)
+    }
+    
     func buttonText() -> some View {
         self.font(.custom("SpaceGrotesk-SemiBold", size: 17))
             .foregroundColor(.white)
@@ -32,5 +37,21 @@ extension Text {
             .foregroundColor(.white)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.leading)
+    }
+    
+    func subtitle() -> some View {
+        self.font(.custom("SpaceGrotesk-SemiBold", size: 20))
+            .foregroundColor(.black)
+            .opacity(0.8)
+    }
+    
+    func bodyText() -> some View{
+        self.font(.custom("SpaceGrotesk-Regular", size: 20))
+            .foregroundColor(.black)
+    }
+    
+    func bodyHeader() -> some View{
+        self.font(.custom("SpaceGrotesk-Medium", size: 20))
+            .foregroundColor(.black)
     }
 }

@@ -9,19 +9,17 @@ import SwiftUI
 
 struct WordContentHeader: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 10){
-            HStack(alignment: .center){
-                Image(systemName: "chevron.left").foregroundColor(.white)
-                Spacer()
-                DropdownMenu().padding(.vertical)
-            }.font(.custom("", size: 20))
-            
-            Text("Hello").multilineTextAlignment(.leading).font(.custom("Inter", size: 50))
+        VStack(alignment: .leading){
+            Text("Hello")
+                .blackTitle()
+                .modifier(LeftAlign())
             HStack(spacing: 5){
-                Image(systemName: "speaker.wave.2.fill").font(.custom("", size: 30))
-                Text("/həˈləʊ/").font(.custom("Inter", size: 15))
+                Image(systemName: "speaker.wave.2.fill")
+                    .font(.system(size: 30))
+                Text("/həˈləʊ/")
+                    .subtitle()
             }
-        }.padding().frame(maxWidth: .infinity, alignment: .leading)
+        }
     }
 }
 
