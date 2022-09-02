@@ -18,10 +18,10 @@ struct SearchBar: View {
             TextField("Search here", text: $word)
                 .foregroundColor(.black)
         }
-        .frame(width: .infinity, height: 60)
-            .background(Color("Retro-Gray"))
-            .cornerRadius(15)
-            .padding(20)
+        .frame(height: 60)
+        .background(Color("Retro-Gray"))
+        .cornerRadius(15)
+        .padding(20)
     }
 }
 
