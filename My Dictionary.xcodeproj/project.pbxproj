@@ -102,11 +102,10 @@
 		2E9885DC28C20C0100C73C6E /* WordContentComponent */ = {
 			isa = PBXGroup;
 			children = (
-				343318AA28C244120068A820 /* Definition */,
+				343318AA28C244120068A820 /* DefinitionComponents */,
 				2E9885DD28C20C1600C73C6E /* DropdownMenu.swift */,
 				2E9885E028C20C1600C73C6E /* WordContentHeader.swift */,
 				343318A228C21A080068A820 /* WordContentNavigation.swift */,
-				343318A428C235FC0068A820 /* TextBubble.swift */,
 			);
 			path = WordContentComponent;
 			sourceTree = "<group>";
@@ -131,14 +130,14 @@
 			path = MainViewComponents;
 			sourceTree = "<group>";
 		};
-		343318AA28C244120068A820 /* Definition */ = {
+		343318AA28C244120068A820 /* DefinitionComponents */ = {
 			isa = PBXGroup;
 			children = (
 				2E9885DF28C20C1600C73C6E /* Definition.swift */,
 				2E9885DE28C20C1600C73C6E /* DefinitionCard.swift */,
 				343318A828C23CDA0068A820 /* DefinitionCardCollection.swift */,
 			);
-			name = Definition;
+			name = DefinitionComponents;
 			path = "Dèinition";
 			sourceTree = "<group>";
 		};
@@ -146,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				343318AC28C244590068A820 /* Navigation.swift */,
+				343318A428C235FC0068A820 /* TextBubble.swift */,
 			);
 			path = SharedComponents;
 			sourceTree = "<group>";
