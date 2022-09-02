@@ -34,7 +34,7 @@
 		A464979028BE532C004A5070 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464978F28BE532C004A5070 /* User.swift */; };
 		A464979228BE533E004A5070 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464979128BE533E004A5070 /* Word.swift */; };
 		A46BE05D28C0667200BB542E /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46BE05C28C0667200BB542E /* Test.swift */; };
-		A479598B28C2150D0058BEF0 /* postRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A479598A28C2150D0058BEF0 /* postRequest.swift */; };
+		A479598B28C2150D0058BEF0 /* PostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A479598A28C2150D0058BEF0 /* PostRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,7 +66,7 @@
 		A464978F28BE532C004A5070 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A464979128BE533E004A5070 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		A46BE05C28C0667200BB542E /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
-		A479598A28C2150D0058BEF0 /* postRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postRequest.swift; sourceTree = "<group>"; };
+		A479598A28C2150D0058BEF0 /* PostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,7 +222,7 @@
 		A479598928C214FF0058BEF0 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				A479598A28C2150D0058BEF0 /* postRequest.swift */,
+				A479598A28C2150D0058BEF0 /* PostRequest.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -314,7 +314,7 @@
 				2E9885E128C20C1600C73C6E /* DropdownMenu.swift in Sources */,
 				2E9885E428C20C1600C73C6E /* WordContentHeader.swift in Sources */,
 				A464978E28BE52DD004A5070 /* WordViewModel.swift in Sources */,
-				A479598B28C2150D0058BEF0 /* postRequest.swift in Sources */,
+				A479598B28C2150D0058BEF0 /* PostRequest.swift in Sources */,
 				34F62BCF28BF53390052488C /* RegistrationView.swift in Sources */,
 				2E9885E628C20D5800C73C6E /* SearchBar.swift in Sources */,
 				2EFB6F2728BFC017006FD046 /* WordListHistory.swift in Sources */,
