@@ -21,7 +21,7 @@ struct WordContentView: View {
                     ScrollView{
                         VStack{
                             Spacer()
-                                .frame(height: 30)
+                                .frame(height: 10)
                             WordContentHeader()
                                 .modifier(Padding())
                             Spacer()

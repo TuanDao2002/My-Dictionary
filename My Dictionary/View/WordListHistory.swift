@@ -9,13 +9,16 @@ import SwiftUI
 
 struct WordListHistory: View {
     @Binding var user: User
-//    let searchedWords = user.searchedWords
+    
     var body: some View {
-        VStack {
-            ZStack {
-                Color("Retro-Red").edgesIgnoringSafeArea(.all)
+        ZStack {
+            Color("Retro-Red").edgesIgnoringSafeArea(.all)
+            VStack {
+                Navigation()
+                    .padding(.top, 30)
+                    .modifier(LeftAlign())
                 ScrollView{
-                    VStack (alignment: .leading, spacing: 10){
+                    VStack (alignment: .leading){
                         Text("Search History")
                             .title()
                             .modifier(LeftAlign())
@@ -24,9 +27,10 @@ struct WordListHistory: View {
                         SearchHistory(searchedWords: $user.searchedWords)
                         Spacer()
                     }
-                    .padding(30)
                 }
+                .padding(.top, 10)
             }
+            .modifier(Padding())
         }
     }
 }
