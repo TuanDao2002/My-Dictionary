@@ -15,6 +15,9 @@ struct RegistrationView: View {
             Color("Retro-Brown")
                 .ignoresSafeArea()
             VStack {
+                Navigation()
+                    .padding(.top, 30)
+                    .modifier(LeftAlign())
                 Text("User Registration")
                     .title()
                     .modifier(LeftAlign())
@@ -24,7 +27,7 @@ struct RegistrationView: View {
                 InputField(header: "Username", textFieldName: "", name: $name)
                 
                 Spacer()
-                    .frame(height: 50)
+                    .frame(height: 30)
                 
                 //Password
                 InputField(header: "Password", textFieldName: "", name: $name)
@@ -49,7 +52,7 @@ struct RegistrationView: View {
                 Spacer()
                 
             }
-            .padding(30)
+            .modifier(Padding())
         }
     }
 }
@@ -69,5 +72,6 @@ struct InputField: View {
 struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {
         RegistrationView()
+            .previewDevice("iPhone 11")
     }
 }

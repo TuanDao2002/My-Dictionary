@@ -10,19 +10,10 @@ import SwiftUI
 struct WordContentNavigation: View {
     var body: some View {
         HStack(alignment: .center){
-            Label{
-                Text("RETURN")
-                    .padding(.leading, 10)
-            } icon: {
-                Image(systemName: "chevron.left")
-            }
-                .padding(.horizontal, 10)
-                .padding(.vertical, 7)
-                .overlay(RoundedRectangle(cornerRadius: 50).stroke(.black, lineWidth: 2))
+            Navigation()
             Spacer()
             DropdownMenu()
         }
-        .font(.custom("", size: 20))
     }
 }
 

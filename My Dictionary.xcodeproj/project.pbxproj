@@ -22,6 +22,7 @@
 		343318A528C235FC0068A820 /* TextBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343318A428C235FC0068A820 /* TextBubble.swift */; };
 		343318A728C2391D0068A820 /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343318A628C2391D0068A820 /* Padding.swift */; };
 		343318A928C23CDA0068A820 /* DefinitionCardCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343318A828C23CDA0068A820 /* DefinitionCardCollection.swift */; };
+		343318AD28C244590068A820 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343318AC28C244590068A820 /* Navigation.swift */; };
 		34F62BCF28BF53390052488C /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BCE28BF53390052488C /* RegistrationView.swift */; };
 		34F62BD328BF5A990052488C /* TextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BD228BF5A990052488C /* TextModifier.swift */; };
 		34F62BD528BF5B1D0052488C /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BD428BF5B1D0052488C /* TextFieldModifier.swift */; };
@@ -57,6 +58,7 @@
 		343318A428C235FC0068A820 /* TextBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBubble.swift; sourceTree = "<group>"; };
 		343318A628C2391D0068A820 /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
 		343318A828C23CDA0068A820 /* DefinitionCardCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionCardCollection.swift; sourceTree = "<group>"; };
+		343318AC28C244590068A820 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		34F62BCE28BF53390052488C /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		34F62BD228BF5A990052488C /* TextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifier.swift; sourceTree = "<group>"; };
 		34F62BD428BF5B1D0052488C /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
@@ -88,46 +90,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2E38EBA928C1836E00343498 /* searchHistoryComponents */ = {
+		2E38EBA928C1836E00343498 /* SearchHistoryComponents */ = {
 			isa = PBXGroup;
 			children = (
 				2EFB6F1F28BF93BF006FD046 /* Wordrow.swift */,
 				2EFB6F2228BFA9DA006FD046 /* SearchHistory.swift */,
 			);
-			path = searchHistoryComponents;
+			path = SearchHistoryComponents;
 			sourceTree = "<group>";
 		};
-		2E9885DC28C20C0100C73C6E /* wordContentComponent */ = {
+		2E9885DC28C20C0100C73C6E /* WordContentComponent */ = {
 			isa = PBXGroup;
 			children = (
-				2E9885DF28C20C1600C73C6E /* Definition.swift */,
-				2E9885DE28C20C1600C73C6E /* DefinitionCard.swift */,
+				343318AA28C244120068A820 /* Definition */,
 				2E9885DD28C20C1600C73C6E /* DropdownMenu.swift */,
 				2E9885E028C20C1600C73C6E /* WordContentHeader.swift */,
 				343318A228C21A080068A820 /* WordContentNavigation.swift */,
 				343318A428C235FC0068A820 /* TextBubble.swift */,
-				343318A828C23CDA0068A820 /* DefinitionCardCollection.swift */,
 			);
-			path = wordContentComponent;
+			path = WordContentComponent;
 			sourceTree = "<group>";
 		};
 		2EFB6F1828BF68E4006FD046 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				2E9885DC28C20C0100C73C6E /* wordContentComponent */,
-				2E38EBA928C1836E00343498 /* searchHistoryComponents */,
-				2EFB6F2128BFA9BD006FD046 /* mainViewComponents */,
+				343318AB28C244380068A820 /* SharedComponents */,
+				2E9885DC28C20C0100C73C6E /* WordContentComponent */,
+				2E38EBA928C1836E00343498 /* SearchHistoryComponents */,
+				2EFB6F2128BFA9BD006FD046 /* MainViewComponents */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		2EFB6F2128BFA9BD006FD046 /* mainViewComponents */ = {
+		2EFB6F2128BFA9BD006FD046 /* MainViewComponents */ = {
 			isa = PBXGroup;
 			children = (
 				2EFB6F1928BF6AC5006FD046 /* Header.swift */,
 				2E9885E528C20D5800C73C6E /* SearchBar.swift */,
 			);
-			path = mainViewComponents;
+			path = MainViewComponents;
+			sourceTree = "<group>";
+		};
+		343318AA28C244120068A820 /* Definition */ = {
+			isa = PBXGroup;
+			children = (
+				2E9885DF28C20C1600C73C6E /* Definition.swift */,
+				2E9885DE28C20C1600C73C6E /* DefinitionCard.swift */,
+				343318A828C23CDA0068A820 /* DefinitionCardCollection.swift */,
+			);
+			name = Definition;
+			path = "Dèinition";
+			sourceTree = "<group>";
+		};
+		343318AB28C244380068A820 /* SharedComponents */ = {
+			isa = PBXGroup;
+			children = (
+				343318AC28C244590068A820 /* Navigation.swift */,
+			);
+			path = SharedComponents;
 			sourceTree = "<group>";
 		};
 		34F62BD028BF5A740052488C /* Modifiers */ = {
@@ -335,6 +355,7 @@
 				A464979028BE532C004A5070 /* User.swift in Sources */,
 				343318A728C2391D0068A820 /* Padding.swift in Sources */,
 				343318A528C235FC0068A820 /* TextBubble.swift in Sources */,
+				343318AD28C244590068A820 /* Navigation.swift in Sources */,
 				2EFB6F2328BFA9DA006FD046 /* SearchHistory.swift in Sources */,
 				34F62BD528BF5B1D0052488C /* TextFieldModifier.swift in Sources */,
 				A464977B28BE4A1E004A5070 /* My_DictionaryApp.swift in Sources */,
