@@ -7,16 +7,13 @@
 
 import Foundation
 
-struct Response: Decodable {
-    var msg: String
-}
-
 let api = "https://cosc2659dictionary.herokuapp.com/api"
 
 final class UserViewModel: ObservableObject {
     @Published var user: User?
+    static let obj = UserViewModel()
     
-    init() {
+    private init() {
         self.user = getUser()
     }
     
@@ -32,7 +29,7 @@ final class UserViewModel: ObservableObject {
         return nil
     }
     
-    private func saveUser(user: User?) {
+    func saveUser(user: User?) {
         do {
             let userData = try JSONEncoder().encode(user)
             UserDefaults.standard.set(userData, forKey: "user")

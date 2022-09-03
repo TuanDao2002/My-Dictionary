@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Test: View {
     @EnvironmentObject var userVM: UserViewModel
+    @EnvironmentObject var wordVM: WordViewModel
     @State private var msg: String = ""
     @State private var status: Int = -1
     @State private var user: User?
@@ -55,6 +56,20 @@ struct Test: View {
                 isLoading = false
             }
             
+            VStack {
+                Button("add searched word") {
+                    Task {
+                        isLoading = true
+                        wordVM.addSearchedWord(userId: user?.id ?? "", word: "teach") { msg, status in
+                            isLoading = false
+                            self.msg = msg
+                            self.status = status
+                            self.user = userVM.user
+                        }
+                    }
+                }
+            }
+            
             if (isLoading) {
                 Text("Loading...")
             }
@@ -71,10 +86,12 @@ struct Test: View {
                 Text("UserId: \(user?.id ?? "undefined")")
                 Text("UserId: \(user?.username ?? "undefined")")
                 
+                Text("Searched:")
                 ForEach(userVM.getUserSearchedWords(), id: \.self) { searchedWord in
                     Text(searchedWord)
                 }
                 
+                Text("Favorite:")
                 ForEach(userVM.getUserFavoriteWords(), id: \.self) { favoriteWord in
                     Text(favoriteWord)
                 }
@@ -91,6 +108,7 @@ struct Test: View {
 struct Test_Previews: PreviewProvider {
     static var previews: some View {
         Test()
-            .environmentObject(UserViewModel())
+            .environmentObject(UserViewModel.obj)
+            .environmentObject(WordViewModel())
     }
 }

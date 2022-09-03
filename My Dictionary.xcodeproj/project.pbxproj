@@ -40,6 +40,8 @@
 		A4B79E9228C269AC00C0A0D3 /* DropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B79E9128C269AC00C0A0D3 /* DropdownMenu.swift */; };
 		A4B79E9528C269CF00C0A0D3 /* WordContentNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B79E9328C269CF00C0A0D3 /* WordContentNavigation.swift */; };
 		A4B79E9628C269CF00C0A0D3 /* WordContentHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B79E9428C269CF00C0A0D3 /* WordContentHeader.swift */; };
+		A4DB226728C2F98A00FA14BA /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB226628C2F98A00FA14BA /* Response.swift */; };
+		A4DB226928C2F9B500FA14BA /* GetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB226828C2F9B500FA14BA /* GetRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,8 @@
 		A4B79E9128C269AC00C0A0D3 /* DropdownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownMenu.swift; sourceTree = "<group>"; };
 		A4B79E9328C269CF00C0A0D3 /* WordContentNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordContentNavigation.swift; sourceTree = "<group>"; };
 		A4B79E9428C269CF00C0A0D3 /* WordContentHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordContentHeader.swift; sourceTree = "<group>"; };
+		A4DB226628C2F98A00FA14BA /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		A4DB226828C2F9B500FA14BA /* GetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +238,7 @@
 			children = (
 				A464978F28BE532C004A5070 /* User.swift */,
 				A464979128BE533E004A5070 /* Word.swift */,
+				A4DB226628C2F98A00FA14BA /* Response.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				A479598A28C2150D0058BEF0 /* PostRequest.swift */,
+				A4DB226828C2F9B500FA14BA /* GetRequest.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -350,12 +356,14 @@
 				2EFB6F2728BFC017006FD046 /* WordListHistory.swift in Sources */,
 				A464979028BE532C004A5070 /* User.swift in Sources */,
 				343318A728C2391D0068A820 /* Padding.swift in Sources */,
+				A4DB226728C2F98A00FA14BA /* Response.swift in Sources */,
 				343318A528C235FC0068A820 /* TextBubble.swift in Sources */,
 				343318AD28C244590068A820 /* Navigation.swift in Sources */,
 				2EFB6F2328BFA9DA006FD046 /* SearchHistory.swift in Sources */,
 				A4B79E8E28C267AE00C0A0D3 /* DefinitionCardCollection.swift in Sources */,
 				A4B79E9528C269CF00C0A0D3 /* WordContentNavigation.swift in Sources */,
 				34F62BD528BF5B1D0052488C /* TextFieldModifier.swift in Sources */,
+				A4DB226928C2F9B500FA14BA /* GetRequest.swift in Sources */,
 				A464977B28BE4A1E004A5070 /* My_DictionaryApp.swift in Sources */,
 				A4B79E9028C267AE00C0A0D3 /* DefinitionCard.swift in Sources */,
 				A464979228BE533E004A5070 /* Word.swift in Sources */,
