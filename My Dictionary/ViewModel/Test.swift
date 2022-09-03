@@ -37,12 +37,10 @@ struct Test: View {
             Button("Login"){
                 Task {
                     isLoading = true
-                    userVM.login(username: username, password: password) { msg, status, user in
+                    userVM.login(username: username, password: password) { msg, status in
                         isLoading = false
                         self.msg = msg
                         self.status = status
-                        
-                        userVM.saveUser(user: user)
                         self.user = userVM.user
                     }
                 }
@@ -85,7 +83,7 @@ struct Test: View {
             }
         }
         .onAppear() {
-            self.user = userVM.getUser()
+            self.user = userVM.user
         }
     }
 }

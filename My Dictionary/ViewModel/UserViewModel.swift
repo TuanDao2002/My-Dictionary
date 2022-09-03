@@ -16,7 +16,11 @@ let api = "https://cosc2659dictionary.herokuapp.com/api"
 final class UserViewModel: ObservableObject {
     @Published var user: User?
     
-    func getUser() -> User?{
+    init() {
+        self.user = getUser()
+    }
+    
+    private func getUser() -> User?{
         if let userData = UserDefaults.standard.data(forKey: "user") {
             do {
                 return try JSONDecoder().decode(User.self, from: userData)
@@ -28,7 +32,7 @@ final class UserViewModel: ObservableObject {
         return nil
     }
     
-    func saveUser(user: User?) {
+    private func saveUser(user: User?) {
         do {
             let userData = try JSONEncoder().encode(user)
             UserDefaults.standard.set(userData, forKey: "user")
@@ -53,7 +57,7 @@ final class UserViewModel: ObservableObject {
         }.resume()
     }
     
-    func login(username: String, password: String, completion: @escaping(String, Int, User?) -> ()) {
+    func login(username: String, password: String, completion: @escaping(String, Int) -> ()) {
         let json: [String: Any] = ["username": username, "password": password]
         let postRequest = postRequest(endpoint: "/auth/login", json: json)
         var user: User?
@@ -63,15 +67,16 @@ final class UserViewModel: ObservableObject {
                 
                 if (response.statusCode != 200) {
                     let apiResponse = try? JSONDecoder().decode(Response.self, from: data)
-                    completion(apiResponse!.msg, response.statusCode, nil)
+                    completion(apiResponse!.msg, response.statusCode)
                     return
                 }
                 
                 user = try? JSONDecoder().decode(User.self, from: data)
-                completion("Login successfully", response.statusCode, user)
+                self.saveUser(user: user)
+                completion("Login successfully", response.statusCode)
                 
             } else {
-                completion(error!.localizedDescription, 404, nil)
+                completion(error!.localizedDescription, 404)
             }
         }.resume()
     }
@@ -80,11 +85,11 @@ final class UserViewModel: ObservableObject {
         saveUser(user: nil)
     }
     
-    func getUserSearchedWords() -> [String]{
+    func getUserSearchedWords() -> [String] {
         return user?.searchedWords ?? []
     }
     
-    func getUserFavoriteWords() -> [String]{
+    func getUserFavoriteWords() -> [String] {
         return user?.favoriteWords ?? []
     }
 }
