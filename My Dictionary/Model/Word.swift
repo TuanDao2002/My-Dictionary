@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct Word: Identifiable{
-    var id = UUID()
-    var title: String
+struct Word: Decodable {
+    var word: String
+    var text: String = ""
+    var audio: String = ""
+    var synonyms: [String] = []
+    var antonyms: [String] = []
+    var meanings: [MeaningContent]
 }

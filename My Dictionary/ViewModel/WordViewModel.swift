@@ -74,4 +74,26 @@ final class WordViewModel: ObservableObject {
             }
         }.resume()
     }
+    
+    func getWordDefinition(searchedWord: String, completion: @escaping(String, Int) -> ()) {
+        let getRequest = getRequest(endpoint: "/word/getWordDefinition/" + searchedWord)
+        let session = URLSession.shared
+        session.dataTask(with: getRequest) { (data, response, error) in
+            if error == nil, let data = data, let response = response as? HTTPURLResponse {
+                
+                if (response.statusCode != 200) {
+                    let apiResponse = try? JSONDecoder().decode(Response.self, from: data)
+                    completion(apiResponse!.msg, response.statusCode)
+                    return
+                }
+                
+                let word = try? JSONDecoder().decode(Word.self, from: data)
+                self.word = word
+                self.addSearchedWord(userId: self.userVM.user?.id ?? "", word: searchedWord) { msg, status in }
+                completion("Word is found", response.statusCode)
+            } else {
+                completion(error!.localizedDescription, 404)
+            }
+        }.resume()
+    }
 }
