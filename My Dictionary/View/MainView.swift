@@ -28,7 +28,7 @@ struct MainView: View {
             .background(Color("Hard-purple"))
             .edgesIgnoringSafeArea(.all)
         }
-        
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
