@@ -34,6 +34,7 @@
 		A464979228BE533E004A5070 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464979128BE533E004A5070 /* Word.swift */; };
 		A46BE05D28C0667200BB542E /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46BE05C28C0667200BB542E /* Test.swift */; };
 		A479598B28C2150D0058BEF0 /* PostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A479598A28C2150D0058BEF0 /* PostRequest.swift */; };
+		A4A0E02028C30C5F00B40228 /* TodayWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A0E01F28C30C5F00B40228 /* TodayWord.swift */; };
 		A4B79E8E28C267AE00C0A0D3 /* DefinitionCardCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B79E8B28C267AE00C0A0D3 /* DefinitionCardCollection.swift */; };
 		A4B79E8F28C267AE00C0A0D3 /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B79E8C28C267AE00C0A0D3 /* Definition.swift */; };
 		A4B79E9028C267AE00C0A0D3 /* DefinitionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B79E8D28C267AE00C0A0D3 /* DefinitionCard.swift */; };
@@ -73,6 +74,7 @@
 		A464979128BE533E004A5070 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		A46BE05C28C0667200BB542E /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		A479598A28C2150D0058BEF0 /* PostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequest.swift; sourceTree = "<group>"; };
+		A4A0E01F28C30C5F00B40228 /* TodayWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWord.swift; sourceTree = "<group>"; };
 		A4B79E8B28C267AE00C0A0D3 /* DefinitionCardCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefinitionCardCollection.swift; sourceTree = "<group>"; };
 		A4B79E8C28C267AE00C0A0D3 /* Definition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
 		A4B79E8D28C267AE00C0A0D3 /* DefinitionCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefinitionCard.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				A464978F28BE532C004A5070 /* User.swift */,
 				A464979128BE533E004A5070 /* Word.swift */,
 				A4DB226628C2F98A00FA14BA /* Response.swift */,
+				A4A0E01F28C30C5F00B40228 /* TodayWord.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				A4DB226728C2F98A00FA14BA /* Response.swift in Sources */,
 				343318A528C235FC0068A820 /* TextBubble.swift in Sources */,
 				343318AD28C244590068A820 /* Navigation.swift in Sources */,
+				A4A0E02028C30C5F00B40228 /* TodayWord.swift in Sources */,
 				2EFB6F2328BFA9DA006FD046 /* SearchHistory.swift in Sources */,
 				A4B79E8E28C267AE00C0A0D3 /* DefinitionCardCollection.swift in Sources */,
 				A4B79E9528C269CF00C0A0D3 /* WordContentNavigation.swift in Sources */,

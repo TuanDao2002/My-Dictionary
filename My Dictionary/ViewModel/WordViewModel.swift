@@ -15,7 +15,7 @@ final class WordViewModel: ObservableObject {
         userVM = UserViewModel.obj
     }
     
-    func addWord(userId: String, word: String, endpoint: String, completion: @escaping(String, Int) -> ()) {
+    private func addWord(userId: String, word: String, endpoint: String, completion: @escaping(String, Int) -> ()) {
         var jsonData: [String: Any]?
         if (endpoint == "/word/addSearchedWord") {
             jsonData = ["userId": userId, "searchedWord": word]
@@ -52,5 +52,26 @@ final class WordViewModel: ObservableObject {
     
     func addFavoriteWord(userId: String, word: String, completion: @escaping(String, Int) -> ()) {
         addWord(userId: userId, word: word, endpoint: "/word/addFavoriteWord", completion: completion)
+    }
+    
+    func getTodayWord(completion: @escaping(String, Int) -> ()) {
+        let getRequest = getRequest(endpoint: "/word/getTodayWord")
+        let session = URLSession.shared
+        session.dataTask(with: getRequest) { (data, response, error) in
+            if error == nil, let data = data, let response = response as? HTTPURLResponse {
+                
+                if (response.statusCode != 200) {
+                    let apiResponse = try? JSONDecoder().decode(Response.self, from: data)
+                    completion(apiResponse!.msg, response.statusCode)
+                    return
+                }
+                
+                let todayWord = try? JSONDecoder().decode(TodayWord.self, from: data)
+                completion(todayWord?.word ?? "", response.statusCode)
+                
+            } else {
+                completion(error!.localizedDescription, 404)
+            }
+        }.resume()
     }
 }
