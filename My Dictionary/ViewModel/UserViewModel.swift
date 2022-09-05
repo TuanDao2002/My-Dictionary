@@ -93,12 +93,12 @@ final class UserViewModel: ObservableObject {
     
     // get list of searched words of the user
     func getUserSearchedWords() -> [String] {
-        return user?.searchedWords ?? []
+        return getUser()?.searchedWords ?? []
     }
     
     // get list of favorite words of the user
     func getUserFavoriteWords() -> [String] {
-        return user?.favoriteWords ?? []
+        return getUser()?.favoriteWords ?? []
     }
     
     //Check for user login
