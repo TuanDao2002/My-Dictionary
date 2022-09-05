@@ -17,6 +17,10 @@ final class WordViewModel: ObservableObject {
     
     // function to add a word to list of searched words and favorite words of a user
     private func addWord(userId: String, word: String, endpoint: String, completion: @escaping(String, Int) -> ()) {
+        if (word == "") {
+            completion("No word is entered!", 404)
+            return
+        }
         var jsonData: [String: Any]?
         if (endpoint == "/word/addSearchedWord") {
             jsonData = ["userId": userId, "searchedWord": word]
