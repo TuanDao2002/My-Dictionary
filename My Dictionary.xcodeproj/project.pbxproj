@@ -24,6 +24,7 @@
 		34F62BE128C083C70052488C /* SpaceGrotesk-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34F62BE028C083C70052488C /* SpaceGrotesk-Medium.ttf */; };
 		34F62BE428C0846C0052488C /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BE328C0846C0052488C /* Text.swift */; };
 		34F62BE628C08AB70052488C /* SpaceGrotesk-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34F62BE528C08AB70052488C /* SpaceGrotesk-SemiBold.ttf */; };
+		5FBDA4DF28C4C7CE0078B59F /* ViewRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBDA4DE28C4C7CE0078B59F /* ViewRouting.swift */; };
 		A464977B28BE4A1E004A5070 /* My_DictionaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464977A28BE4A1E004A5070 /* My_DictionaryApp.swift */; };
 		A464977D28BE4A1E004A5070 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464977C28BE4A1E004A5070 /* ContentView.swift */; };
 		A464977F28BE4A21004A5070 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A464977E28BE4A21004A5070 /* Assets.xcassets */; };
@@ -65,6 +66,7 @@
 		34F62BE028C083C70052488C /* SpaceGrotesk-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-Medium.ttf"; sourceTree = "<group>"; };
 		34F62BE328C0846C0052488C /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		34F62BE528C08AB70052488C /* SpaceGrotesk-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-SemiBold.ttf"; sourceTree = "<group>"; };
+		5FBDA4DE28C4C7CE0078B59F /* ViewRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouting.swift; sourceTree = "<group>"; };
 		A464977728BE4A1E004A5070 /* My Dictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Dictionary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A464977A28BE4A1E004A5070 /* My_DictionaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_DictionaryApp.swift; sourceTree = "<group>"; };
 		A464977C28BE4A1E004A5070 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -188,6 +190,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		5FBDA4DD28C4C7B70078B59F /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				5FBDA4DE28C4C7CE0078B59F /* ViewRouting.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
 		A464976E28BE4A1E004A5070 = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +217,7 @@
 		A464977928BE4A1E004A5070 /* My Dictionary */ = {
 			isa = PBXGroup;
 			children = (
+				5FBDA4DD28C4C7B70078B59F /* Routing */,
 				A479598928C214FF0058BEF0 /* Helper */,
 				34F62BD628C07BBA0052488C /* Font */,
 				2EFB6F1828BF68E4006FD046 /* Components */,
@@ -375,6 +386,7 @@
 				A4B79E8E28C267AE00C0A0D3 /* DefinitionCardCollection.swift in Sources */,
 				A4B79E9528C269CF00C0A0D3 /* WordContentNavigation.swift in Sources */,
 				34F62BD528BF5B1D0052488C /* TextFieldModifier.swift in Sources */,
+				5FBDA4DF28C4C7CE0078B59F /* ViewRouting.swift in Sources */,
 				A4DB226928C2F9B500FA14BA /* GetRequest.swift in Sources */,
 				A464977B28BE4A1E004A5070 /* My_DictionaryApp.swift in Sources */,
 				A4B79E9028C267AE00C0A0D3 /* DefinitionCard.swift in Sources */,
@@ -507,7 +519,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"My Dictionary/Preview Content\"";
-				DEVELOPMENT_TEAM = 4AQLK4VT6N;
+				DEVELOPMENT_TEAM = UYGLFFGN69;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "My-Dictionary-Info.plist";
@@ -522,7 +534,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.khatun.My-Dictionary1";
+				PRODUCT_BUNDLE_IDENTIFIER = com.khatun.myDictionary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -538,7 +550,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"My Dictionary/Preview Content\"";
-				DEVELOPMENT_TEAM = 4AQLK4VT6N;
+				DEVELOPMENT_TEAM = UYGLFFGN69;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "My-Dictionary-Info.plist";
@@ -553,7 +565,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.khatun.My-Dictionary1";
+				PRODUCT_BUNDLE_IDENTIFIER = com.khatun.myDictionary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
