@@ -93,11 +93,11 @@ struct Test: View {
                 Button("add favorite word") {
                     Task {
                         isLoading = true
-                        wordVM.addFavoriteWord(userId: user?.id ?? "", word: "one") { msg, status in
+                        wordVM.addFavoriteWord(userId: user?.id ?? "", word: "hello") { msg, status in
                             isLoading = false
                             self.msg = msg
                             self.status = status
-                            self.user = userVM.user
+                            self.user = userVM.getUser()
                         }
                     }
                 }
