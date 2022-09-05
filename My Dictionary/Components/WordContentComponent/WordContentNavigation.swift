@@ -8,9 +8,17 @@
 import SwiftUI
 
 struct WordContentNavigation: View {
+    @EnvironmentObject var viewRouting: ViewRouting
+    
     var body: some View {
         HStack(alignment: .center){
-            Navigation()
+            Button (action: {
+                viewRouting.state = .mainView
+            }, label: {
+                Navigation()
+                    .foregroundColor(.black)
+            })
+            
             Spacer()
             DropdownMenu()
         }
