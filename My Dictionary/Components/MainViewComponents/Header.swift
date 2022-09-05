@@ -39,6 +39,7 @@ struct SearchBlock_Previews: PreviewProvider {
     static var previews: some View {
         VStack{
             Header(name: .constant("Phi cunt"))
+                .environmentObject(ViewRouting())
         }
         .background(Color("Hard-purple"))
     }
