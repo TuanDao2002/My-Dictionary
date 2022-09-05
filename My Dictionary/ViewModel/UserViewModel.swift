@@ -48,6 +48,10 @@ final class UserViewModel: ObservableObject {
     
     // register new account
     func register(username: String, password: String, completion: @escaping(String, Int) -> ()) {
+        if (username == "" || password == "") {
+            completion("Username or password is not entered!", 404)
+            return
+        }
         let json: [String: Any] = ["username": username, "password": password]
         let postRequest = postRequest(endpoint: "/auth/register", json: json)
         let session = URLSession.shared
@@ -63,6 +67,10 @@ final class UserViewModel: ObservableObject {
     
     // login to an account
     func login(username: String, password: String, completion: @escaping(String, Int) -> ()) {
+        if (username == "" || password == "") {
+            completion("Username or password is not entered!", 404)
+            return
+        }
         let json: [String: Any] = ["username": username, "password": password]
         let postRequest = postRequest(endpoint: "/auth/login", json: json)
         var user: User?
