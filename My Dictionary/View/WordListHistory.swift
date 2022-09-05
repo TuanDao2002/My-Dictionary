@@ -14,7 +14,8 @@ struct WordListHistory: View {
     var body: some View {
         
         ZStack {
-            Color("Retro-Red").edgesIgnoringSafeArea(.all)
+            Color("Retro-Red")
+                .edgesIgnoringSafeArea(.all)
             VStack {
                 Button(action: {
                     viewRouting.state = .mainView

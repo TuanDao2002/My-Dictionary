@@ -12,15 +12,16 @@ struct MainView: View {
     @EnvironmentObject var viewRouting: ViewRouting
     @EnvironmentObject var userVM: UserViewModel
     
-    @State var name = "Phi cunt"
     @State var input = ""
-    @State var user = User(id: "1", username: "Phi", searchedWords: ["favorite", "content", "word"], favoriteWords: [])
+//    @State var user = User(id: "1", username: "Phi", searchedWords: ["favorite", "content", "word"], favoriteWords: [])
+    
+    @State private var user: User?
     
     var body: some View {
         NavigationView{
             VStack{
                 Spacer()
-                Header(name: $name)
+                Header()
                 Spacer()
                     .frame(height: 60)
                 
@@ -35,8 +36,20 @@ struct MainView: View {
                         .foregroundColor(Color("Retro-Gray"))
                 })
                 
-//                NavigationLink("Search history >>", destination: WordListHistory())
-//                    .foregroundColor(Color("Retro-Gray"))
+                Button(action: {
+                    // Change to WordListHistory view
+                    viewRouting.state = .userSetting
+                }, label: {
+                    Text("Setting >>")
+                        .foregroundColor(Color("Retro-Gray"))
+                })
+                Button(action: {
+                    // Change to WordListHistory view
+                    viewRouting.state = .test
+                }, label: {
+                    Text("Setting >>")
+                        .foregroundColor(Color("Retro-Gray"))
+                })
                 Spacer()
             }
             .navigationBarHidden(true)

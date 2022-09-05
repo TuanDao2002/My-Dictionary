@@ -45,6 +45,23 @@ struct RegistrationView: View {
                     .modifier(LeftAlign())
                 Spacer()
                 
+                if (user != nil) {
+                    Text("UserId: \(user?.id ?? "undefined")")
+                    Text("UserId: \(user?.username ?? "undefined")")
+
+                    Text("Searched:")
+                    ForEach(userVM.getUserSearchedWords(), id: \.self) { searchedWord in
+                        Text(searchedWord)
+                    }
+
+                    Text("Favorite:")
+                    ForEach(userVM.getUserFavoriteWords(), id: \.self) { favoriteWord in
+                        Text(favoriteWord)
+                    }
+                } else {
+                    Text("No user account")
+                }
+                
                 //Username
                 InputField(header: "Username", textFieldName: "", name: $username)
                 
@@ -64,10 +81,11 @@ struct RegistrationView: View {
                 Button() {
                     Task {
                         isLoading = true
-                        userVM.register(username: username, password: password) { msg, status in
+                        userVM.login(username: username, password: password) { msg, status in
                             isLoading = false
                             self.msg = msg
                             self.status = status
+                            self.user = userVM.getUser()
                         }
                     }
                 } label: {
@@ -76,7 +94,7 @@ struct RegistrationView: View {
                 }.background(Color("Retro-Yellow"))
                     .cornerRadius(15)
                     
-                Spacer()
+//                Spacer()
                 
                 // Login button
 //                Button(action: {

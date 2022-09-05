@@ -30,6 +30,7 @@ struct My_DictionaryApp: App {
             case .registrationView: RegistrationView()
             case .wordView: WordContentView()
             case .test: Test()
+            case .userSetting: UserSettings()
             }
         }
 }

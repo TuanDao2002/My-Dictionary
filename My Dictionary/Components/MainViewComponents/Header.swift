@@ -10,8 +10,6 @@ import SwiftUI
 struct Header: View {
     @EnvironmentObject var userVM: UserViewModel
     @EnvironmentObject var viewRouting: ViewRouting
-    
-    @Binding var name: String
  
     var body: some View {
         VStack(spacing: 10){
@@ -20,7 +18,7 @@ struct Header: View {
                     .title()
                 
                 //Handle optional here >>
-                Text(userVM.user!.username)
+                Text(userVM.getUser()!.username)
                     .title()
             } else {
                 Button (action: {
@@ -32,15 +30,5 @@ struct Header: View {
             
         }
         .foregroundColor(.white)
-    }
-}
-
-struct SearchBlock_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack{
-            Header(name: .constant("Phi cunt"))
-                .environmentObject(ViewRouting())
-        }
-        .background(Color("Hard-purple"))
     }
 }

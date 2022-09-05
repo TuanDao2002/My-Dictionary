@@ -17,6 +17,7 @@
 		343318A528C235FC0068A820 /* TextBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343318A428C235FC0068A820 /* TextBubble.swift */; };
 		343318A728C2391D0068A820 /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343318A628C2391D0068A820 /* Padding.swift */; };
 		343318AD28C244590068A820 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343318AC28C244590068A820 /* Navigation.swift */; };
+		343DBE1D28C6044300BB728F /* UserSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343DBE1C28C6044300BB728F /* UserSettingsView.swift */; };
 		34F62BCF28BF53390052488C /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BCE28BF53390052488C /* RegistrationView.swift */; };
 		34F62BD328BF5A990052488C /* TextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BD228BF5A990052488C /* TextModifier.swift */; };
 		34F62BD528BF5B1D0052488C /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BD428BF5B1D0052488C /* TextFieldModifier.swift */; };
@@ -59,6 +60,7 @@
 		343318A428C235FC0068A820 /* TextBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBubble.swift; sourceTree = "<group>"; };
 		343318A628C2391D0068A820 /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
 		343318AC28C244590068A820 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		343DBE1C28C6044300BB728F /* UserSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsView.swift; sourceTree = "<group>"; };
 		34F62BCE28BF53390052488C /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		34F62BD228BF5A990052488C /* TextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifier.swift; sourceTree = "<group>"; };
 		34F62BD428BF5B1D0052488C /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				34F62BCE28BF53390052488C /* RegistrationView.swift */,
 				2EFB6F1628BF68AB006FD046 /* MainView.swift */,
 				2EFB6F2628BFC017006FD046 /* WordListHistory.swift */,
+				343DBE1C28C6044300BB728F /* UserSettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				2E9885E628C20D5800C73C6E /* SearchBar.swift in Sources */,
 				2EFB6F2728BFC017006FD046 /* WordListHistory.swift in Sources */,
 				A464979028BE532C004A5070 /* User.swift in Sources */,
+				343DBE1D28C6044300BB728F /* UserSettingsView.swift in Sources */,
 				343318A728C2391D0068A820 /* Padding.swift in Sources */,
 				A4DB226728C2F98A00FA14BA /* Response.swift in Sources */,
 				343318A528C235FC0068A820 /* TextBubble.swift in Sources */,
