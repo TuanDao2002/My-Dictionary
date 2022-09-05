@@ -9,9 +9,26 @@ import SwiftUI
 
 @main
 struct My_DictionaryApp: App {
+    @EnvironmentObject var userVM: UserViewModel
+    @StateObject var viewRouting = ViewRouting()
+    
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            rootView
+                .environmentObject(viewRouting)
+                .environmentObject(UserViewModel.obj)
+            
         }
     }
+    
+    @ViewBuilder
+        var rootView: some View {
+            switch viewRouting.state {
+            case .mainView: MainView()
+            case .historyView: WordListHistory()
+            case .registrationView: RegistrationView()
+            case .wordView: WordContentView()
+            }
+        }
 }

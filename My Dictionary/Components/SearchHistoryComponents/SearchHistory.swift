@@ -9,8 +9,8 @@ import SwiftUI
 
 
 struct SearchHistory: View {
-    @Binding var searchedWords: [String]
-
+    private var user: User?
+    
     var body: some View {
 //        VStack{
 //            ForEach(searchHistory){
@@ -18,7 +18,7 @@ struct SearchHistory: View {
 //                TopWord(word: word)
 //            }
 //        }
-        ForEach(searchedWords, id: \.self) { word in
+        ForEach(user!.searchedWords, id: \.self) { word in
             Button(action: {
                 WordContentView()
             }, label: {
@@ -30,6 +30,7 @@ struct SearchHistory: View {
 
 struct SearchHistory_Previews: PreviewProvider {
     static var previews: some View {
-        SearchHistory(searchedWords: .constant(["favorite", "content", "word"]))
+        SearchHistory()
+            .environmentObject(UserViewModel.obj)
     }
 }

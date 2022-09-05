@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct WordListHistory: View {
-    @Binding var user: User
+    @EnvironmentObject var userVM: UserViewModel
     
     var body: some View {
+        
         ZStack {
             Color("Retro-Red").edgesIgnoringSafeArea(.all)
             VStack {
@@ -24,7 +25,7 @@ struct WordListHistory: View {
                             .modifier(LeftAlign())
                         Spacer()
                             .frame(height: 60)
-                        SearchHistory(searchedWords: $user.searchedWords)
+                        SearchHistory()
                         Spacer()
                     }
                 }
@@ -37,6 +38,7 @@ struct WordListHistory: View {
 
 struct WordListHistory_Previews: PreviewProvider {
     static var previews: some View {
-        WordListHistory(user: .constant(User(id: "1", username: "Phi", searchedWords: ["favorite", "content", "word"], favoriteWords: [])))
+        WordListHistory()
+            .environmentObject(UserViewModel.obj)
     }
 }

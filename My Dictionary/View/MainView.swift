@@ -19,7 +19,7 @@ struct MainView: View {
                 Spacer()
                     .frame(height: 60)
                 SearchBar(word: $input)
-                NavigationLink("Search history >>", destination: WordListHistory(user: $user))
+                NavigationLink("Search history >>", destination: WordListHistory())
                     .foregroundColor(Color("Retro-Gray"))
                 Spacer()
             }
