@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Header: View {
     @EnvironmentObject var userVM: UserViewModel
+    @EnvironmentObject var viewRouting: ViewRouting
     
     @Binding var name: String
  
@@ -22,7 +23,11 @@ struct Header: View {
                 Text(userVM.user!.username)
                     .title()
             } else {
-                Button("Log in/ Register"){}
+                Button (action: {
+                    viewRouting.state = .registrationView
+                }, label: {
+                    Text("Register/Log in")
+                })
             }
             
         }
