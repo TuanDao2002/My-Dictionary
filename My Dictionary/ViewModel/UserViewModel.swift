@@ -18,7 +18,7 @@ final class UserViewModel: ObservableObject {
     }
     
     // get the current user
-    private func getUser() -> User?{
+    func getUser() -> User?{
         if let userData = UserDefaults.standard.data(forKey: "user") {
             do {
                 return try JSONDecoder().decode(User.self, from: userData)
@@ -32,11 +32,15 @@ final class UserViewModel: ObservableObject {
     
     // save user in UserDefault
     func saveUser(user: User?) {
+        if (user == nil) {
+            UserDefaults.standard.set(nil, forKey: "user")
+            return
+        }
         do {
             let userData = try JSONEncoder().encode(user)
             UserDefaults.standard.set(userData, forKey: "user")
             
-            self.user = user
+//            self.user = user
         } catch {
             print(error.localizedDescription)
         }
@@ -99,7 +103,7 @@ final class UserViewModel: ObservableObject {
     
     //Check for user login
     func isLogin() -> Bool {
-        let check = user != nil
+        let check = getUser() != nil
         return check
     }
 }

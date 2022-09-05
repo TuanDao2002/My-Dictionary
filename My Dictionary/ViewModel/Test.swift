@@ -45,7 +45,7 @@ struct Test: View {
                             isLoading = false
                             self.msg = msg
                             self.status = status
-                            self.user = userVM.user
+                            self.user = userVM.getUser()
                         }
                     }
                 }
@@ -55,7 +55,7 @@ struct Test: View {
                     userVM.logout()
                     self.msg = "You have logged out"
                     self.status = -1
-                    self.user = userVM.user
+                    self.user = userVM.getUser()
                     isLoading = false
                 }
                 if (user != nil) {
@@ -160,7 +160,7 @@ struct Test: View {
             }
         }
         .onAppear() {
-            self.user = userVM.user
+            self.user = userVM.getUser()
         }
     }
 }
