@@ -18,7 +18,7 @@ struct My_DictionaryApp: App {
             rootView
                 .environmentObject(viewRouting)
                 .environmentObject(UserViewModel.obj)
-            
+                .environmentObject(WordViewModel())
         }
     }
     

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class ViewRouting: ObservableObject {
-    @Published var state: ViewState = .test
+    @Published var state: ViewState = .mainViewd
 }
 
 enum ViewState {
