@@ -8,7 +8,17 @@
 import SwiftUI
 
 struct RegistrationView: View {
-    @State private var name = ""
+    @EnvironmentObject var userVM: UserViewModel
+    @EnvironmentObject var wordVM: WordViewModel
+    
+    @State private var username: String = ""
+    @State private var password: String = ""
+    @State private var msg: String = ""
+    @State private var status: Int = -1
+    @State private var user: User?
+
+    
+    @State private var isLoading: Bool = false
     
     var body: some View {
         ZStack{
@@ -24,13 +34,13 @@ struct RegistrationView: View {
                 Spacer()
                 
                 //Username
-                InputField(header: "Username", textFieldName: "", name: $name)
+                InputField(header: "Username", textFieldName: "", name: $username)
                 
                 Spacer()
                     .frame(height: 30)
                 
                 //Password
-                InputField(header: "Password", textFieldName: "", name: $name)
+                InputField(header: "Password", textFieldName: "", name: $password)
                 
                 Text("New user? Register here")
                     .modifier(RightAlign())
@@ -41,7 +51,14 @@ struct RegistrationView: View {
                     .frame(height: 50)
                 
                 Button() {
-                    
+                    Task {
+                        isLoading = true
+                        userVM.register(username: username, password: password) { msg, status in
+                            isLoading = false
+                            self.msg = msg
+                            self.status = status
+                        }
+                    }
                 } label: {
                     Text("Register")
                         .buttonText()
@@ -50,7 +67,6 @@ struct RegistrationView: View {
                 .background(Color("Retro-Yellow"))
                 .cornerRadius(15)
                 Spacer()
-                
             }
             .modifier(Padding())
         }

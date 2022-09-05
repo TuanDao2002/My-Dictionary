@@ -11,6 +11,7 @@ struct MainView: View {
     @State var name = "Phi cunt"
     @State var input = ""
     @State var user = User(id: "1", username: "Phi", searchedWords: ["favorite", "content", "word"], favoriteWords: [])
+    
     var body: some View {
         NavigationView{
             VStack{

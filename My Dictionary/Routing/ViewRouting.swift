@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class ViewRouting: ObservableObject {
-    @Published var state: ViewState = .mainView
+    @Published var state: ViewState = .test
 }
 
 enum ViewState {
@@ -17,4 +17,5 @@ enum ViewState {
     case historyView
     case registrationView
     case wordView
+    case test
 }

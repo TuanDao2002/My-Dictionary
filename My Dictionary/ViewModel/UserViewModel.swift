@@ -96,4 +96,10 @@ final class UserViewModel: ObservableObject {
     func getUserFavoriteWords() -> [String] {
         return user?.favoriteWords ?? []
     }
+    
+    //Check for user login
+    func isLogin() -> Bool {
+        let check = user != nil
+        return check
+    }
 }

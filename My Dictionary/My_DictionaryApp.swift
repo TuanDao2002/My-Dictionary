@@ -29,6 +29,7 @@ struct My_DictionaryApp: App {
             case .historyView: WordListHistory()
             case .registrationView: RegistrationView()
             case .wordView: WordContentView()
+            case .test: Test()
             }
         }
 }
