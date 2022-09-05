@@ -93,6 +93,7 @@ struct Test: View {
                 Button("add favorite word") {
                     Task {
                         isLoading = true
+                        //Change "Hello" with the word that need to add to favorite
                         wordVM.addFavoriteWord(userId: user?.id ?? "", word: "hello") { msg, status in
                             isLoading = false
                             self.msg = msg
