@@ -15,6 +15,7 @@ final class WordViewModel: ObservableObject {
         userVM = UserViewModel.obj
     }
     
+    // function to add a word to list of searched words and favorite words of a user
     private func addWord(userId: String, word: String, endpoint: String, completion: @escaping(String, Int) -> ()) {
         var jsonData: [String: Any]?
         if (endpoint == "/word/addSearchedWord") {
@@ -46,14 +47,17 @@ final class WordViewModel: ObservableObject {
         }.resume()
     }
     
+    // function to add a word to list of searched words of a user
     func addSearchedWord(userId: String, word: String, completion: @escaping(String, Int) -> ()) {
         addWord(userId: userId, word: word, endpoint: "/word/addSearchedWord", completion: completion)
     }
     
+    // function to add a word to list of favorite words of a user
     func addFavoriteWord(userId: String, word: String, completion: @escaping(String, Int) -> ()) {
         addWord(userId: userId, word: word, endpoint: "/word/addFavoriteWord", completion: completion)
     }
     
+    // get the today word
     func getTodayWord(completion: @escaping(String, Int) -> ()) {
         let getRequest = getRequest(endpoint: "/word/getTodayWord")
         let session = URLSession.shared
@@ -75,6 +79,7 @@ final class WordViewModel: ObservableObject {
         }.resume()
     }
     
+    // get the definition of a word
     func getWordDefinition(searchedWord: String, completion: @escaping(String, Int) -> ()) {
         let getRequest = getRequest(endpoint: "/word/getWordDefinition/" + searchedWord)
         let session = URLSession.shared
