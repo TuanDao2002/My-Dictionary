@@ -17,6 +17,7 @@ final class UserViewModel: ObservableObject {
         self.user = getUser()
     }
     
+    // get the current user
     private func getUser() -> User?{
         if let userData = UserDefaults.standard.data(forKey: "user") {
             do {
@@ -29,6 +30,7 @@ final class UserViewModel: ObservableObject {
         return nil
     }
     
+    // save user in UserDefault
     func saveUser(user: User?) {
         do {
             let userData = try JSONEncoder().encode(user)
@@ -40,6 +42,7 @@ final class UserViewModel: ObservableObject {
         }
     }
     
+    // register new account
     func register(username: String, password: String, completion: @escaping(String, Int) -> ()) {
         let json: [String: Any] = ["username": username, "password": password]
         let postRequest = postRequest(endpoint: "/auth/register", json: json)
@@ -54,6 +57,7 @@ final class UserViewModel: ObservableObject {
         }.resume()
     }
     
+    // login to an account
     func login(username: String, password: String, completion: @escaping(String, Int) -> ()) {
         let json: [String: Any] = ["username": username, "password": password]
         let postRequest = postRequest(endpoint: "/auth/login", json: json)
@@ -78,14 +82,17 @@ final class UserViewModel: ObservableObject {
         }.resume()
     }
     
+    // logout of an account
     func logout() {
         saveUser(user: nil)
     }
     
+    // get list of searched words of the user
     func getUserSearchedWords() -> [String] {
         return user?.searchedWords ?? []
     }
     
+    // get list of favorite words of the user
     func getUserFavoriteWords() -> [String] {
         return user?.favoriteWords ?? []
     }
