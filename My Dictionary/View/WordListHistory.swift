@@ -9,15 +9,22 @@ import SwiftUI
 
 struct WordListHistory: View {
     @EnvironmentObject var userVM: UserViewModel
+    @EnvironmentObject var viewRouting: ViewRouting
     
     var body: some View {
         
         ZStack {
             Color("Retro-Red").edgesIgnoringSafeArea(.all)
             VStack {
-                Navigation()
-                    .padding(.top, 30)
-                    .modifier(LeftAlign())
+                Button(action: {
+                    viewRouting.state = .mainView
+                }, label: {
+                    Navigation()
+                        .padding(.top, 30)
+                        .modifier(LeftAlign())
+                        .foregroundColor(.black)
+                })
+                
                 ScrollView{
                     VStack (alignment: .leading){
                         Text("Search History")

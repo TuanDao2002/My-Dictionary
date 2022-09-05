@@ -9,21 +9,18 @@ import SwiftUI
 
 
 struct SearchHistory: View {
-    private var user: User?
+    @EnvironmentObject var userVM: UserViewModel
+    @EnvironmentObject var viewRouting: ViewRouting
     
     var body: some View {
-//        VStack{
-//            ForEach(searchHistory){
-//                word in
-//                TopWord(word: word)
-//            }
-//        }
-        ForEach(user!.searchedWords, id: \.self) { word in
-            Button(action: {
-                WordContentView()
-            }, label: {
-                WordRow(title: word)
-            })
+        VStack{
+            ForEach(userVM.getUserSearchedWords(), id: \.self) { word in
+                Button(action: {
+                    viewRouting.state = .wordView
+                }, label: {
+                    WordRow(title: word)
+                })
+            }
         }
     }
 }
@@ -32,5 +29,6 @@ struct SearchHistory_Previews: PreviewProvider {
     static var previews: some View {
         SearchHistory()
             .environmentObject(UserViewModel.obj)
+            .environmentObject(ViewRouting())
     }
 }

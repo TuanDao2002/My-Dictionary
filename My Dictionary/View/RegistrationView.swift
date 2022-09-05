@@ -4,12 +4,17 @@
 //
 //  Created by Phi Thai on 31/08/2022.
 //
+// Note to change view to both register and log in session view
+// so add one more button to the view
 
 import SwiftUI
 
 struct RegistrationView: View {
     @EnvironmentObject var userVM: UserViewModel
     @EnvironmentObject var wordVM: WordViewModel
+    
+    // Global variable to change view of app
+    @EnvironmentObject var viewRouting: ViewRouting
     
     @State private var username: String = ""
     @State private var password: String = ""
@@ -19,15 +24,22 @@ struct RegistrationView: View {
 
     
     @State private var isLoading: Bool = false
-    
     var body: some View {
         ZStack{
+            // Background color
             Color("Retro-Brown")
                 .ignoresSafeArea()
+            
             VStack {
-                Navigation()
-                    .padding(.top, 30)
-                    .modifier(LeftAlign())
+                Button(action: {
+                    viewRouting.state = .mainView
+                }, label: {
+                    Navigation()
+                        .padding(.top, 30)
+                        .modifier(LeftAlign())
+                        .foregroundColor(Color("Retro-Gray"))
+                })
+                
                 Text("User Registration")
                     .title()
                     .modifier(LeftAlign())
@@ -49,7 +61,6 @@ struct RegistrationView: View {
                     .padding(.top, 5)
                 Spacer()
                     .frame(height: 50)
-                
                 Button() {
                     Task {
                         isLoading = true
@@ -62,11 +73,21 @@ struct RegistrationView: View {
                 } label: {
                     Text("Register")
                         .buttonText()
-                        
-                }
-                .background(Color("Retro-Yellow"))
-                .cornerRadius(15)
+                }.background(Color("Retro-Yellow"))
+                    .cornerRadius(15)
+                    
                 Spacer()
+                
+                // Login button
+//                Button(action: {
+//                    
+//                }, label: {
+//                    Text("Log in")
+//                        .buttonText()
+//                })
+//                .background(Color("Retro-Yellow"))
+//                .cornerRadius(15)
+
             }
             .modifier(Padding())
         }
@@ -88,6 +109,7 @@ struct InputField: View {
 struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {
         RegistrationView()
+            .environmentObject(ViewRouting())
             .previewDevice("iPhone 11")
     }
 }
