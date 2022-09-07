@@ -81,10 +81,9 @@ struct Test: View {
                 Button("search word") {
                     Task {
                         isLoading = true
-                        wordVM.getWordDefinition(searchedWord: searchedWord) { msg, status in
+                        wordVM.getWordDefinition(searchedWord: searchedWord) { msg, word in
                             self.msg = msg
-                            self.status = status
-                            self.word = wordVM.word
+                            self.word = word
                             isLoading = false
                         }
                     }

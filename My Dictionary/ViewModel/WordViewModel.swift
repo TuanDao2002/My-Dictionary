@@ -8,7 +8,7 @@
 import Foundation
 
 final class WordViewModel: ObservableObject {
-    @Published var word: Word?
+//    @Published var word: Word?
     private var userVM: UserViewModel
     
     init() {
@@ -84,24 +84,27 @@ final class WordViewModel: ObservableObject {
     }
     
     // get the definition of a word
-    func getWordDefinition(searchedWord: String, completion: @escaping(String, Int) -> ()) {
+    func getWordDefinition(searchedWord: String, completion: @escaping(String, Word?) -> ()) {
+        if (searchedWord == "") {
+            completion("Please enter a word", nil)
+            return
+        }
         let getRequest = getRequest(endpoint: "/word/getWordDefinition/" + searchedWord)
         let session = URLSession.shared
         session.dataTask(with: getRequest) { (data, response, error) in
             if error == nil, let data = data, let response = response as? HTTPURLResponse {
                 
                 if (response.statusCode != 200) {
-                    let apiResponse = try? JSONDecoder().decode(Response.self, from: data)
-                    completion(apiResponse!.msg, response.statusCode)
+                    completion("Word not found", nil)
                     return
                 }
                 
                 let word = try? JSONDecoder().decode(Word.self, from: data)
-                self.word = word
-                self.addSearchedWord(userId: self.userVM.user?.id ?? "", word: searchedWord) { msg, status in }
-                completion("Word is found", response.statusCode)
+//                self.word = word
+                self.addSearchedWord(userId: self.userVM.getUser()?.id ?? "", word: searchedWord) { msg, status in }
+                completion("Word found", word)
             } else {
-                completion(error!.localizedDescription, 404)
+                completion("Error", nil)
             }
         }.resume()
     }

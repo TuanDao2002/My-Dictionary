@@ -10,12 +10,12 @@ import Foundation
 let api = "https://cosc2659dictionary.herokuapp.com/api"
 
 final class UserViewModel: ObservableObject {
-    @Published var user: User?
+//    @Published var user: User?
     static let obj = UserViewModel()
     
-    private init() {
-        self.user = getUser()
-    }
+//    private init() {
+//        self.user = getUser()
+//    }
     
     // get the current user
     func getUser() -> User?{
