@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct WordContentView: View {
+    @EnvironmentObject var viewRouting: ViewRouting
+    
     var body: some View {
         ZStack {
             Color("Retro-Green")
@@ -16,6 +18,7 @@ struct WordContentView: View {
                 WordContentNavigation()
                     .modifier(Padding())
                     .padding(.top, 30)
+                
                 GeometryReader {
                     geo in
                     ScrollView{

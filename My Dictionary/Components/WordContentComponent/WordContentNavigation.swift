@@ -13,7 +13,7 @@ struct WordContentNavigation: View {
     var body: some View {
         HStack(alignment: .center){
             Button (action: {
-                viewRouting.state = .mainView
+                viewRouting.state = viewRouting.prevState
             }, label: {
                 Navigation()
                     .foregroundColor(.black)

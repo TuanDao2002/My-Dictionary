@@ -17,6 +17,7 @@ struct SearchHistory: View {
             ForEach(userVM.getUserSearchedWords(), id: \.self) { word in
                 Button(action: {
                     viewRouting.state = .wordView
+                    viewRouting.prevState = .historyView
                 }, label: {
                     WordRow(title: word, userVM: userVM)
                 })

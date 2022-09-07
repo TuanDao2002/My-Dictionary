@@ -48,7 +48,13 @@ struct UserSettings: View {
                         .title()
                         .modifier(LeftAlign())
                     ForEach(userVM.getUserFavoriteWords(), id: \.self) { favWord in
-                        WordRow(title: favWord, userVM: userVM)
+//                        WordRow(title: favWord, userVM: userVM)
+                        Button(action: {
+                            viewRouting.state = .wordView
+                            viewRouting.prevState = .userSetting
+                        }, label: {
+                            WordRow(title: favWord, userVM: userVM)
+                        })
                     }
                 }
             }

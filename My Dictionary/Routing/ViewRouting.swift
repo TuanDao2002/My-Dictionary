@@ -10,6 +10,7 @@ import SwiftUI
 
 class ViewRouting: ObservableObject {
     @Published var state: ViewState = .mainView
+    @Published var prevState: ViewState = .mainView
 }
 
 enum ViewState {
@@ -20,3 +21,4 @@ enum ViewState {
     case test
     case userSetting
 }
+
