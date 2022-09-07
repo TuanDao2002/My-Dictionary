@@ -18,7 +18,7 @@ struct SearchHistory: View {
                 Button(action: {
                     viewRouting.state = .wordView
                 }, label: {
-                    WordRow(title: word)
+                    WordRow(title: word, userVM: userVM)
                 })
             }
         }

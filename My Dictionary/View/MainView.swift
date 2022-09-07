@@ -58,7 +58,7 @@ struct MainView: View {
                 }
             }.navigationBarHidden(true)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                .background(Color("Hard-purple"))
+                .background(Color("Retro-Pink"))
                 .edgesIgnoringSafeArea(.all)
                 .onTapGesture {
                     withAnimation (.linear(duration: 0.25)){
