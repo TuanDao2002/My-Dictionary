@@ -9,13 +9,17 @@ import SwiftUI
 
 struct WordContentView: View {
     @EnvironmentObject var viewRouting: ViewRouting
+    @State private var input = UserDefaults.standard.string(forKey: "word") ?? ""
+    @EnvironmentObject var wordVM: WordViewModel
+    @State private var msg = ""
+    @State private var word: Word?
     
     var body: some View {
         ZStack {
             Color("Retro-Green")
                 .ignoresSafeArea()
             VStack {
-                WordContentNavigation()
+                WordContentNavigation(word: word)
                     .modifier(Padding())
                     .padding(.top, 30)
                 
@@ -25,7 +29,7 @@ struct WordContentView: View {
                         VStack{
                             Spacer()
                                 .frame(height: 10)
-                            WordContentHeader()
+                            WordContentHeader(word: word)
                                 .modifier(Padding())
                             Spacer()
                                 .frame(height: 100)
@@ -37,6 +41,11 @@ struct WordContentView: View {
                         
                     }
                     
+                }
+            }.onAppear {
+                wordVM.getWordDefinition(searchedWord: input) { msg, word in
+                    self.msg = msg
+                    self.word = word
                 }
             }
         }

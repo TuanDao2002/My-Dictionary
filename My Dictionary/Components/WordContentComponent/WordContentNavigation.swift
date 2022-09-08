@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WordContentNavigation: View {
     @EnvironmentObject var viewRouting: ViewRouting
-    
+    var word: Word?
     var body: some View {
         HStack(alignment: .center){
             Button (action: {
@@ -20,13 +20,13 @@ struct WordContentNavigation: View {
             })
             
             Spacer()
-            DropdownMenu()
+            DropdownMenu(word: word)
         }
     }
 }
 
-struct WordContentNavigation_Previews: PreviewProvider {
-    static var previews: some View {
-        WordContentNavigation()
-    }
-}
+//struct WordContentNavigation_Previews: PreviewProvider {
+//    static var previews: some View {
+//        WordContentNavigation()
+//    }
+//}

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Definition: View {
     var textArray = ["hello", "hi", ":)))", "Phi", ":)))",":)))",":)))"]
-    
+    var word: Word?
     var body: some View {
         VStack(alignment: .leading){
             Text("\"Hello!\" or an equivalent greeting.")

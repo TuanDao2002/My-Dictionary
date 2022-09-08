@@ -44,6 +44,7 @@ struct SearchBar: View {
                                     wordVM.getWordDefinition(searchedWord: input) { msg, word in
                                         self.msg = msg
                                         self.word = word
+                                        UserDefaults.standard.set(input, forKey: "word")
                                     }
                                 }
                         }
