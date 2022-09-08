@@ -18,6 +18,7 @@
 		342C5F9428C9AF4200B6E65E /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342C5F9328C9AF4200B6E65E /* InputField.swift */; };
 		342C5F9628C9AFAF00B6E65E /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342C5F9528C9AFAF00B6E65E /* ActionButton.swift */; };
 		342C5F9828C9B2A200B6E65E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342C5F9728C9B2A200B6E65E /* Notification.swift */; };
+		342C5F9A28C9BB9100B6E65E /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342C5F9928C9BB9100B6E65E /* ButtonModifier.swift */; };
 		343318A528C235FC0068A820 /* TextBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343318A428C235FC0068A820 /* TextBubble.swift */; };
 		343318A728C2391D0068A820 /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343318A628C2391D0068A820 /* Padding.swift */; };
 		343318AD28C244590068A820 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343318AC28C244590068A820 /* Navigation.swift */; };
@@ -65,6 +66,7 @@
 		342C5F9328C9AF4200B6E65E /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		342C5F9528C9AFAF00B6E65E /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		342C5F9728C9B2A200B6E65E /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		342C5F9928C9BB9100B6E65E /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		343318A428C235FC0068A820 /* TextBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBubble.swift; sourceTree = "<group>"; };
 		343318A628C2391D0068A820 /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
 		343318AC28C244590068A820 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				34F62BD228BF5A990052488C /* TextModifier.swift */,
 				34F62BD428BF5B1D0052488C /* TextFieldModifier.swift */,
 				343318A628C2391D0068A820 /* Padding.swift */,
+				342C5F9928C9BB9100B6E65E /* ButtonModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				A4B79E8E28C267AE00C0A0D3 /* DefinitionCardCollection.swift in Sources */,
 				A4B79E9528C269CF00C0A0D3 /* WordContentNavigation.swift in Sources */,
 				34F62BD528BF5B1D0052488C /* TextFieldModifier.swift in Sources */,
+				342C5F9A28C9BB9100B6E65E /* ButtonModifier.swift in Sources */,
 				5FBDA4DF28C4C7CE0078B59F /* ViewRouting.swift in Sources */,
 				A4DB226928C2F9B500FA14BA /* GetRequest.swift in Sources */,
 				A464977B28BE4A1E004A5070 /* My_DictionaryApp.swift in Sources */,

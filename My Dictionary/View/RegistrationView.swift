@@ -46,23 +46,6 @@ struct RegistrationView: View {
                     .modifier(LeftAlign())
                 Spacer()
                 
-                //                if (user != nil) {
-                //                    Text("UserId: \(user?.id ?? "undefined")")
-                //                    Text("UserId: \(user?.username ?? "undefined")")
-                //
-                //                    Text("Searched:")
-                //                    ForEach(userVM.getUserSearchedWords(), id: \.self) { searchedWord in
-                //                        Text(searchedWord)
-                //                    }
-                //
-                //                    Text("Favorite:")
-                //                    ForEach(userVM.getUserFavoriteWords(), id: \.self) { favoriteWord in
-                //                        Text(favoriteWord)
-                //                    }
-                //                } else {
-                //                    Text("No user account")
-                //                }
-                
                 //Username
                 InputField(header: "Username", textFieldName: "", name: $username)
                 
@@ -79,34 +62,49 @@ struct RegistrationView: View {
                     .padding(.top, 5)
                 Spacer()
                     .frame(height: 50)
-                Button() {
-                    Task {
-                        isLoading = true
-                        userVM.login(username: username, password: password) { msg, status in
-                            isLoading = false
-                            self.msg = msg
-                            self.status = status
-                            self.user = userVM.getUser()
-                            showingAlert = true
+                HStack {
+                    //Register button
+                    Button() {
+                        Task {
+                            isLoading = true
+                            userVM.register(username: username, password: password) { msg, status in
+                                isLoading = false
+                                self.msg = msg
+                                self.status = status
+                                showingAlert = true
+                            }
                         }
+                    } label: {
+                        Text("Register")
+                            .buttonText()
                     }
-                } label: {
-                    Text("Register")
-                        .buttonText()
-                }.background(Color("Retro-Yellow"))
-                    .cornerRadius(15)
+                    .modifier(ButtonModifier())
+//                    .background(Color("Retro-Blue"))
+//                    .cornerRadius(15)
+                    
+                    
+                    //Log in button
+                    Button() {
+                        Task {
+                            isLoading = true
+                            userVM.login(username: username, password: password) { msg, status in
+                                isLoading = false
+                                self.msg = msg
+                                self.status = status
+                                self.user = userVM.getUser()
+                                showingAlert = true
+                            }
+                        }
+                    } label: {
+                        Text("Log in")
+                            .buttonText()
+                    }
+                    .modifier(ButtonModifier())
+                    .background(Color("Retro-Yellow"))
+                    .cornerRadius(10)
+                }
                 
                 Spacer()
-                
-                // Login button
-//                                Button(action: {
-//
-//                                }, label: {
-//                                    Text("Log in")
-//                                        .buttonText()
-//                                })
-//                                .background(Color("Retro-Yellow"))
-//                                .cornerRadius(15)
                 
             }
             .modifier(Padding())
