@@ -21,7 +21,9 @@ struct RegistrationView: View {
     @State private var msg: String = ""
     @State private var status: Int = -1
     @State private var user: User?
-
+    
+    @State private var showingAlert = false
+    
     
     @State private var isLoading: Bool = false
     var body: some View {
@@ -29,7 +31,6 @@ struct RegistrationView: View {
             // Background color
             Color("Retro-Brown")
                 .ignoresSafeArea()
-            
             VStack {
                 Button(action: {
                     viewRouting.state = .mainView
@@ -45,22 +46,22 @@ struct RegistrationView: View {
                     .modifier(LeftAlign())
                 Spacer()
                 
-                if (user != nil) {
-                    Text("UserId: \(user?.id ?? "undefined")")
-                    Text("UserId: \(user?.username ?? "undefined")")
-
-                    Text("Searched:")
-                    ForEach(userVM.getUserSearchedWords(), id: \.self) { searchedWord in
-                        Text(searchedWord)
-                    }
-
-                    Text("Favorite:")
-                    ForEach(userVM.getUserFavoriteWords(), id: \.self) { favoriteWord in
-                        Text(favoriteWord)
-                    }
-                } else {
-                    Text("No user account")
-                }
+                //                if (user != nil) {
+                //                    Text("UserId: \(user?.id ?? "undefined")")
+                //                    Text("UserId: \(user?.username ?? "undefined")")
+                //
+                //                    Text("Searched:")
+                //                    ForEach(userVM.getUserSearchedWords(), id: \.self) { searchedWord in
+                //                        Text(searchedWord)
+                //                    }
+                //
+                //                    Text("Favorite:")
+                //                    ForEach(userVM.getUserFavoriteWords(), id: \.self) { favoriteWord in
+                //                        Text(favoriteWord)
+                //                    }
+                //                } else {
+                //                    Text("No user account")
+                //                }
                 
                 //Username
                 InputField(header: "Username", textFieldName: "", name: $username)
@@ -86,6 +87,7 @@ struct RegistrationView: View {
                             self.msg = msg
                             self.status = status
                             self.user = userVM.getUser()
+                            showingAlert = true
                         }
                     }
                 } label: {
@@ -93,37 +95,33 @@ struct RegistrationView: View {
                         .buttonText()
                 }.background(Color("Retro-Yellow"))
                     .cornerRadius(15)
-                    
-//                Spacer()
+                
+                Spacer()
                 
                 // Login button
-//                Button(action: {
-//                    
-//                }, label: {
-//                    Text("Log in")
-//                        .buttonText()
-//                })
-//                .background(Color("Retro-Yellow"))
-//                .cornerRadius(15)
-
+//                                Button(action: {
+//
+//                                }, label: {
+//                                    Text("Log in")
+//                                        .buttonText()
+//                                })
+//                                .background(Color("Retro-Yellow"))
+//                                .cornerRadius(15)
+                
             }
             .modifier(Padding())
+            .alert("\(msg)", isPresented: $showingAlert) {
+                if(msg == "Login successfully") {
+                    Button("Return") {
+                        viewRouting.state = .mainView
+                    }
+                }
+            }
+            Notification(check: isLoading)
         }
     }
 }
 
-struct InputField: View {
-    var header: String
-    var textFieldName: String
-    @Binding var name: String
-    
-    var body: some View {
-        Text("\(header):")
-            .textFieldHeader()
-        TextField("\(textFieldName)", text: $name)
-            .modifier(TextFieldModifier())
-    }
-}
 struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {
         RegistrationView()
