@@ -11,9 +11,8 @@ struct ButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .textFieldStyle(PlainTextFieldStyle())
-            .padding(.horizontal)
+            .padding(.horizontal, 2)
             .padding(.vertical, 7)
-            .accentColor(Color("Hard-purple"))
             .font(.custom("SpaceGrotesk-Regular", size: 15))
             .foregroundColor(.white)
             .cornerRadius(10)

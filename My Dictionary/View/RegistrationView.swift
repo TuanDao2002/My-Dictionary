@@ -53,13 +53,7 @@ struct RegistrationView: View {
                     .frame(height: 30)
                 
                 //Password
-                InputField(header: "Password", textFieldName: "", name: $password)
-                
-                Text("New user? Register here")
-                    .modifier(RightAlign())
-                    .font(.custom("SpaceGrotesk-Regular", size: 15))
-                    .foregroundColor(Color("Retro-Gray"))
-                    .padding(.top, 5)
+                PasswordField(header: "Password", textFieldName: "", name: $password)
                 Spacer()
                     .frame(height: 50)
                 HStack {
