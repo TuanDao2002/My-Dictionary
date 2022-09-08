@@ -33,13 +33,14 @@ struct SearchBar: View {
                 TextField("Search here", text: $input)
                     .padding()
                     .padding(.horizontal, 30)
+                    .frame(minWidth: 0, maxWidth: .infinity)
                     .background(Color("Retro-Gray")).foregroundColor(.black)
                     .cornerRadius(7.5)
                     .overlay(
                         HStack {
                             Image(systemName: "magnifyingglass")
                                 .foregroundColor(Color("Retro-Red"))
-                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
                                 .padding().onTapGesture {
                                     wordVM.getWordDefinition(searchedWord: input) { msg, word in
                                         self.msg = msg
@@ -55,13 +56,15 @@ struct SearchBar: View {
                         }
                     }
             }
-            if msg == "Word found"{
-                Button {
+
+            Button {
+                if msg == "Word found"{
                     viewRouting.state = .wordView
-                } label: {
-                    WordRow(title: word?.word ?? "", userVM: userVM).padding(10)
                 }
-            }
+            } label: {
+                WordRow(title: word?.word ?? msg, userVM: userVM)
+            }.padding(10).frame(height: searchBarTouched ? nil : 0)
+
         }
     }
 }

@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct Definition: View {
-    var textArray = ["hello", "hi", ":)))", "Phi", ":)))",":)))",":)))"]
-    var word: Word?
+//    var textArray = ["hello", "hi", ":)))", "Phi", ":)))",":)))",":)))"]
+    var synonyms: [String]
+    var antonyms: [String]
+    var definitions: [DefinitionContent]
     var body: some View {
         VStack(alignment: .leading){
-            Text("\"Hello!\" or an equivalent greeting.")
+            Text(definitions[0].definition)
                 .blackDefinition()
                 .opacity(0.7)
                 .modifier(Padding())
@@ -22,20 +24,20 @@ struct Definition: View {
                 Text("synonyms:")
                     .bodyHeader()
                     .modifier(Padding())
-                TextBubble(textArray: textArray)
+                TextBubble(textArray: synonyms)
                 Text("antonyms:")
                     .bodyHeader()
                     .padding(.top, 20)
                     .modifier(Padding())
-                TextBubble(textArray: textArray)
+                TextBubble(textArray: antonyms)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
-struct Defination_Previews: PreviewProvider {
-    static var previews: some View {
-        Definition().background(Color("Retro-Green"))
-    }
-}
+//struct Defination_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Definition().background(Color("Retro-Green"))
+//    }
+//}

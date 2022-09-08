@@ -31,10 +31,10 @@ struct WordContentView: View {
                                 .modifier(Padding())
                             Spacer()
                                 .frame(height: 100)
-                            Definition()
+                            Definition(synonyms: wordVM.getWord()?.synonyms ?? [], antonyms: wordVM.getWord()?.antonyms ?? [], definitions: wordVM.getWord()?.meanings[0].definitions ?? [])
                             Spacer()
                                 .frame(height: 70)
-                            DefinitionCardCollection(width: geo.size.width)
+                            DefinitionCardCollection(width: geo.size.width, meanings: wordVM.getWord()?.meanings ?? [])
                         }
                         
                     }

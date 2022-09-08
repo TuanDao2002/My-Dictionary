@@ -9,16 +9,16 @@ import SwiftUI
 
 struct DefinitionCard: View {
     let width: CGFloat
-    
+    var definition: DefinitionContent
     var body: some View {
         VStack(alignment: .leading, spacing: 10){
-            Text("A greeting (salutation) said when meeting someone or acknowledging someone’s arrival or presence.")
+            Text("\(definition.definition)")
                 .bodyText()
             Spacer()
             HStack{
                 Text("Example:")
                     .bodyText()
-                Text("Hello everyone")
+                Text("\(definition.example)")
                     .bodyText()
             }
         }

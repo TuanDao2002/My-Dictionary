@@ -64,6 +64,7 @@ struct DropdownMenu: View {
                 Button{
                     self.isExpanded.toggle()
                     selectedForm = meaning.partOfSpeech
+                    UserDefaults.standard.set(selectedForm, forKey: "partOfSpeech")
                 } label: {
                     Text("\(meaning.partOfSpeech)").padding()
                 }.foregroundColor(.black).multilineTextAlignment(.trailing)

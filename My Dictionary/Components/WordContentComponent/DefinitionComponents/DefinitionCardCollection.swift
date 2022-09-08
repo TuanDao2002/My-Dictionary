@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DefinitionCardCollection: View {
     let width: CGFloat
-    
+    var meanings: [MeaningContent]
     var body: some View {
         VStack{
             Text("Other meaning:")
@@ -20,7 +20,14 @@ struct DefinitionCardCollection: View {
                 HStack {
                     Spacer()
                         .frame(width: 30)
-                    DefinitionCard(width: width - 60)
+                    ForEach(meanings, id: \.self){
+                        meaning in
+                        ForEach(meaning.definitions, id: \.self){
+                            definition in DefinitionCard(width: width - 60, definition: definition)
+                        }
+                        
+                        
+                    }
                 }
             }
         }
