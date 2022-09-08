@@ -8,11 +8,37 @@
 import Foundation
 
 final class WordViewModel: ObservableObject {
-//    @Published var word: Word?
     private var userVM: UserViewModel
     
     init() {
         userVM = UserViewModel.obj
+    }
+    
+    // function to save word to UserDefault
+    private func saveWord(word: Word?) {
+        if (word == nil) {
+            UserDefaults.standard.set(nil, forKey: "word")
+            return
+        }
+        do {
+            let wordData = try JSONEncoder().encode(word)
+            UserDefaults.standard.set(wordData, forKey: "word")
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    // function to get word from UserDefault
+    func getWord() -> Word?{
+        if let wordData = UserDefaults.standard.data(forKey: "word") {
+            do {
+                return try JSONDecoder().decode(Word.self, from: wordData)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        
+        return nil
     }
     
     // function to add a word to list of searched words and favorite words of a user
@@ -100,7 +126,7 @@ final class WordViewModel: ObservableObject {
                 }
                 
                 let word = try? JSONDecoder().decode(Word.self, from: data)
-//                self.word = word
+                self.saveWord(word: word)
                 self.addSearchedWord(userId: self.userVM.getUser()?.id ?? "", word: searchedWord) { msg, status in }
                 completion("Word found", word)
             } else {

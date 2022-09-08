@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Word: Decodable {
+struct Word: Codable {
     var word: String
     var text: String = ""
     var audio: String = ""

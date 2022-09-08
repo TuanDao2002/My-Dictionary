@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DefinitionContent: Decodable, Hashable {    
+struct DefinitionContent: Codable, Hashable {    
     var definition: String
     var example: String = ""
 }

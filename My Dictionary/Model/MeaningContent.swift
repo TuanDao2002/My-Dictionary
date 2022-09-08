@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MeaningContent: Decodable, Hashable {
+struct MeaningContent: Codable, Hashable {
     var partOfSpeech: String
     var definitions: [DefinitionContent]
 }
