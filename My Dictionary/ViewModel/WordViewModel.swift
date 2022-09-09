@@ -115,7 +115,8 @@ final class WordViewModel: ObservableObject {
             completion("Please enter a word", nil)
             return
         }
-        let getRequest = getRequest(endpoint: "/word/getWordDefinition/" + searchedWord)
+        let convertToUrl = searchedWord.replacingOccurrences(of: " ", with: "-").lowercased()
+        let getRequest = getRequest(endpoint: "/word/getWordDefinition/" + convertToUrl)
         let session = URLSession.shared
         session.dataTask(with: getRequest) { (data, response, error) in
             if error == nil, let data = data, let response = response as? HTTPURLResponse {

@@ -8,6 +8,7 @@
 import Foundation
 
 func getRequest(endpoint: String) -> URLRequest {
+    
     let url = URL(string: api + endpoint)!
     var request = URLRequest(url: url)
         
