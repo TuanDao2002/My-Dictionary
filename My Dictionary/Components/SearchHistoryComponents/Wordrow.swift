@@ -27,12 +27,11 @@ struct WordRow: View {
     
     var body: some View {
         HStack{
-            Image(systemName: isFavorite ? "star.fill" : "star").foregroundColor(Color("Soft-purple")).disabled(title == "Word not found" ? true : false).opacity(title == "Word not found" ? 0 : 1)
-            Spacer()
+            Image(systemName: isFavorite ? "star.fill" : "star").foregroundColor(Color("Soft-purple")).disabled(title == "Word not found" ? true : false).opacity(title == "Word not found" ? 0 : 1).padding(.horizontal)
             Text(title.firstCapitalized).font(.custom("Inter", size: 15)).foregroundColor(.black)
             Spacer()
-            Image(systemName: "chevron.right").foregroundColor(Color("Retro-Gray")).disabled(title == "Word not found" ? true : false).opacity(title == "Word not found" ? 0 : 1)
-        }.padding().background(.white).cornerRadius(10)
+            Image(systemName: "chevron.right").foregroundColor(Color("Retro-Gray")).disabled(title == "Word not found" ? true : false).opacity(title == "Word not found" ? 0 : 1).padding(.horizontal)
+        }.frame(maxHeight: 50).padding(5).background(.white).cornerRadius(10)
     }
 }
 

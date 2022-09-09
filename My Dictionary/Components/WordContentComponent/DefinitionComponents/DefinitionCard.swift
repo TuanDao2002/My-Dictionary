@@ -11,19 +11,24 @@ struct DefinitionCard: View {
     let width: CGFloat
     var definition: DefinitionContent
     var body: some View {
-        VStack(alignment: .leading, spacing: 10){
-            Text("\(definition.definition)")
-                .bodyText()
-            Spacer()
-            HStack{
-                Text("Example:")
+        VStack(alignment: .leading){
+            HStack {
+                Text("\(definition.definition)")
                     .bodyText()
-                Text("\(definition.example)")
-                    .bodyText()
+                    .multilineTextAlignment(.leading)
+                Spacer()
             }
+            .frame(width: width - 60)
+            Spacer()
+            HStack {
+                Text("Example: \(definition.example)")
+                    .bodyText()
+                    .multilineTextAlignment(.leading)
+                Spacer()
+            }
+            .frame(width: width - 60)
         }
         .padding(30)
-        .frame(width: width)
         .background(Color("Retro-Gray"))
         .cornerRadius(20)
     }

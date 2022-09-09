@@ -42,14 +42,16 @@ struct SearchBar: View {
                             searchBarTouched = true
                         }
                     }
-            }
+            }.overlay(
+                Text("Tap here to search").foregroundColor(Color("Retro-Green")).disabled(searchBarTouched ? true : false).opacity(searchBarTouched ? 0 : 1)
+            )
             
             Button {
                 if msg == "Word found"{
                     viewRouting.state = .wordView
                 }
             } label: {
-                WordRow(title: word?.word ?? msg, userVM: userVM).frame(height: 50)
+                WordRow(title: word?.word ?? msg, userVM: userVM)
             }.padding(10).frame(height: searchBarTouched ? nil : 0).opacity(input.isEmpty ? 0 : !msg.isEmpty ? 1 : 0).onChange(of: input) { msg in
                 if input.isEmpty{
                     self.msg = ""

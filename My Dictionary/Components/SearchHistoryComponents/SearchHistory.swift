@@ -9,20 +9,31 @@ import SwiftUI
 
 
 struct SearchHistory: View {
+//    let words = ["Hello", "Cunt", "Oi"]
     @EnvironmentObject var userVM: UserViewModel
+    @EnvironmentObject var wordVM: WordViewModel
     @EnvironmentObject var viewRouting: ViewRouting
+    @State var msg = ""
+    @State var word: Word?
     
     var body: some View {
         VStack{
-            ForEach(userVM.getUserSearchedWords(), id: \.self) { word in
+            ForEach(userVM.getUserSearchedWords(), id: \.self) { searchedWord in
                 Button(action: {
-                    viewRouting.state = .wordView
-                    viewRouting.prevState = .historyView
+                    wordVM.getWordDefinition(searchedWord: searchedWord) { msg, word in
+                        self.msg = msg
+                        self.word = word
+                    }
                 }, label: {
-                    WordRow(title: word, userVM: userVM)
+                    WordRow(title: searchedWord, userVM: userVM)
                 })
             }
-        }
+        }.onChange(of: msg, perform: { newValue in
+            if msg == "Word found"{
+                viewRouting.state = .wordView
+                viewRouting.prevState = .historyView
+            }
+        })
     }
 }
 
