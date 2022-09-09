@@ -10,9 +10,8 @@ import SwiftUI
 struct WordListHistory: View {
     @EnvironmentObject var userVM: UserViewModel
     @EnvironmentObject var viewRouting: ViewRouting
-    
-    var body: some View {
         
+    var body: some View {
         ZStack {
             Color("Retro-Red")
                 .edgesIgnoringSafeArea(.all)

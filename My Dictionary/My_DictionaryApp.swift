@@ -25,12 +25,29 @@ struct My_DictionaryApp: App {
     @ViewBuilder
         var rootView: some View {
             switch viewRouting.state {
-            case .mainView: MainView()
-            case .historyView: WordListHistory()
-            case .registrationView: RegistrationView()
-            case .wordView: WordContentView()
-            case .test: Test()
-            case .userSetting: UserSettings()
+            case .mainView:
+                MainView()
+                    .transition(AnyTransition.opacity.animation(.easeIn(duration: 0.5)))
+                    .transition(AnyTransition.asymmetric(insertion: .slide, removal: .opacity).animation(.easeIn(duration: 0.5)))
+            case .historyView:
+                WordListHistory()
+                    .transition(AnyTransition.opacity.animation(.easeIn(duration: 0.5)))
+                    .transition(AnyTransition.asymmetric(insertion: .slide, removal: .opacity).animation(.easeIn(duration: 0.5)))
+            case .registrationView:
+                RegistrationView()
+                    .transition(AnyTransition.opacity.animation(.easeIn(duration: 0.5)))
+                    .transition(AnyTransition.asymmetric(insertion: .slide, removal: .opacity).animation(.easeIn(duration: 0.5)))
+            case .wordView:
+                WordContentView()
+                    .transition(AnyTransition.opacity.animation(.easeIn(duration: 0.5)))
+                    .transition(AnyTransition.asymmetric(insertion: .slide, removal: .opacity).animation(.easeIn(duration: 0.5)))
+            case .test:
+                Test()
+            case .userSetting:
+                UserSettings()
+                    .transition(AnyTransition.opacity.animation(.easeIn(duration: 0.5)))
+                    .transition(AnyTransition.asymmetric(insertion: .slide, removal: .opacity).animation(.easeIn(duration: 0.5)))
             }
+
         }
 }
