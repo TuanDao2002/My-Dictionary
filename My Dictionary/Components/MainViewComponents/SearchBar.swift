@@ -49,6 +49,7 @@ struct SearchBar: View {
             Button {
                 if msg == "Word found"{
                     viewRouting.state = .wordView
+                    viewRouting.prevState = .mainView
                 }
             } label: {
                 WordRow(title: word?.word ?? msg, userVM: userVM)

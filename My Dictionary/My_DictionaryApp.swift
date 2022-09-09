@@ -27,26 +27,26 @@ struct My_DictionaryApp: App {
             switch viewRouting.state {
             case .mainView:
                 MainView()
-                    .transition(AnyTransition.opacity.animation(.easeIn(duration: 0.5)))
-                    .transition(AnyTransition.asymmetric(insertion: .slide, removal: .opacity).animation(.easeIn(duration: 0.5)))
+                    .transition(AnyTransition.opacity.animation(.easeInOut))
+                    .transition(AnyTransition.asymmetric(insertion: .slide, removal: .opacity).animation(.easeInOut))
             case .historyView:
                 WordListHistory()
-                    .transition(AnyTransition.opacity.animation(.easeIn(duration: 0.5)))
-                    .transition(AnyTransition.asymmetric(insertion: .slide, removal: .opacity).animation(.easeIn(duration: 0.5)))
+                    .transition(AnyTransition.opacity.animation(.easeInOut))
+                    .transition(AnyTransition.asymmetric(insertion: .slide, removal: .opacity).animation(.easeInOut))
             case .registrationView:
                 RegistrationView()
-                    .transition(AnyTransition.opacity.animation(.easeIn(duration: 0.5)))
-                    .transition(AnyTransition.asymmetric(insertion: .slide, removal: .opacity).animation(.easeIn(duration: 0.5)))
+                    .transition(AnyTransition.opacity.animation(.easeInOut))
+                    .transition(AnyTransition.asymmetric(insertion: .slide, removal: .opacity).animation(.easeInOut))
             case .wordView:
                 WordContentView()
-                    .transition(AnyTransition.opacity.animation(.easeIn(duration: 0.5)))
-                    .transition(AnyTransition.asymmetric(insertion: .slide, removal: .opacity).animation(.easeIn(duration: 0.5)))
+                    .transition(AnyTransition.opacity.animation(.easeInOut))
+                    .transition(AnyTransition.asymmetric(insertion: .slide, removal: .opacity).animation(.easeInOut))
             case .test:
                 Test()
             case .userSetting:
                 UserSettings()
-                    .transition(AnyTransition.opacity.animation(.easeIn(duration: 0.5)))
-                    .transition(AnyTransition.asymmetric(insertion: .slide, removal: .opacity).animation(.easeIn(duration: 0.5)))
+                    .transition(AnyTransition.opacity.animation(.easeInOut))
+                    .transition(AnyTransition.asymmetric(insertion: .slide, removal: .opacity).animation(.easeInOut))
             }
 
         }
