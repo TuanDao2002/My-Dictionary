@@ -16,24 +16,11 @@ struct SearchBar: View {
     @State var word: Word?
     @EnvironmentObject var viewRouting: ViewRouting
     var body: some View {
-        //            HStack{
-        //                Image(systemName: "magnifyingglass")
-        //                    .frame(width: 30, height: 30)
-        //                    .foregroundColor(Color("Retro-Red"))
-        //                    .padding(.horizontal)
-        //                TextField("Search here", text: $word)
-        //                    .foregroundColor(.black)
-        //            }
-        //            .frame(height: 60)
-        //            .background(Color("Retro-Gray"))
-        //            .cornerRadius(15)
-        //            .padding(20)
         VStack{
             HStack {
                 TextField("Search here", text: $input)
-                    .padding()
                     .padding(.horizontal, 30)
-                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 60).opacity(searchBarTouched ? 1 : 0).font(.custom("Inter", size: 15))
                     .background(Color("Retro-Gray")).foregroundColor(.black)
                     .cornerRadius(7.5)
                     .overlay(
@@ -56,15 +43,18 @@ struct SearchBar: View {
                         }
                     }
             }
-
+            
             Button {
                 if msg == "Word found"{
                     viewRouting.state = .wordView
                 }
             } label: {
-                WordRow(title: word?.word ?? msg, userVM: userVM)
-            }.padding(10).frame(height: searchBarTouched ? nil : 0)
-
+                WordRow(title: word?.word ?? msg, userVM: userVM).frame(height: 50)
+            }.padding(10).frame(height: searchBarTouched ? nil : 0).opacity(input.isEmpty ? 0 : !msg.isEmpty ? 1 : 0).onChange(of: input) { msg in
+                if input.isEmpty{
+                    self.msg = ""
+                }
+            }
         }
     }
 }
