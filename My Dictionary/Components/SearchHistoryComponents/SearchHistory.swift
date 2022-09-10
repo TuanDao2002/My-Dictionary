@@ -26,7 +26,7 @@ struct SearchHistory: View {
                     }
                 }, label: {
                     WordRow(title: searchedWord, userVM: userVM, msg: msg)
-                })
+                }).frame(height: 60)
             }
         }.onChange(of: msg, perform: { newValue in
             if msg == "Word found"{

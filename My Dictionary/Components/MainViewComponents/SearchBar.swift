@@ -56,6 +56,7 @@ struct SearchBar: View {
             }.padding(10).frame(height: searchBarTouched ? nil : 0).opacity(input.isEmpty ? 0 : 1).onChange(of: input) { msg in
                 if input.isEmpty{
                     self.msg = ""
+                    word?.word = ""
                 }
             }
         }
