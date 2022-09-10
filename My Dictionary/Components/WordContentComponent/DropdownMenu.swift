@@ -9,13 +9,14 @@ import SwiftUI
 
 struct DropdownMenu: View {
     @State var isExpanded = false
-    @State var selectedForm = "noun"
+    @State var selectedForm = ""
     var word: Word?
     private var meanings: [MeaningContent]
     
     init(word: Word?){
         self.word = word
         meanings = word?.meanings ?? []
+        selectedForm = meanings[0].partOfSpeech
     }
     
     var body: some View {

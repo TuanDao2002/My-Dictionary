@@ -57,7 +57,7 @@ struct UserSettings: View {
                                 self.word = word
                             }
                         }, label: {
-                            WordRow(title: favWord, userVM: userVM)
+                            WordRow(title: favWord, userVM: userVM, msg: msg)
                         })
                     }.onChange(of: msg, perform: { newValue in
                         if msg == "Word found"{

@@ -25,7 +25,7 @@ struct SearchHistory: View {
                         self.word = word
                     }
                 }, label: {
-                    WordRow(title: searchedWord, userVM: userVM)
+                    WordRow(title: searchedWord, userVM: userVM, msg: msg)
                 })
             }
         }.onChange(of: msg, perform: { newValue in

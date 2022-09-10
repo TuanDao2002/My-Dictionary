@@ -52,8 +52,8 @@ struct SearchBar: View {
                     viewRouting.prevState = .mainView
                 }
             } label: {
-                WordRow(title: word?.word ?? msg, userVM: userVM)
-            }.padding(10).frame(height: searchBarTouched ? nil : 0).opacity(input.isEmpty ? 0 : !msg.isEmpty ? 1 : 0).onChange(of: input) { msg in
+                WordRow(title: word?.word ?? msg, userVM: userVM, msg: msg)
+            }.padding(10).frame(height: searchBarTouched ? nil : 0).opacity(input.isEmpty ? 0 : 1).onChange(of: input) { msg in
                 if input.isEmpty{
                     self.msg = ""
                 }
