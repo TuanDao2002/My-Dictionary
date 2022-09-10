@@ -26,14 +26,16 @@ struct DefinitionCard: View {
             }
             .frame(width: width - 60)
             Spacer()
-            Divider()
-            HStack {
-                Text("Example: \(definition.example)")
-                    .subText()
-                    .multilineTextAlignment(.leading)
-                Spacer()
+            if(definition.example != ""){
+                Divider()
+                HStack {
+                    Text("Example: \(definition.example)")
+                        .subText()
+                        .multilineTextAlignment(.leading)
+                    Spacer()
+                }
+                .frame(width: width - 60)
             }
-            .frame(width: width - 60)
         }
         .padding(30)
         .background(Color("Retro-Gray"))
