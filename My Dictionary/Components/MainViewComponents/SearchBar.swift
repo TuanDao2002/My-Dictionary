@@ -90,16 +90,11 @@ struct SearchBar: View {
                     word = nil
                     searchedClicked = false
                 }
-<<<<<<< Updated upstream
             }.opacity(searchedClicked && msg != "Please enter a word" && msg != "Please enter a valid English word" ? 1 : 0)
             
             if (searchedClicked && msg != "Word found" && msg != "Loading...") {
                 Text(msg)
             }
-=======
-            }
-            .opacity(searchedClicked && msg != "Please enter a word" ? 1 : 0)
->>>>>>> Stashed changes
         }
     }
 }
