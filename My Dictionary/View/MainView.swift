@@ -25,7 +25,7 @@ struct MainView: View {
                 Spacer()
                     .frame(height: 90)
                 Header().disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
-//                Spacer()
+                Spacer()
                 
                 // Create searchView for this one before putting routing into it!
                 
