@@ -14,17 +14,22 @@ struct DefinitionCard: View {
     var body: some View {
         VStack(alignment: .leading){
             Text("\(partOfSpeech)")
+                .padding(.horizontal, 13)
+                .padding(.vertical, 7)
+                .overlay(RoundedRectangle(cornerRadius: 50).stroke(.black, lineWidth: 1))
             HStack {
                 Text("\(definition.definition)")
                     .bodyText()
                     .multilineTextAlignment(.leading)
+                    .padding(.bottom, 50)
                 Spacer()
             }
             .frame(width: width - 60)
             Spacer()
+            Divider()
             HStack {
                 Text("Example: \(definition.example)")
-                    .bodyText()
+                    .subText()
                     .multilineTextAlignment(.leading)
                 Spacer()
             }

@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct WordContentNavigation: View {
+    @EnvironmentObject var userVM: UserViewModel
+    @EnvironmentObject var wordVM: WordViewModel
     @EnvironmentObject var viewRouting: ViewRouting
-    var word: Word?
+    let word: Word?
+    
+    @State private var isLoading: Bool = false
+    
     var body: some View {
         HStack(alignment: .center){
             Button (action: {
@@ -20,7 +25,23 @@ struct WordContentNavigation: View {
             })
             
             Spacer()
-            DropdownMenu(word: word)
+            Button {
+                Task {
+                    if(!userVM.getUserFavoriteWords().contains(word?.word ?? "")){
+                        isLoading = true
+                        //Change "Hello" with the word that need to add to favorite
+                        wordVM.addFavoriteWord(userId: userVM.getUser()?.id ?? "", word: word?.word ?? "") { msg, status in
+                            isLoading = false
+                        }
+                    } else {
+                        print("Có rồi")
+                    }
+                }
+            } label: {
+                Image(systemName: userVM.getUserFavoriteWords().contains(word?.word ?? "") ? "star.fill" : "star")
+                    .foregroundColor(Color("Soft-purple"))
+                    .overlay(labelOnTheLeft(check: isLoading))
+            }
         }
     }
 }
@@ -30,3 +51,17 @@ struct WordContentNavigation: View {
 //        WordContentNavigation()
 //    }
 //}
+
+func labelOnTheLeft(check: Bool) -> some View {
+    GeometryReader { proxy in
+        if(check) {
+            Text("Adding...")
+                .subText()
+                .fixedSize()
+                .foregroundColor(Color("Hard-purple"))
+                .padding(.trailing)
+                .offset(x: -proxy.size.width + 10)
+                .frame(width: proxy.size.width, alignment: .trailing)
+        }
+    }
+}
