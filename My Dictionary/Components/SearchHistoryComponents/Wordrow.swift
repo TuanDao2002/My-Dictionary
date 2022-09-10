@@ -18,7 +18,8 @@ struct WordRow: View {
         self.msg = msg
         if (!userVM.isLogin()) {
             isFavorite = false
-        } else if (!userVM.getUserFavoriteWords().contains(where: {$0.localizedStandardContains(title)})) {
+        } else if (!userVM.getUserFavoriteWords()
+            .contains(where: {$0.localizedStandardContains(title)})) {
             isFavorite = false
         } else {
             isFavorite = true
@@ -27,12 +28,24 @@ struct WordRow: View {
     
     var body: some View {
         HStack{
-            Image(systemName: isFavorite ? "star.fill" : "star").foregroundColor(Color("Soft-purple")).disabled(title == "Word not found" || title == "Loading..." || title == "Please enter a word" ? true : false).opacity(title == "Word not found" || title == "Loading..." || title == "Please enter a word" ? 0 : 1).padding(.horizontal)
-            Text(title == "Word not found" || msg == "Loading..." ? msg : title.firstCapitalized).font(.custom("Inter", size: 15)).foregroundColor(.black)
+            Image(systemName: isFavorite ? "star.fill" : "star")
+                .foregroundColor(Color("Retro-Blue"))
+                .font(.system(.title2))
+                .disabled(title == "Word not found" || title == "Loading..." || title == "Please enter a word" ? true : false)
+                .opacity(title == "Word not found" || title == "Loading..." || title == "Please enter a word" ? 0 : 1)
+                .padding(.horizontal)
+            Text(title == "Word not found" || msg == "Loading..." ? msg : title.firstCapitalized)
+                .font(.custom("Inter", size: 15))
+                .foregroundColor(.black)
             Spacer()
-            Image(systemName: "chevron.right").foregroundColor(Color("Retro-Gray")).disabled(title == "Word not found" || title == "Loading..." || title == "Please enter a word" ? true : false).opacity(title == "Word not found" || title == "Loading..." || title == "Please enter a word" ? 0 : 1).padding(.horizontal)
+            Image(systemName: "chevron.right")
+                .foregroundColor(Color("Dark-Green"))
+                .disabled(title == "Word not found" || title == "Loading..." || title == "Please enter a word" ? true : false)
+                .opacity(title == "Word not found" || title == "Loading..." || title == "Please enter a word" ? 0 : 1)
+                .padding(.horizontal)
         }
-        .frame(maxHeight: 65).background(.white)
+        .frame(maxHeight: 65)
+        .background(.white)
         .cornerRadius(10)
     }
 }

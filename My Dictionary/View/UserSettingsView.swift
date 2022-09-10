@@ -27,7 +27,7 @@ struct UserSettings: View {
                         .modifier(LeftAlign())
                         .foregroundColor(.black)
                 })
-                ScrollView {
+                ScrollView(showsIndicators: false) {
                     Text("\(userVM.getUser()?.username ?? "")")
                         .darkTitle()
                         .modifier(LeftAlign())

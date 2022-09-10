@@ -29,6 +29,7 @@ struct SearchBar: View {
         VStack{
             HStack {
                 TextField("Search", text: $input)
+                    .padding(.horizontal, 50)
                     .opacity(searchBarTouched ? 1 : 0)
                     .modifier(TextFieldModifier())
                     .background(Color("Hard-purple"))

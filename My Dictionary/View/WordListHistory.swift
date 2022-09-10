@@ -25,7 +25,7 @@ struct WordListHistory: View {
                         .foregroundColor(.black)
                 })
                 
-                ScrollView{
+                ScrollView(showsIndicators: false){
                     VStack (alignment: .leading){
                         Text("Search History")
                             .title()
