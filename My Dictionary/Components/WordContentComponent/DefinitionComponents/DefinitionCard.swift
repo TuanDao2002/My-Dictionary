@@ -10,8 +10,10 @@ import SwiftUI
 struct DefinitionCard: View {
     let width: CGFloat
     var definition: DefinitionContent
+    var partOfSpeech: String
     var body: some View {
         VStack(alignment: .leading){
+            Text("\(partOfSpeech)")
             HStack {
                 Text("\(definition.definition)")
                     .bodyText()

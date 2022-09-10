@@ -23,10 +23,8 @@ struct DefinitionCardCollection: View {
                     ForEach(meanings, id: \.self){
                         meaning in
                         ForEach(meaning.definitions, id: \.self){
-                            definition in DefinitionCard(width: width - 60, definition: definition)
+                            definition in DefinitionCard(width: width - 60, definition: definition, partOfSpeech: meaning.partOfSpeech)
                         }
-                        
-                        
                     }
                 }
             }
