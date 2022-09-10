@@ -31,7 +31,9 @@ struct WordRow: View {
             Text(title == "Word not found" || msg == "Loading..." ? msg : title.firstCapitalized).font(.custom("Inter", size: 15)).foregroundColor(.black)
             Spacer()
             Image(systemName: "chevron.right").foregroundColor(Color("Retro-Gray")).disabled(title == "Word not found" || title == "Loading..." || title == "Please enter a word" ? true : false).opacity(title == "Word not found" || title == "Loading..." || title == "Please enter a word" ? 0 : 1).padding(.horizontal)
-        }.frame(maxHeight: 50).padding(5).background(.white).cornerRadius(10)
+        }
+        .frame(maxHeight: 65).background(.white)
+        .cornerRadius(10)
     }
 }
 

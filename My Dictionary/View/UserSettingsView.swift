@@ -29,7 +29,7 @@ struct UserSettings: View {
                 })
                 ScrollView {
                     Text("\(userVM.getUser()?.username ?? "")")
-                        .title()
+                        .darkTitle()
                         .modifier(LeftAlign())
                     Spacer()
                         .frame(height: 25)
@@ -47,7 +47,7 @@ struct UserSettings: View {
                     Spacer()
                         .frame(height: 25)
                     Text("Favorite words")
-                        .title()
+                        .darkTitle()
                         .modifier(LeftAlign())
                     ForEach(userVM.getUserFavoriteWords(), id: \.self) { favWord in
 //                        WordRow(title: favWord, userVM: userVM)

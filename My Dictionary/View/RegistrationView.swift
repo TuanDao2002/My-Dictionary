@@ -9,6 +9,11 @@
 
 import SwiftUI
 
+enum LogInField {
+    case Username
+    case Password
+}
+
 struct RegistrationView: View {
     @EnvironmentObject var userVM: UserViewModel
     @EnvironmentObject var wordVM: WordViewModel
@@ -24,6 +29,7 @@ struct RegistrationView: View {
     
     @State private var showingAlert = false
     
+    @FocusState private var loginFieldFocus: LogInField?
     
     @State private var isLoading: Bool = false
     var body: some View {
@@ -48,17 +54,26 @@ struct RegistrationView: View {
                 
                 //Username
                 InputField(header: "Username", textFieldName: "", name: $username)
+                    .focused($loginFieldFocus, equals: .Username)
+                    .onSubmit {
+                        loginFieldFocus = .Password
+                    }
                 
                 Spacer()
                     .frame(height: 30)
                 
                 //Password
                 PasswordField(header: "Password", textFieldName: "", name: $password)
+                    .focused($loginFieldFocus, equals: .Password)
+                    .onSubmit {
+                        loginFieldFocus = .Username
+                    }
                 Spacer()
                     .frame(height: 50)
                 HStack {
                     //Register button
                     Button() {
+                        loginFieldFocus = nil
                         Task {
                             isLoading = true
                             userVM.register(username: username, password: password) { msg, status in
@@ -73,12 +88,10 @@ struct RegistrationView: View {
                             .buttonText()
                     }
                     .modifier(ButtonModifier())
-//                    .background(Color("Retro-Blue"))
-//                    .cornerRadius(15)
-                    
                     
                     //Log in button
                     Button() {
+                        loginFieldFocus = nil
                         Task {
                             isLoading = true
                             userVM.login(username: username, password: password) { msg, status in
@@ -109,10 +122,16 @@ struct RegistrationView: View {
                     }
                 }
             }
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    loginFieldFocus = .Username
+                }
+            }
             Notification(check: isLoading)
         }
     }
 }
+
 
 struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {

@@ -158,7 +158,6 @@
 		342C5F9228C9AF3100B6E65E /* RegisterComponents */ = {
 			isa = PBXGroup;
 			children = (
-				342C5F9328C9AF4200B6E65E /* InputField.swift */,
 				342C5F9528C9AFAF00B6E65E /* ActionButton.swift */,
 			);
 			path = RegisterComponents;
@@ -177,6 +176,7 @@
 		343318AB28C244380068A820 /* SharedComponents */ = {
 			isa = PBXGroup;
 			children = (
+				342C5F9328C9AF4200B6E65E /* InputField.swift */,
 				343318AC28C244590068A820 /* Navigation.swift */,
 				343318A428C235FC0068A820 /* TextBubble.swift */,
 				342C5F9728C9B2A200B6E65E /* Notification.swift */,

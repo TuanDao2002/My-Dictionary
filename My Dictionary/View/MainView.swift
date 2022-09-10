@@ -19,54 +19,52 @@ struct MainView: View {
     @State var searchBarTouched = false
     
     var body: some View {
-        NavigationView{
-            GeometryReader{
-                g in
-                VStack{
-                    Spacer()
-                    Header().disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
-                    Spacer()
-                        .frame(height: 60)
-                    
-                    // Create searchView for this one before putting routing into it!
-                    
-                    SearchBar(input: $input, searchBarTouched: $searchBarTouched).offset(x: 0, y: searchBarTouched ? -(g.size.height/3) : 0)
-                    
-                    Button(action: {
-                        // Change to WordListHistory view
-                        viewRouting.state = .historyView
-                    }, label: {
-                        Text("Search history >>")
-                            .foregroundColor(Color("Retro-Gray"))
-                    }).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
-                    
-                    Button(action: {
-                        // Change to WordListHistory view
-                        viewRouting.state = .userSetting
-                    }, label: {
-                        Text("Setting >>")
-                            .foregroundColor(Color("Retro-Gray"))
-                    }).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
-                    Button(action: {
-                        // Change to WordListHistory view
-                        viewRouting.state = .test
-                    }, label: {
-                        Text("Setting >>")
-                            .foregroundColor(Color("Retro-Gray"))
-                    }).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
-                    Spacer()
+        GeometryReader{
+            g in
+            VStack{
+                Spacer()
+                    .frame(height: 90)
+                Header().disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
+//                Spacer()
+                
+                // Create searchView for this one before putting routing into it!
+                
+                SearchBar(input: $input, searchBarTouched: $searchBarTouched).offset(x: 0, y: searchBarTouched ? -(g.size.height / 4) : 0)
+                Spacer()
+                Button(action: {
+                    // Change to WordListHistory view
+                    viewRouting.state = .historyView
+                }, label: {
+                    Text("Search history >>")
+                        .foregroundColor(Color("Retro-Gray"))
+                }).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
+                
+                Button(action: {
+                    // Change to WordListHistory view
+                    viewRouting.state = .userSetting
+                }, label: {
+                    Text("Setting >>")
+                        .foregroundColor(Color("Retro-Gray"))
+                }).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
+                Button(action: {
+                    // Change to WordListHistory view
+                    viewRouting.state = .test
+                }, label: {
+                    Text("Setting >>")
+                        .foregroundColor(Color("Retro-Gray"))
+                }).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
+                Spacer()
+            }
+            
+            .modifier(Padding())
+        }.navigationBarHidden(true)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+            .background(Color("Hard-purple"))
+            .onTapGesture {
+                withAnimation (.linear(duration: 0.25)){
+                    searchBarTouched = false
                 }
-            }.navigationBarHidden(true)
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                .background(Color("Retro-Pink"))
-                .edgesIgnoringSafeArea(.all)
-                .onTapGesture {
-                    withAnimation (.linear(duration: 0.25)){
-                        searchBarTouched = false
-                    }
-                }
-        }
-        .navigationViewStyle(StackNavigationViewStyle())
+            }
     }
 }
 

@@ -11,8 +11,8 @@ struct TextFieldModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .textFieldStyle(PlainTextFieldStyle())
-            .padding(.horizontal)
-            .padding(.vertical, 13)
+            .padding(.leading, 17)
+            .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 55)
             .accentColor(Color("Purple"))
             .font(.custom("SpaceGrotesk-Regular", size: 15))
             .foregroundColor(.white)

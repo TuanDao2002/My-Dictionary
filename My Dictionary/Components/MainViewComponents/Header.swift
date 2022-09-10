@@ -14,12 +14,15 @@ struct Header: View {
     var body: some View {
         VStack(spacing: 10){
             if userVM.isLogin() {
-                Text("Welcome back")
+                Text("Welcome!")
                     .title()
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 
                 //Handle optional here >>
-                Text(userVM.getUser()!.username)
+                Text(userVM.getUser()?.username ?? "Unvalid name")
                     .title()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    
             } else {
                 Button (action: {
                     viewRouting.state = .registrationView
@@ -29,6 +32,7 @@ struct Header: View {
             }
             
         }
+        
         .foregroundColor(.white)
     }
 }

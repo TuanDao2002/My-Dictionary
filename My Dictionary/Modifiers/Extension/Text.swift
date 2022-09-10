@@ -15,6 +15,11 @@ extension Text {
             .foregroundColor(.white)
     }
     
+    func darkTitle() -> some View {
+        self.font(.custom("SpaceGrotesk-Medium", size: 50))
+            .foregroundColor(Color("Dark-Green"))
+    }
+    
     func blackTitle() -> some View {
         self.font(.custom("SpaceGrotesk-Medium", size: 50))
             .foregroundColor(.black)
