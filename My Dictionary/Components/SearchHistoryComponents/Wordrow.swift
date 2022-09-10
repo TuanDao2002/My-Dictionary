@@ -18,7 +18,7 @@ struct WordRow: View {
         self.msg = msg
         if (!userVM.isLogin()) {
             isFavorite = false
-        } else if (!userVM.getUserFavoriteWords().contains(title)) {
+        } else if (!userVM.getUserFavoriteWords().contains(where: {$0.localizedStandardContains(title)})) {
             isFavorite = false
         } else {
             isFavorite = true
