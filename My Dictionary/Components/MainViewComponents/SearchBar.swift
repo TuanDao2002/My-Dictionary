@@ -59,7 +59,7 @@ struct SearchBar: View {
                     self.msg = ""
                     word?.word = ""
                 }
-            }
+            }.opacity(msg == "Loading..." || !msg.isEmpty ? 1 : 0)
         }
     }
 }
