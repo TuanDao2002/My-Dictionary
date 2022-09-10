@@ -19,7 +19,7 @@ struct WordRow: View {
         if (!userVM.isLogin()) {
             isFavorite = false
         } else if (!userVM.getUserFavoriteWords()
-            .contains(where: {$0.localizedStandardContains(title)})) {
+            .contains(where: {$0.caseInsensitiveCompare(title) == .orderedSame})) {
             isFavorite = false
         } else {
             isFavorite = true
