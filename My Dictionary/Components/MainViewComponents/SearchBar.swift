@@ -29,6 +29,7 @@ struct SearchBar: View {
                                 .foregroundColor(Color("Retro-Red"))
                                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
                                 .padding().onTapGesture {
+                                    self.msg = "Loading..."
                                     wordVM.getWordDefinition(searchedWord: input) { msg, word in
                                         self.msg = msg
                                         self.word = word
