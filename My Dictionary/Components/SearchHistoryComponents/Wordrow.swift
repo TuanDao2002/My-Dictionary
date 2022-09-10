@@ -27,10 +27,10 @@ struct WordRow: View {
     
     var body: some View {
         HStack{
-            Image(systemName: isFavorite ? "star.fill" : "star").foregroundColor(Color("Soft-purple")).disabled(title == "Word not found" || title == "Loading..." || title == "" ? true : false).opacity(title == "Word not found" || title == "Loading..." || title == "" ? 0 : 1).padding(.horizontal)
+            Image(systemName: isFavorite ? "star.fill" : "star").foregroundColor(Color("Soft-purple")).disabled(title == "Word not found" || title == "Loading..." || title == "Please enter a word" ? true : false).opacity(title == "Word not found" || title == "Loading..." || title == "Please enter a word" ? 0 : 1).padding(.horizontal)
             Text(title == "Word not found" || msg == "Loading..." ? msg : title.firstCapitalized).font(.custom("Inter", size: 15)).foregroundColor(.black)
             Spacer()
-            Image(systemName: "chevron.right").foregroundColor(Color("Retro-Gray")).disabled(title == "Word not found" || title == "Loading..." || title == "" ? true : false).opacity(title == "Word not found" || title == "Loading..." || title == "" ? 0 : 1).padding(.horizontal)
+            Image(systemName: "chevron.right").foregroundColor(Color("Retro-Gray")).disabled(title == "Word not found" || title == "Loading..." || title == "Please enter a word" ? true : false).opacity(title == "Word not found" || title == "Loading..." || title == "Please enter a word" ? 0 : 1).padding(.horizontal)
         }.frame(maxHeight: 50).padding(5).background(.white).cornerRadius(10)
     }
 }

@@ -13,29 +13,40 @@ struct SearchBar: View {
     @EnvironmentObject var userVM: UserViewModel
     @EnvironmentObject var wordVM: WordViewModel
     @State private var msg: String = ""
+    @State private var searchedClicked = false
     @State var word: Word?
     @EnvironmentObject var viewRouting: ViewRouting
     var body: some View {
         VStack{
             HStack {
                 TextField("Search here", text: $input)
-                    .padding(.horizontal, 30)
+                    .padding(.horizontal, 50)
                     .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 60).opacity(searchBarTouched ? 1 : 0).font(.custom("Inter", size: 15))
                     .background(Color("Retro-Gray")).foregroundColor(.black)
                     .cornerRadius(7.5)
                     .overlay(
                         HStack {
+                            Image(systemName: "x.circle.fill")
+                                .foregroundColor(Color("Retro-Red"))
+                                .frame(alignment: .leading)
+                                .padding().onTapGesture {
+                                    withAnimation (.linear(duration: 0.25)){
+                                        searchBarTouched = false
+                                    }
+                                }.opacity(searchBarTouched ? 1 : 0)
+                            Spacer()
                             Image(systemName: "magnifyingglass")
                                 .foregroundColor(Color("Retro-Red"))
-                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
+                                .frame(alignment: .trailing)
                                 .padding().onTapGesture {
                                     self.msg = "Loading..."
+                                    searchedClicked = true
                                     wordVM.getWordDefinition(searchedWord: input) { msg, word in
                                         self.msg = msg
                                         self.word = word
                                     }
                                 }
-                        }
+                        }.frame( maxWidth: .infinity)
                     )
                     .padding(.horizontal, 10)
                     .onTapGesture {
@@ -57,9 +68,10 @@ struct SearchBar: View {
             }.padding(10).frame(height: searchBarTouched ? nil : 0).opacity(input.isEmpty ? 0 : 1).onChange(of: input) { msg in
                 if input.isEmpty{
                     self.msg = ""
-                    word?.word = ""
+                    word = nil
+                    searchedClicked = false
                 }
-            }.opacity(msg == "Loading..." || !msg.isEmpty ? 1 : 0)
+            }.opacity(searchedClicked && msg != "Please enter a word" ? 1 : 0)
         }
     }
 }
