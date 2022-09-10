@@ -91,7 +91,7 @@ final class WordViewModel: ObservableObject {
     func getTodayWord(completion: @escaping(String, Int) -> ()) {
         let getRequest = getRequest(endpoint: "/word/getTodayWord")
         let session = URLSession.shared
-        session.dataTask(with: getRequest) { (data, response, error) in
+        session.dataTask(with: getRequest!) { (data, response, error) in
             if error == nil, let data = data, let response = response as? HTTPURLResponse {
                 
                 if (response.statusCode != 200) {
@@ -117,8 +117,12 @@ final class WordViewModel: ObservableObject {
         }
         let convertToUrl = searchedWord.replacingOccurrences(of: " ", with: "-").lowercased()
         let getRequest = getRequest(endpoint: "/word/getWordDefinition/" + convertToUrl)
+        if (getRequest == nil) {
+            completion("Please enter a word", nil)
+            return
+        }
         let session = URLSession.shared
-        session.dataTask(with: getRequest) { (data, response, error) in
+        session.dataTask(with: getRequest!) { (data, response, error) in
             if error == nil, let data = data, let response = response as? HTTPURLResponse {
                 
                 if (response.statusCode != 200) {

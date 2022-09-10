@@ -7,11 +7,15 @@
 
 import Foundation
 
-func getRequest(endpoint: String) -> URLRequest {
+func getRequest(endpoint: String) -> URLRequest? {
     
-    let url = URL(string: api + endpoint)!
-    var request = URLRequest(url: url)
-        
+    let url = URL(string: api + endpoint) ?? nil
+    
+    if (url == nil) {
+        return nil
+    }
+    
+    var request = URLRequest(url: url!)
     request.httpMethod = "GET"
     return request
 }
