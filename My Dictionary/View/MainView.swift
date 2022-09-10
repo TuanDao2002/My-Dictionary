@@ -31,28 +31,30 @@ struct MainView: View {
                 
                 SearchBar(input: $input, searchBarTouched: $searchBarTouched).offset(x: 0, y: searchBarTouched ? -(g.size.height / 4) : 0)
                 Spacer()
-                Button(action: {
-                    // Change to WordListHistory view
-                    viewRouting.state = .historyView
-                }, label: {
-                    Text("Search history >>")
-                        .foregroundColor(Color("Retro-Gray"))
-                }).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
-                
-                Button(action: {
-                    // Change to WordListHistory view
-                    viewRouting.state = .userSetting
-                }, label: {
-                    Text("Setting >>")
-                        .foregroundColor(Color("Retro-Gray"))
-                }).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
-                Button(action: {
-                    // Change to WordListHistory view
-                    viewRouting.state = .test
-                }, label: {
-                    Text("Setting >>")
-                        .foregroundColor(Color("Retro-Gray"))
-                }).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
+                if(userVM.isLogin()){
+                    Button(action: {
+                        // Change to WordListHistory view
+                        viewRouting.state = .historyView
+                    }, label: {
+                        Text("Search history >>")
+                            .foregroundColor(Color("Retro-Gray"))
+                    }).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
+                    
+                    Button(action: {
+                        // Change to WordListHistory view
+                        viewRouting.state = .userSetting
+                    }, label: {
+                        Text("Setting >>")
+                            .foregroundColor(Color("Retro-Gray"))
+                    }).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
+                    Button(action: {
+                        // Change to WordListHistory view
+                        viewRouting.state = .test
+                    }, label: {
+                        Text("Setting >>")
+                            .foregroundColor(Color("Retro-Gray"))
+                    }).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
+                }
                 Spacer()
             }
             

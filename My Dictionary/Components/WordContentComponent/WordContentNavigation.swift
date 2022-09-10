@@ -38,10 +38,12 @@ struct WordContentNavigation: View {
                     }
                 }
             } label: {
-                Image(systemName: userVM.getUserFavoriteWords().contains(word?.word ?? "") ? "star.fill" : "star")
-                    .foregroundColor(Color("Hard-purple"))
-                    .font(.system(.title2))
-                    .overlay(labelOnTheLeft(check: isLoading))
+                if (userVM.isLogin()) {
+                    Image(systemName: userVM.getUserFavoriteWords().contains(word?.word ?? "") ? "star.fill" : "star")
+                        .foregroundColor(Color("Hard-purple"))
+                        .font(.system(.title2))
+                        .overlay(labelOnTheLeft(check: isLoading))
+                }
             }
         }
     }
