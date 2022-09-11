@@ -59,11 +59,12 @@ struct MainView: View {
                     }).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
                 }
                 Spacer()
+                Text("Today word: \(isLoading ? "Loading..." : todayWord)")
+                
+                .modifier(Padding())
             }
             
-            Text("Today word: \(isLoading ? "Loading..." : todayWord)")
             
-            .modifier(Padding())
         }.navigationBarHidden(true)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             .background(Color("Hard-purple"))
