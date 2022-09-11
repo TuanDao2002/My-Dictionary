@@ -10,6 +10,8 @@ import SwiftUI
 struct WordListHistory: View {
     @EnvironmentObject var userVM: UserViewModel
     @EnvironmentObject var viewRouting: ViewRouting
+    
+    @State private var isLoading = false
         
     var body: some View {
         ZStack {
@@ -32,13 +34,15 @@ struct WordListHistory: View {
                             .modifier(LeftAlign())
                         Spacer()
                             .frame(height: 60)
-                        SearchHistory()
+                        SearchHistory(isLoading: $isLoading)
                         Spacer()
                     }
                 }
                 .padding(.top, 10)
             }
             .modifier(Padding())
+            Notification(check: isLoading)
+                .transition(AnyTransition.opacity.animation(.easeInOut))
         }
     }
 }

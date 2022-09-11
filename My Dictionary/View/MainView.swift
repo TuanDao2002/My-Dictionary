@@ -24,48 +24,46 @@ struct MainView: View {
     var body: some View {
         GeometryReader{
             g in
-            ScrollView {
-                VStack{
-                    Spacer()
-                        .frame(height: 90)
-                    Header().disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
-                    Spacer()
+            VStack{
+                Spacer()
+                    .frame(height: 90)
+                Header().disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
+                Spacer()
+                
+                // Create searchView for this one before putting routing into it!
+                
+                SearchBar(input: $input, searchBarTouched: $searchBarTouched).offset(x: 0, y: searchBarTouched ? -(g.size.height / 4) : 0)
+                Spacer()
+                if(userVM.isLogin()){
+                    Button(action: {
+                        // Change to WordListHistory view
+                        viewRouting.state = .historyView
+                    }, label: {
+                        Text("Search history >>")
+                            .foregroundColor(Color("Retro-Gray"))
+                    }).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
                     
-                    // Create searchView for this one before putting routing into it!
-                    
-                    SearchBar(input: $input, searchBarTouched: $searchBarTouched).offset(x: 0, y: searchBarTouched ? -(g.size.height / 4) : 0)
-                    Spacer()
-                    if(userVM.isLogin()){
-                        Button(action: {
-                            // Change to WordListHistory view
-                            viewRouting.state = .historyView
-                        }, label: {
-                            Text("Search history >>")
-                                .foregroundColor(Color("Retro-Gray"))
-                        }).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
-                        
-                        Button(action: {
-                            // Change to WordListHistory view
-                            viewRouting.state = .userSetting
-                        }, label: {
-                            Text("Setting >>")
-                                .foregroundColor(Color("Retro-Gray"))
-                        }).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
-                        Button(action: {
-                            // Change to WordListHistory view
-                            viewRouting.state = .test
-                        }, label: {
-                            Text("Setting >>")
-                                .foregroundColor(Color("Retro-Gray"))
-                        }).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
-                    }
-                    Spacer()
+                    Button(action: {
+                        // Change to WordListHistory view
+                        viewRouting.state = .userSetting
+                    }, label: {
+                        Text("Setting >>")
+                            .foregroundColor(Color("Retro-Gray"))
+                    }).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
+                    Button(action: {
+                        // Change to WordListHistory view
+                        viewRouting.state = .test
+                    }, label: {
+                        Text("Setting >>")
+                            .foregroundColor(Color("Retro-Gray"))
+                    }).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
                 }
-                
-                Text("Today word: \(isLoading ? "Loading..." : todayWord)")
-                
-                .modifier(Padding())
+                Spacer()
             }
+            
+            Text("Today word: \(isLoading ? "Loading..." : todayWord)")
+            
+            .modifier(Padding())
         }.navigationBarHidden(true)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             .background(Color("Hard-purple"))
