@@ -12,13 +12,16 @@ struct WordContentNavigation: View {
     @EnvironmentObject var wordVM: WordViewModel
     @EnvironmentObject var viewRouting: ViewRouting
     let word: Word?
-    
+    @State var todayWord = ""
     @State private var isLoading: Bool = false
     @State private var action: String = ""
     
     var body: some View {
         HStack(alignment: .center){
             Button (action: {
+                wordVM.getTodayWord { word, statusCode in
+                    todayWord = word
+                }
                 viewRouting.state = viewRouting.prevState
             }, label: {
                 Navigation()

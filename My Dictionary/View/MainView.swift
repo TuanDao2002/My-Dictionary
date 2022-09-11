@@ -11,7 +11,7 @@ struct MainView: View {
     // Global object to change view of app
     @EnvironmentObject var viewRouting: ViewRouting
     @EnvironmentObject var userVM: UserViewModel
-    @EnvironmentObject var worVM: WordViewModel
+    @EnvironmentObject var wordVM: WordViewModel
     
     @State var input = ""
     //    @State var user = User(id: "1", username: "Phi", searchedWords: ["favorite", "content", "word"], favoriteWords: [])
@@ -20,6 +20,10 @@ struct MainView: View {
     @State var searchBarTouched = false
     @State var todayWord: String = ""
     @State var isLoading: Bool = false
+    @State var title = ""
+    @State var msg: String = ""
+    @State var searchedClicked = false
+    @State var word: Word?
     
     var body: some View {
         GeometryReader{
@@ -59,7 +63,19 @@ struct MainView: View {
                     }).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
                 }
                 Spacer()
-                Text("Today word: \(isLoading ? "Loading..." : todayWord)")
+                Text("Today word: ").foregroundColor(.white).frame(maxWidth: .infinity, alignment: .leading).opacity(searchBarTouched ? 0 : 1)
+                Button(action: {
+//                    isLoading = true
+                    wordVM.getWordDefinition(searchedWord: todayWord) { msg, word in
+                        self.msg = msg
+                        self.word = word
+                        isLoading = false
+                    }
+                    viewRouting.state = .wordView
+                }, label: {
+                    WordRow(title: isLoading ? "Loading..." : todayWord, userVM: userVM, msg: msg)
+                }).frame(height: 60).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
+                
             }
             .modifier(Padding())
             
@@ -75,7 +91,7 @@ struct MainView: View {
         
             .onAppear{
                 isLoading = true
-                worVM.getTodayWord() { msg, status in
+                wordVM.getTodayWord() { msg, status in
                     todayWord = msg
                     isLoading = false
                 }
