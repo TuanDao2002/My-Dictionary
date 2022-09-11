@@ -60,9 +60,8 @@ struct MainView: View {
                 }
                 Spacer()
                 Text("Today word: \(isLoading ? "Loading..." : todayWord)")
-                
-                .modifier(Padding())
             }
+            .modifier(Padding())
             
             
         }.navigationBarHidden(true)
