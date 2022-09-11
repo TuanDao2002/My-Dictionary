@@ -32,7 +32,6 @@
 		34F62BE628C08AB70052488C /* SpaceGrotesk-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34F62BE528C08AB70052488C /* SpaceGrotesk-SemiBold.ttf */; };
 		5FBDA4DF28C4C7CE0078B59F /* ViewRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBDA4DE28C4C7CE0078B59F /* ViewRouting.swift */; };
 		A464977B28BE4A1E004A5070 /* My_DictionaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464977A28BE4A1E004A5070 /* My_DictionaryApp.swift */; };
-		A464977D28BE4A1E004A5070 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464977C28BE4A1E004A5070 /* ContentView.swift */; };
 		A464977F28BE4A21004A5070 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A464977E28BE4A21004A5070 /* Assets.xcassets */; };
 		A464978228BE4A21004A5070 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A464978128BE4A21004A5070 /* Preview Assets.xcassets */; };
 		A464978C28BE52C7004A5070 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464978B28BE52C7004A5070 /* UserViewModel.swift */; };
@@ -81,7 +80,6 @@
 		5FBDA4DE28C4C7CE0078B59F /* ViewRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouting.swift; sourceTree = "<group>"; };
 		A464977728BE4A1E004A5070 /* My Dictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Dictionary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A464977A28BE4A1E004A5070 /* My_DictionaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_DictionaryApp.swift; sourceTree = "<group>"; };
-		A464977C28BE4A1E004A5070 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A464977E28BE4A21004A5070 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A464978128BE4A21004A5070 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A464978B28BE52C7004A5070 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
@@ -291,7 +289,6 @@
 			isa = PBXGroup;
 			children = (
 				2E9885DA28C209EC00C73C6E /* WordContentView.swift */,
-				A464977C28BE4A1E004A5070 /* ContentView.swift */,
 				34F62BCE28BF53390052488C /* RegistrationView.swift */,
 				2EFB6F1628BF68AB006FD046 /* MainView.swift */,
 				2EFB6F2628BFC017006FD046 /* WordListHistory.swift */,
@@ -383,7 +380,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A464977D28BE4A1E004A5070 /* ContentView.swift in Sources */,
 				A4B79E8F28C267AE00C0A0D3 /* Definition.swift in Sources */,
 				A464978C28BE52C7004A5070 /* UserViewModel.swift in Sources */,
 				2EFB6F2028BF93BF006FD046 /* Wordrow.swift in Sources */,
