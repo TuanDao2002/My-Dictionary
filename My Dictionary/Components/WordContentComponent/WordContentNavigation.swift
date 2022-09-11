@@ -14,6 +14,7 @@ struct WordContentNavigation: View {
     let word: Word?
     
     @State private var isLoading: Bool = false
+    @State private var action: String = ""
     
     var body: some View {
         HStack(alignment: .center){
@@ -29,12 +30,19 @@ struct WordContentNavigation: View {
                 Task {
                     if(!userVM.getUserFavoriteWords().contains(word?.word ?? "")){
                         isLoading = true
+                        action = "Adding..."
                         //Change "Hello" with the word that need to add to favorite
                         wordVM.addFavoriteWord(userId: userVM.getUser()?.id ?? "", word: word?.word ?? "") { msg, status in
                             isLoading = false
+                            action = ""
                         }
                     } else {
-                        print("Có rồi")
+                        isLoading = true
+                        action = "Removing..."
+                        wordVM.removeFavoriteWord(userId: userVM.getUser()?.id ?? "", word: word?.word ?? "") { msg, status in
+                            isLoading = false
+                            action = ""
+                        }
                     }
                 }
             } label: {
@@ -42,7 +50,7 @@ struct WordContentNavigation: View {
                     Image(systemName: userVM.getUserFavoriteWords().contains(word?.word ?? "") ? "star.fill" : "star")
                         .foregroundColor(Color("Hard-purple"))
                         .font(.system(.title2))
-                        .overlay(labelOnTheLeft(check: isLoading))
+                        .overlay(labelOnTheLeft(check: isLoading, action: action))
                 }
             }
         }
@@ -55,10 +63,10 @@ struct WordContentNavigation: View {
 //    }
 //}
 
-func labelOnTheLeft(check: Bool) -> some View {
+func labelOnTheLeft(check: Bool, action: String) -> some View {
     GeometryReader { proxy in
         if(check) {
-            Text("Adding...")
+            Text(action)
                 .subText()
                 .fixedSize()
                 .foregroundColor(Color("Hard-purple"))

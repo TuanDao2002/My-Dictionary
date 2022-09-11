@@ -87,6 +87,32 @@ final class WordViewModel: ObservableObject {
         addWord(userId: userId, word: word, endpoint: "/word/addFavoriteWord", completion: completion)
     }
     
+    // function to remove a word from list of favorite words of a user
+    func removeFavoriteWord(userId: String, word: String, completion: @escaping(String, Int) -> ()) {
+        let jsonData = ["userId": userId, "favoriteWord": word]
+        let postRequest = postRequest(endpoint: "/word/removeFavoriteWord", json: jsonData)
+
+        var user: User?
+        let session = URLSession.shared
+        session.dataTask(with: postRequest) { (data, response, error) in
+            if error == nil, let data = data, let response = response as? HTTPURLResponse {
+                
+                if (response.statusCode != 200) {
+                    let apiResponse = try? JSONDecoder().decode(Response.self, from: data)
+                    completion(apiResponse!.msg, response.statusCode)
+                    return
+                }
+                
+                user = try? JSONDecoder().decode(User.self, from: data)
+                self.userVM.saveUser(user: user)
+                completion("Word is removed", response.statusCode)
+                
+            } else {
+                completion(error!.localizedDescription, 404)
+            }
+        }.resume()
+    }
+    
     // get the today word
     func getTodayWord(completion: @escaping(String, Int) -> ()) {
         let getRequest = getRequest(endpoint: "/word/getTodayWord")
