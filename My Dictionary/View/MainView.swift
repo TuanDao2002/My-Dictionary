@@ -66,6 +66,8 @@ struct MainView: View {
                 Text("Today word: ").foregroundColor(.white).frame(maxWidth: .infinity, alignment: .leading).opacity(searchBarTouched ? 0 : 1)
                 Button(action: {
                     isLoading = true
+                    // Set the previous view is main view
+                    viewRouting.prevState = .mainView
                     wordVM.getWordDefinition(searchedWord: todayWord) { msg, word in
                         self.msg = msg
                         self.word = word
