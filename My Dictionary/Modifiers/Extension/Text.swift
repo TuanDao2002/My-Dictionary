@@ -9,10 +9,14 @@ import Foundation
 import SwiftUI
 
 extension Text {
-
+    func customFont(size: Double) -> some View {
+        self.font(.custom("SpaceGrotesk-Regular", size: size))
+    }
+    
     func title() -> some View {
         self.font(.custom("SpaceGrotesk-Medium", size: 50))
             .foregroundColor(.white)
+            .frame(maxWidth: .infinity, alignment: .leading)
     }
     
     func darkTitle() -> some View {

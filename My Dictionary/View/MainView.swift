@@ -29,41 +29,56 @@ struct MainView: View {
         GeometryReader{
             g in
             VStack{
-                Spacer()
-                    .frame(height: 90)
-                Header().disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
-                Spacer()
-                
-                // Create searchView for this one before putting routing into it!
-                
-                SearchBar(input: $input, searchBarTouched: $searchBarTouched).offset(x: 0, y: searchBarTouched ? -(g.size.height / 4) : 0)
-                Spacer()
-                if(userVM.isLogin()){
-                    Button(action: {
-                        // Change to WordListHistory view
-                        viewRouting.state = .historyView
-                    }, label: {
-                        Text("Search history >>")
-                            .foregroundColor(Color("Retro-Gray"))
-                    }).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
-                    
-                    Button(action: {
-                        // Change to WordListHistory view
-                        viewRouting.state = .userSetting
-                    }, label: {
-                        Text("Setting >>")
-                            .foregroundColor(Color("Retro-Gray"))
-                    }).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
-                    Button(action: {
-                        // Change to WordListHistory view
-                        viewRouting.state = .test
-                    }, label: {
-                        Text("Setting >>")
-                            .foregroundColor(Color("Retro-Gray"))
-                    }).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
+                //PROFILE NAVIGATION SECTION
+                Button {
+                    viewRouting.state = .userSetting
+                } label: {
+                    HStack{
+                        Text("PROFILE")
+                            .customFont(size: 20)
+                            .padding(.leading, 10)
+                        Image(systemName: "chevron.right")
+                    }
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 7)
+                    .overlay(RoundedRectangle(cornerRadius: 50)
+                        .stroke(.black, lineWidth: 2))
                 }
+                .padding(.top, 30)
+                .modifier(RightAlign())
+                .modifier(Hide(check: searchBarTouched))
+                .modifier(Hide(check: !userVM.isLogin()))
+                .foregroundColor(.black)
+                
+                
+                Header()
+                    .disabled(searchBarTouched)
+                    .opacity(searchBarTouched ? 0 : 1)
+//                Spacer()
+                
+                
+                //SEARCH BAR SECTION
+                SearchBar(input: $input, searchBarTouched: $searchBarTouched)
+                    .offset(x: 0, y: searchBarTouched ? -(g.size.height / 6) : 0)
+                
+                Button(action: {
+                    // Change to WordListHistory view
+                    viewRouting.state = .historyView
+                }, label: {
+                    Text("Search history >>")
+                        .foregroundColor(Color("Retro-Gray"))
+                })
+                    .modifier(Hide(check: searchBarTouched))
+                    .modifier(Hide(check: !userVM.isLogin()))
+                
                 Spacer()
-                Text("Today word: ").foregroundColor(.white).frame(maxWidth: .infinity, alignment: .leading).opacity(searchBarTouched ? 0 : 1)
+                
+                
+                //TODAY WORD SECTION
+                Text("Today word: ")
+                    .title()
+                    .modifier(Hide(check: searchBarTouched))
+                
                 Button(action: {
                     isLoading = true
                     // Set the previous view is main view
@@ -75,35 +90,35 @@ struct MainView: View {
                     }
                 }, label: {
                     WordRow(title: isLoading ? "Loading..." : todayWord, userVM: userVM, msg: msg)
-                }).frame(height: 60).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
+                })
+                .modifier(Hide(check: searchBarTouched))
                 
             }
             .modifier(Padding())
-            
-            
-        }.navigationBarHidden(true)
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-            .background(Color("Hard-purple"))
-            .onTapGesture {
-                withAnimation (.linear(duration: 0.25)){
-                    searchBarTouched = false
-                }
+            .padding(.bottom, 30)
+        }
+        .navigationBarHidden(true)
+        .background(Color("Hard-purple"))
+        .onTapGesture {
+            withAnimation (.linear(duration: 0.25)){
+                searchBarTouched = false
             }
-        
-            .onAppear{
-                isLoading = true
-                wordVM.getTodayWord() { msg, status in
-                    todayWord = msg
-                    isLoading = false
-                }
+        }
+    
+        .onAppear{
+            isLoading = true
+            wordVM.getTodayWord() { msg, status in
+                todayWord = msg
+                isLoading = false
             }
-        
-            .onChange(of: self.msg) {
-                newValue in
-                if (self.msg == "Word found") {
-                    viewRouting.state = .wordView
-                }
+        }
+    
+        .onChange(of: self.msg) {
+            newValue in
+            if (self.msg == "Word found") {
+                viewRouting.state = .wordView
             }
+        }
     }
 }
 

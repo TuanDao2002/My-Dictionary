@@ -27,7 +27,11 @@ struct Header: View {
                 Button (action: {
                     viewRouting.state = .registrationView
                 }, label: {
-                    Text("Register/Log in")
+                    Text("Register or Log in")
+                        .underline()
+                        .title()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Image(systemName: "chevron.right")
                 })
             }
             

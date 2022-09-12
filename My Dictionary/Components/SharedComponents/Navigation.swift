@@ -11,8 +11,8 @@ struct Navigation: View {
     var body: some View {
         Label{
             Text("RETURN")
+                .customFont(size: 20)
                 .padding(.leading, 10)
-                .font(.system(size: 20))
         } icon: {
             Image(systemName: "chevron.left")
         }

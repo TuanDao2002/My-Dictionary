@@ -40,6 +40,7 @@ struct RegistrationView: View {
             VStack {
                 Button(action: {
                     viewRouting.state = .mainView
+                    loginFieldFocus = nil
                 }, label: {
                     Navigation()
                         .padding(.top, 30)
