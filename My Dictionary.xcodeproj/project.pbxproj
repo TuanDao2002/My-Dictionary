@@ -30,6 +30,9 @@
 		34F62BE128C083C70052488C /* SpaceGrotesk-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34F62BE028C083C70052488C /* SpaceGrotesk-Medium.ttf */; };
 		34F62BE428C0846C0052488C /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BE328C0846C0052488C /* Text.swift */; };
 		34F62BE628C08AB70052488C /* SpaceGrotesk-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34F62BE528C08AB70052488C /* SpaceGrotesk-SemiBold.ttf */; };
+		5F4E2CDD28CF57FD00BBED23 /* dictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F4E2CDC28CF57FD00BBED23 /* dictionary.json */; };
+		5F4E2CE328CF591C00BBED23 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5F4E2CE228CF591C00BBED23 /* Lottie */; };
+		5F4E2CE528CF59EF00BBED23 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E2CE428CF59EF00BBED23 /* LottieView.swift */; };
 		5FBDA4DF28C4C7CE0078B59F /* ViewRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBDA4DE28C4C7CE0078B59F /* ViewRouting.swift */; };
 		A464977B28BE4A1E004A5070 /* My_DictionaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464977A28BE4A1E004A5070 /* My_DictionaryApp.swift */; };
 		A464977F28BE4A21004A5070 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A464977E28BE4A21004A5070 /* Assets.xcassets */; };
@@ -77,6 +80,8 @@
 		34F62BE028C083C70052488C /* SpaceGrotesk-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-Medium.ttf"; sourceTree = "<group>"; };
 		34F62BE328C0846C0052488C /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		34F62BE528C08AB70052488C /* SpaceGrotesk-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-SemiBold.ttf"; sourceTree = "<group>"; };
+		5F4E2CDC28CF57FD00BBED23 /* dictionary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dictionary.json; sourceTree = "<group>"; };
+		5F4E2CE428CF59EF00BBED23 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		5FBDA4DE28C4C7CE0078B59F /* ViewRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouting.swift; sourceTree = "<group>"; };
 		A464977728BE4A1E004A5070 /* My Dictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Dictionary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A464977A28BE4A1E004A5070 /* My_DictionaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_DictionaryApp.swift; sourceTree = "<group>"; };
@@ -106,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F4E2CE328CF591C00BBED23 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +141,7 @@
 		2EFB6F1828BF68E4006FD046 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				5F4E2CDB28CF57E800BBED23 /* Lottie */,
 				342C5F9228C9AF3100B6E65E /* RegisterComponents */,
 				343318AB28C244380068A820 /* SharedComponents */,
 				2E9885DC28C20C0100C73C6E /* WordContentComponent */,
@@ -210,6 +217,15 @@
 				34F62BE328C0846C0052488C /* Text.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		5F4E2CDB28CF57E800BBED23 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				5F4E2CDC28CF57FD00BBED23 /* dictionary.json */,
+				5F4E2CE428CF59EF00BBED23 /* LottieView.swift */,
+			);
+			path = Lottie;
 			sourceTree = "<group>";
 		};
 		5FBDA4DD28C4C7B70078B59F /* Routing */ = {
@@ -323,6 +339,9 @@
 			dependencies = (
 			);
 			name = "My Dictionary";
+			packageProductDependencies = (
+				5F4E2CE228CF591C00BBED23 /* Lottie */,
+			);
 			productName = "My Dictionary";
 			productReference = A464977728BE4A1E004A5070 /* My Dictionary.app */;
 			productType = "com.apple.product-type.application";
@@ -351,6 +370,9 @@
 				Base,
 			);
 			mainGroup = A464976E28BE4A1E004A5070;
+			packageReferences = (
+				5F4E2CE128CF591C00BBED23 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = A464977828BE4A1E004A5070 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -366,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34F62BE628C08AB70052488C /* SpaceGrotesk-SemiBold.ttf in Resources */,
+				5F4E2CDD28CF57FD00BBED23 /* dictionary.json in Resources */,
 				34F62BE128C083C70052488C /* SpaceGrotesk-Medium.ttf in Resources */,
 				A464978228BE4A21004A5070 /* Preview Assets.xcassets in Resources */,
 				A464977F28BE4A21004A5070 /* Assets.xcassets in Resources */,
@@ -387,6 +410,7 @@
 				342C5F9628C9AFAF00B6E65E /* ActionButton.swift in Sources */,
 				2E9885DB28C209EC00C73C6E /* WordContentView.swift in Sources */,
 				A46BE05D28C0667200BB542E /* Test.swift in Sources */,
+				5F4E2CE528CF59EF00BBED23 /* LottieView.swift in Sources */,
 				A4B79E9228C269AC00C0A0D3 /* DropdownMenu.swift in Sources */,
 				34F62BD328BF5A990052488C /* TextModifier.swift in Sources */,
 				2EFB6F1A28BF6AC5006FD046 /* Header.swift in Sources */,
@@ -623,6 +647,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5F4E2CE128CF591C00BBED23 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5F4E2CE228CF591C00BBED23 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F4E2CE128CF591C00BBED23 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A464976F28BE4A1E004A5070 /* Project object */;
 }
