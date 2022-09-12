@@ -23,7 +23,7 @@ struct WordContentNavigation: View {
                     self.msg = msg
                     self.word = word
                 }
-                viewRouting.state = .mainView
+                viewRouting.state = viewRouting.prevState
             }, label: {
                 Navigation()
                     .foregroundColor(.black)
