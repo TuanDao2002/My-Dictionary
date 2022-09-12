@@ -11,18 +11,19 @@ struct WordContentNavigation: View {
     @EnvironmentObject var userVM: UserViewModel
     @EnvironmentObject var wordVM: WordViewModel
     @EnvironmentObject var viewRouting: ViewRouting
-    let word: Word?
+    @State var word: Word?
     @State var todayWord = ""
     @State private var isLoading: Bool = false
     @State private var action: String = ""
-    
+    @State var msg = ""
     var body: some View {
         HStack(alignment: .center){
             Button (action: {
-                wordVM.getTodayWord { word, statusCode in
-                    todayWord = word
+                wordVM.getWordDefinition(searchedWord: todayWord) { msg, word in
+                    self.msg = msg
+                    self.word = word
                 }
-                viewRouting.state = viewRouting.prevState
+                viewRouting.state = .mainView
             }, label: {
                 Navigation()
                     .foregroundColor(.black)
@@ -55,6 +56,10 @@ struct WordContentNavigation: View {
                         .font(.system(.title2))
                         .overlay(labelOnTheLeft(check: isLoading, action: action))
                 }
+            }
+        }.onAppear{
+            wordVM.getTodayWord { word, statusCode in
+                todayWord = word
             }
         }
     }
