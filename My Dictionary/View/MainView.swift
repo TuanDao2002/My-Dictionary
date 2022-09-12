@@ -73,12 +73,6 @@ struct MainView: View {
                 
                 Spacer()
                 
-                
-                //TODAY WORD SECTION
-//                Text("Today word: ")
-//                    .title()
-//                    .modifier(Hide(check: searchBarTouched))
-                
                 Button(action: {
                     isLoading = true
                     // Set the previous view is main view
@@ -90,14 +84,25 @@ struct MainView: View {
                     }
                 }, label: {
 //                    WordRow(title: isLoading ? "Loading..." : todayWord, userVM: userVM, msg: msg)
-                    Text("TODAY WORD")
+                    if(!isLoading){
+                        Text("TODAY WORD")
+                            .customFont(size: 20)
+                            .padding()
+                    } else {
+                        Text("Loading...")
+                            .customFont(size: 20)
+                            .padding()
+                    }
+                    Spacer()
+                    Image(systemName: "arrow.right")
                         .padding()
                         
                 })
-                .modifier(Hide(check: searchBarTouched))
+                .foregroundColor(Color("Retro-Yellow"))
                 .frame(width: g.size.width - 60)
                 .overlay(RoundedRectangle(cornerRadius: 50)
                 .stroke(.black, lineWidth: 2))
+                .modifier(Hide(check: searchBarTouched))
                 
             }
             .modifier(Padding())
