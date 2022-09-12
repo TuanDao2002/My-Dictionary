@@ -23,7 +23,7 @@ struct Definition: View {
             VStack(alignment: .leading){
                 Text("synonyms:")
                     .bodyHeader()
-                    .modifier(Padding()).opacity(!antonyms.isEmpty ? 1 : 0)
+                    .modifier(Padding()).opacity(!synonyms.isEmpty ? 1 : 0)
                 TextBubble(textArray: synonyms)
                 Text("antonyms:")
                     .bodyHeader()
