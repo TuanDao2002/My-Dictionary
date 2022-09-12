@@ -121,7 +121,6 @@
 		2E38EBA928C1836E00343498 /* SearchHistoryComponents */ = {
 			isa = PBXGroup;
 			children = (
-				2EFB6F1F28BF93BF006FD046 /* Wordrow.swift */,
 				2EFB6F2228BFA9DA006FD046 /* SearchHistory.swift */,
 			);
 			path = SearchHistoryComponents;
@@ -185,6 +184,7 @@
 				343318AC28C244590068A820 /* Navigation.swift */,
 				343318A428C235FC0068A820 /* TextBubble.swift */,
 				342C5F9728C9B2A200B6E65E /* Notification.swift */,
+				2EFB6F1F28BF93BF006FD046 /* Wordrow.swift */,
 			);
 			path = SharedComponents;
 			sourceTree = "<group>";
