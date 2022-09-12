@@ -19,10 +19,10 @@ struct WordContentNavigation: View {
     var body: some View {
         HStack(alignment: .center){
             Button (action: {
-                wordVM.getWordDefinition(searchedWord: todayWord) { msg, word in
-                    self.msg = msg
-                    self.word = word
-                }
+//                wordVM.getWordDefinition(searchedWord: todayWord) { msg, word in
+//                    self.msg = msg
+//                    self.word = word
+//                }
                 viewRouting.state = viewRouting.prevState
             }, label: {
                 Navigation()

@@ -65,13 +65,12 @@ struct MainView: View {
                 Spacer()
                 Text("Today word: ").foregroundColor(.white).frame(maxWidth: .infinity, alignment: .leading).opacity(searchBarTouched ? 0 : 1)
                 Button(action: {
-//                    isLoading = true
+                    isLoading = true
                     wordVM.getWordDefinition(searchedWord: todayWord) { msg, word in
                         self.msg = msg
                         self.word = word
                         isLoading = false
                     }
-                    viewRouting.state = .wordView
                 }, label: {
                     WordRow(title: isLoading ? "Loading..." : todayWord, userVM: userVM, msg: msg)
                 }).frame(height: 60).disabled(searchBarTouched).opacity(searchBarTouched ? 0 : 1)
@@ -94,6 +93,13 @@ struct MainView: View {
                 wordVM.getTodayWord() { msg, status in
                     todayWord = msg
                     isLoading = false
+                }
+            }
+        
+            .onChange(of: self.msg) {
+                newValue in
+                if (self.msg == "Word found") {
+                    viewRouting.state = .wordView
                 }
             }
     }
