@@ -19,7 +19,6 @@ struct WordContentView: View {
             VStack {
                 WordContentNavigation(word: wordVM.getWord())
                     .modifier(Padding())
-                    .padding(.top, 30)
                 
                 GeometryReader {
                     geo in

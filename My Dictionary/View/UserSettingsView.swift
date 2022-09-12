@@ -25,10 +25,8 @@ struct UserSettings: View {
                     viewRouting.state = .mainView
                 }, label: {
                     Navigation()
-                        .padding(.top, 30)
-                        .modifier(LeftAlign())
-                        .foregroundColor(.black)
                 })
+                
                 ScrollView(showsIndicators: false) {
                     Text("\(userVM.getUser()?.username ?? "")")
                         .darkTitle()

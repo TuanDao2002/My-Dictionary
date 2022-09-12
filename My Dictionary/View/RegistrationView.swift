@@ -43,9 +43,6 @@ struct RegistrationView: View {
                     loginFieldFocus = nil
                 }, label: {
                     Navigation()
-                        .padding(.top, 30)
-                        .modifier(LeftAlign())
-                        .foregroundColor(Color("Retro-Gray"))
                 })
                 
                 Text("User Registration")

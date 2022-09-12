@@ -44,11 +44,11 @@ struct MainView: View {
                     .overlay(RoundedRectangle(cornerRadius: 50)
                         .stroke(.black, lineWidth: 2))
                 }
-                .padding(.top, 30)
+                .padding(.top, 40)
                 .modifier(RightAlign())
                 .modifier(Hide(check: searchBarTouched))
                 .modifier(Hide(check: !userVM.isLogin()))
-                .foregroundColor(.black)
+                .foregroundColor(Color("Retro-Gray"))
                 
                 
                 Header()
@@ -75,9 +75,9 @@ struct MainView: View {
                 
                 
                 //TODAY WORD SECTION
-                Text("Today word: ")
-                    .title()
-                    .modifier(Hide(check: searchBarTouched))
+//                Text("Today word: ")
+//                    .title()
+//                    .modifier(Hide(check: searchBarTouched))
                 
                 Button(action: {
                     isLoading = true
@@ -89,9 +89,15 @@ struct MainView: View {
                         isLoading = false
                     }
                 }, label: {
-                    WordRow(title: isLoading ? "Loading..." : todayWord, userVM: userVM, msg: msg)
+//                    WordRow(title: isLoading ? "Loading..." : todayWord, userVM: userVM, msg: msg)
+                    Text("TODAY WORD")
+                        .padding()
+                        
                 })
                 .modifier(Hide(check: searchBarTouched))
+                .frame(width: g.size.width - 60)
+                .overlay(RoundedRectangle(cornerRadius: 50)
+                .stroke(.black, lineWidth: 2))
                 
             }
             .modifier(Padding())

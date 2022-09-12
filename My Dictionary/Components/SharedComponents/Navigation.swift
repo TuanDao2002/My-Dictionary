@@ -19,5 +19,8 @@ struct Navigation: View {
             .padding(.horizontal, 10)
             .padding(.vertical, 7)
             .overlay(RoundedRectangle(cornerRadius: 50).stroke(.black, lineWidth: 2))
+                .padding(.top, 40)
+                .foregroundColor(.black)
+                .modifier(LeftAlign())
     }
 }
