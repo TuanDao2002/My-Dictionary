@@ -116,6 +116,7 @@ struct MainView: View {
         .background(Color("Hard-purple"))
         .onTapGesture {
             withAnimation (.linear(duration: 0.25)){
+                input = ""
                 searchBarTouched = false
                 searchFieldFocus = nil
             }

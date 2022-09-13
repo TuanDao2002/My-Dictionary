@@ -43,6 +43,7 @@ struct SearchBar: View {
                                 .foregroundColor(Color("Retro-Gray"))
                                 .padding()
                                 .onTapGesture {
+                                    searchFieldFocus = nil
                                     withAnimation (.linear(duration: 0.25)){
                                         searchBarTouched = false
                                     }
