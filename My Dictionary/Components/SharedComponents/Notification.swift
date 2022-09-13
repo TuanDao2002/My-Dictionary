@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Notification: View {
     var check: Bool
+    var text: String
     
     var body: some View {
         if check {
@@ -17,12 +18,10 @@ struct Notification: View {
                     .edgesIgnoringSafeArea(.all)
                 ZStack {
                     Color("Retro-Skin")
-                    VStack{
-                        Text("Loading...")
-                    }
+                    Text(text)
                     .padding()
                 }
-                .frame(width: 200, height: 50)
+                .frame(width: 200, height: 100)
                 .cornerRadius(20)
                 
             }

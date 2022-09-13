@@ -27,41 +27,47 @@ struct MainView: View {
     
     @FocusState private var searchFieldFocus: TextFieldFocus?
     
+    @StateObject var network = Network()
+    
     var body: some View {
         GeometryReader{
             g in
             ZStack {
-                VStack{
-                    Spacer()
-                    //SEARCH BAR SECTION
-                    SearchBar(input: $input, searchBarTouched: $searchBarTouched, searchFieldFocus: _searchFieldFocus)
-                        .offset(x: 0, y: searchBarTouched ? -(g.size.height / 3) : 0)
-                    Spacer()
-                    Spacer()
+                Group {
+                    VStack{
+                        Spacer()
+                        //SEARCH BAR SECTION
+                        SearchBar(input: $input, searchBarTouched: $searchBarTouched, searchFieldFocus: _searchFieldFocus)
+                            .offset(x: 0, y: searchBarTouched ? -(g.size.height / 3) : 0)
+                        Spacer()
+                        Spacer()
+                    }
+                    VStack{
+                        //PROFILE NAVIGATION SECTION
+                        ProfileButton(searchBarTouched: searchBarTouched)
+                        
+                        
+                        //HEADER SECTION
+                        Header()
+                            .disabled(searchBarTouched)
+                            .opacity(searchBarTouched ? 0 : 1)
+                        
+                        Spacer()
+                            .frame(height: (g.size.height/4))
+                        Spacer()
+                        
+                        
+                        //TODAY WORD SECTION
+                        TodayWordButton(searchBarTouched: $searchBarTouched, todayWord: todayWord, isLoading: $isLoading, msg: $msg, searchedClicked: $searchedClicked, word: $word, width: g.size.width)
+                    }
                 }
-                VStack{
-                    //PROFILE NAVIGATION SECTION
-                    ProfileButton(searchBarTouched: searchBarTouched)
-                    
-                    
-                    //HEADER SECTION
-                    Header()
-                        .disabled(searchBarTouched)
-                        .opacity(searchBarTouched ? 0 : 1)
-                    
-                    Spacer()
-                        .frame(height: (g.size.height/4))
-                    Spacer()
-                    
-                    
-                    //TODAY WORD SECTION
-                    TodayWordButton(searchBarTouched: $searchBarTouched, todayWord: todayWord, isLoading: $isLoading, msg: $msg, searchedClicked: $searchedClicked, word: $word, width: g.size.width)
-                    
-                }
+                
+                .modifier(Padding())
+                .padding(.bottom, 30)
+                Notification(check: !network.connected, text: "Please connect to network to continue")
+                    .frame(width: g.size.width, height: g.size.height)
             }
             
-            .modifier(Padding())
-            .padding(.bottom, 30)
         }
         .navigationBarHidden(true)
         .background(Color("Hard-purple"))

@@ -38,7 +38,7 @@ struct WordListHistory: View {
                 .padding(.top, 10)
             }
             .modifier(Padding())
-            Notification(check: isLoading)
+            Notification(check: isLoading, text: "Loading...")
                 .transition(AnyTransition.opacity.animation(.easeInOut))
         }
     }

@@ -102,7 +102,7 @@ struct RegistrationView: View {
                     loginFieldFocus = .username
                 }
             }
-            Notification(check: isLoading)
+            Notification(check: isLoading, text: "Loading...")
         }
     }
 }

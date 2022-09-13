@@ -63,7 +63,7 @@ struct UserSettings: View {
                 }
             }
             .modifier(Padding())
-            Notification(check: isLoading)
+            Notification(check: isLoading, text: "Loading...")
         }
     }
 }
