@@ -41,25 +41,7 @@ struct MainView: View {
                 }
                 VStack{
                     //PROFILE NAVIGATION SECTION
-                    Button {
-                        viewRouting.state = .userSetting
-                    } label: {
-                        HStack{
-                            Text("PROFILE")
-                                .customFont(size: 20)
-                                .padding(.leading, 10)
-                            Image(systemName: "chevron.right")
-                        }
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 7)
-                        .overlay(RoundedRectangle(cornerRadius: 50)
-                            .stroke(.black, lineWidth: 2))
-                    }
-                    .padding(.top, 40)
-                    .modifier(RightAlign())
-                    .modifier(Hide(check: searchBarTouched))
-                    .modifier(Hide(check: !userVM.isLogin()))
-                    .foregroundColor(Color("Retro-Gray"))
+                    ProfileButton(searchBarTouched: searchBarTouched)
                     
                     
                     //HEADER SECTION
@@ -73,36 +55,7 @@ struct MainView: View {
                     
                     
                     //TODAY WORD SECTION
-                    Button(action: {
-                        isLoading = true
-                        // Set the previous view is main view
-                        viewRouting.prevState = .mainView
-                        wordVM.getWordDefinition(searchedWord: todayWord) { msg, word in
-                            self.msg = msg
-                            self.word = word
-                            isLoading = false
-                        }
-                    }, label: {
-                        //                    WordRow(title: isLoading ? "Loading..." : todayWord, userVM: userVM, msg: msg)
-                        if(!isLoading){
-                            Text("TODAY WORD")
-                                .customFont(size: 20)
-                                .padding()
-                        } else {
-                            Text("Loading...")
-                                .customFont(size: 20)
-                                .padding()
-                        }
-                        Spacer()
-                        Image(systemName: "arrow.right")
-                            .padding()
-                        
-                    })
-                    .foregroundColor(Color("Retro-Yellow"))
-                    .frame(width: g.size.width - 60)
-                    .overlay(RoundedRectangle(cornerRadius: 50)
-                        .stroke(Color("Retro-Yellow"), lineWidth: 2))
-                    .modifier(Hide(check: searchBarTouched))
+                    TodayWordButton(searchBarTouched: $searchBarTouched, todayWord: todayWord, isLoading: $isLoading, msg: $msg, searchedClicked: $searchedClicked, word: $word, width: g.size.width)
                     
                 }
             }

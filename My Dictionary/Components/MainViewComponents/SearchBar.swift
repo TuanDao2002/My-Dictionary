@@ -29,9 +29,7 @@ struct SearchBar: View {
     var body: some View {
         VStack{
             HStack {
-                
                 TextField("", text: $input)
-                //                    .frame(height: 55)
                     .padding(.horizontal, 50)
                     .modifier(Hide(check: !searchBarTouched))
                     .modifier(TextFieldModifier())
