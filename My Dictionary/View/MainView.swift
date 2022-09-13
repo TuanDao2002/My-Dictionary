@@ -31,10 +31,14 @@ struct MainView: View {
         GeometryReader{
             g in
             ZStack {
-                //SEARCH BAR SECTION
-                SearchBar(input: $input, searchBarTouched: $searchBarTouched, searchFieldFocus: _searchFieldFocus)
-                    .offset(x: 0, y: searchBarTouched ? -(g.size.height / 3) : 0)
-                
+                VStack{
+                    Spacer()
+                    //SEARCH BAR SECTION
+                    SearchBar(input: $input, searchBarTouched: $searchBarTouched, searchFieldFocus: _searchFieldFocus)
+                        .offset(x: 0, y: searchBarTouched ? -(g.size.height / 3) : 0)
+                    Spacer()
+                    Spacer()
+                }
                 VStack{
                     //PROFILE NAVIGATION SECTION
                     Button {
@@ -62,19 +66,27 @@ struct MainView: View {
                     Header()
                         .disabled(searchBarTouched)
                         .opacity(searchBarTouched ? 0 : 1)
-
                     
-                    //SEARCH HISTORY SECTION
-                    Button(action: {
-                        // Change to WordListHistory view
-                        viewRouting.state = .historyView
-                    }, label: {
-                        Text("Search history >>")
-                            .foregroundColor(Color("Retro-Gray"))
-                    })
-                        .modifier(Hide(check: searchBarTouched))
-                        .modifier(Hide(check: !userVM.isLogin()))
+                    Spacer()
+                        .frame(height: (g.size.height/4))
                     
+//                    //SEARCH HISTORY SECTION
+//                    HStack {
+//                        Spacer()
+//                        Button(action: {
+//                            // Change to WordListHistory view
+//                            viewRouting.state = .historyView
+//                        }, label: {
+//                            Text("Search history")
+//                                .underline()
+//                                .subText()
+//                            Image(systemName: "chevron.right")
+//                        })
+//                        .foregroundColor(Color("Retro-Gray"))
+//                        .modifier(Hide(check: searchBarTouched))
+//                        .modifier(Hide(check: !userVM.isLogin()))
+//                        
+//                    }
                     Spacer()
                     
                     
@@ -89,7 +101,7 @@ struct MainView: View {
                             isLoading = false
                         }
                     }, label: {
-    //                    WordRow(title: isLoading ? "Loading..." : todayWord, userVM: userVM, msg: msg)
+                        //                    WordRow(title: isLoading ? "Loading..." : todayWord, userVM: userVM, msg: msg)
                         if(!isLoading){
                             Text("TODAY WORD")
                                 .customFont(size: 20)
@@ -102,12 +114,12 @@ struct MainView: View {
                         Spacer()
                         Image(systemName: "arrow.right")
                             .padding()
-                            
+                        
                     })
                     .foregroundColor(Color("Retro-Yellow"))
                     .frame(width: g.size.width - 60)
                     .overlay(RoundedRectangle(cornerRadius: 50)
-                    .stroke(Color("Retro-Yellow"), lineWidth: 2))
+                        .stroke(Color("Retro-Yellow"), lineWidth: 2))
                     .modifier(Hide(check: searchBarTouched))
                     
                 }
@@ -125,7 +137,7 @@ struct MainView: View {
                 searchFieldFocus = nil
             }
         }
-    
+        
         .onAppear{
             isLoading = true
             wordVM.getTodayWord() { msg, status in
@@ -133,7 +145,7 @@ struct MainView: View {
                 isLoading = false
             }
         }
-    
+        
         .onChange(of: self.msg) {
             newValue in
             if (self.msg == "Word found") {

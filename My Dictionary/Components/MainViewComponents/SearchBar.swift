@@ -29,10 +29,12 @@ struct SearchBar: View {
     var body: some View {
         VStack{
             HStack {
-                TextField("Search", text: $input)
-//                    .frame(height: 55)
+                
+                TextField("", text: $input)
+                //                    .frame(height: 55)
                     .padding(.horizontal, 50)
-                    .opacity(searchBarTouched ? 1 : 0)
+                
+                    .modifier(Hide(check: !searchBarTouched))
                     .modifier(TextFieldModifier())
                     .focused($searchFieldFocus, equals: .Search)
                 
@@ -48,7 +50,7 @@ struct SearchBar: View {
                                         searchBarTouched = false
                                     }
                                 }
-                                .opacity(searchBarTouched ? 1 : 0)
+                                .modifier(Hide(check: !searchBarTouched))
                             Spacer()
                             Image(systemName: "magnifyingglass")
                                 .foregroundColor(Color("Retro-Gray"))
@@ -62,12 +64,12 @@ struct SearchBar: View {
                                     }
                                 }
                         }
-                            
+                        
                     )
                     .onTapGesture {
                         withAnimation (.linear(duration: 0.25)){
                             searchBarTouched = true
-
+                            
                         }
                     }
                     .onChange(of: searchBarTouched){
@@ -86,15 +88,34 @@ struct SearchBar: View {
                             self.word = word
                         }
                     }
+                
             }
-//            .padding(.vertical, 20)
             .overlay(
                 Text("Tap here to search")
+                    .subText()
                     .foregroundColor(Color("Retro-Gray"))
                     .disabled(searchBarTouched ? true : false)
-                    .opacity(searchBarTouched ? 0 : 1)
+                    .modifier(Hide(check: searchBarTouched))
             )
+            .padding(.top, 120)
             
+            HStack {
+                Spacer()
+                Button(action: {
+                    // Change to WordListHistory view
+                    viewRouting.state = .historyView
+                }, label: {
+                    Text("Search history")
+                        .underline()
+                        .subText()
+                    Image(systemName: "chevron.right")
+                })
+                .foregroundColor(Color("Retro-Gray"))
+                .modifier(Hide(check: !searchBarTouched))
+                .modifier(Hide(check: !userVM.isLogin()))
+                
+            }
+            .padding(.bottom, 50)
             
             Button {
                 if msg == "Word found"{
@@ -114,9 +135,9 @@ struct SearchBar: View {
                 }
             }.opacity(searchedClicked && msg != "Please enter a word" && msg != "Please enter a valid English word" && msg != "Word not found" && msg != "Error" ? 1 : 0)
             
-//            if (searchedClicked && msg != "Word found" && msg != "Loading...") {
-//                Text(msg)
-//            }
+            //            if (searchedClicked && msg != "Word found" && msg != "Loading...") {
+            //                Text(msg)
+            //            }
         }
     }
 }
