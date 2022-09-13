@@ -58,11 +58,13 @@ struct MainView: View {
                     .foregroundColor(Color("Retro-Gray"))
                     
                     
+                    //HEADER SECTION
                     Header()
                         .disabled(searchBarTouched)
                         .opacity(searchBarTouched ? 0 : 1)
 
                     
+                    //SEARCH HISTORY SECTION
                     Button(action: {
                         // Change to WordListHistory view
                         viewRouting.state = .historyView
@@ -75,6 +77,8 @@ struct MainView: View {
                     
                     Spacer()
                     
+                    
+                    //TODAY WORD SECTION
                     Button(action: {
                         isLoading = true
                         // Set the previous view is main view
