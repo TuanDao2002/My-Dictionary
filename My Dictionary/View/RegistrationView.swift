@@ -10,8 +10,8 @@
 import SwiftUI
 
 enum LogInField {
-    case Username
-    case Password
+    case username
+    case password
 }
 
 struct RegistrationView: View {
@@ -27,11 +27,11 @@ struct RegistrationView: View {
     @State private var status: Int = -1
     @State private var user: User?
     
+    @State private var isLoading: Bool = false
     @State private var showingAlert = false
     
     @FocusState private var loginFieldFocus: LogInField?
     
-    @State private var isLoading: Bool = false
     var body: some View {
         ZStack{
             // Background color
@@ -50,45 +50,20 @@ struct RegistrationView: View {
                     .modifier(LeftAlign())
                 Spacer()
                 
-                //Username
+                //USERNAME INPUT FIELD HERE
                 InputField(header: "Username", textFieldName: "", name: $username)
-                    .focused($loginFieldFocus, equals: .Username)
+                    .focused($loginFieldFocus, equals: .username)
                     .onSubmit {
-                        loginFieldFocus = .Password
+                        loginFieldFocus = .password
                     }
                 
                 Spacer()
                     .frame(height: 30)
                 
-                //Password
+                //PASSWORD INPUT FIELD HERE
                 PasswordField(header: "Password", textFieldName: "", name: $password)
-                    .focused($loginFieldFocus, equals: .Password)
+                    .focused($loginFieldFocus, equals: .password)
                     .onSubmit {
-                        loginFieldFocus = .Username
-                    }
-                Spacer()
-                    .frame(height: 50)
-                HStack {
-                    //Register button
-                    Button() {
-                        loginFieldFocus = nil
-                        Task {
-                            isLoading = true
-                            userVM.register(username: username, password: password) { msg, status in
-                                isLoading = false
-                                self.msg = msg
-                                self.status = status
-                                showingAlert = true
-                            }
-                        }
-                    } label: {
-                        Text("Register")
-                            .buttonText()
-                    }
-                    .modifier(ButtonModifier())
-                    
-                    //Log in button
-                    Button() {
                         loginFieldFocus = nil
                         Task {
                             isLoading = true
@@ -100,15 +75,17 @@ struct RegistrationView: View {
                                 showingAlert = true
                             }
                         }
-                    } label: {
-                        Text("Log in")
-                            .buttonText()
                     }
-                    .modifier(ButtonModifier())
-                    .background(Color("Retro-Yellow"))
-                    .cornerRadius(10)
+                Spacer()
+                    .frame(height: 50)
+                HStack {
+                    //Log in button
+                    LogInButton(username: $username, password: $password, msg: $msg, status: $status, isLoading: $isLoading, showingAlert: $showingAlert, loginFieldFocus: _loginFieldFocus)
+                    
+                    //Register button
+                    RegisterButton(username: $username, password: $password, msg: $msg, status: $status, user: $user, isLoading: $isLoading, showingAlert: $showingAlert, loginFieldFocus: _loginFieldFocus)
+                    
                 }
-                
                 Spacer()
                 
             }
@@ -122,7 +99,7 @@ struct RegistrationView: View {
             }
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    loginFieldFocus = .Username
+                    loginFieldFocus = .username
                 }
             }
             Notification(check: isLoading)

@@ -13,7 +13,6 @@ struct UserSettings: View {
     @EnvironmentObject var viewRouting: ViewRouting
     
     @State var msg = ""
-    @State var word: Word?
     @State private var isLoading = false
     
     var body: some View {
@@ -49,18 +48,10 @@ struct UserSettings: View {
                     Text("Favorite words")
                         .darkTitle()
                         .modifier(LeftAlign())
+                    
+                    
                     ForEach(userVM.getUserFavoriteWords(), id: \.self) { favWord in
-                        //                        WordRow(title: favWord, userVM: userVM)
-                        Button(action: {
-                            wordVM.getWordDefinition(searchedWord: favWord) { msg, word in
-                                isLoading = true
-                                self.msg = msg
-                                self.word = word
-                            }
-                        }, label: {
-                            WordRow(title: favWord, userVM: userVM, msg: msg)
-                        })
-                        .frame(height: 60)
+                        WordRow_Button(title: favWord, isLoading: $isLoading, msg: $msg)
                     }
                     .onChange(of: msg, perform: { newValue in
                         if msg == "Word found"{

@@ -24,6 +24,7 @@
 		343318AD28C244590068A820 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343318AC28C244590068A820 /* Navigation.swift */; };
 		343DBE1D28C6044300BB728F /* UserSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343DBE1C28C6044300BB728F /* UserSettingsView.swift */; };
 		344E038A28CF8A01005B90FC /* ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344E038928CF8A01005B90FC /* ViewModifier.swift */; };
+		344E038C28D03CA1005B90FC /* RegisterViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344E038B28D03CA1005B90FC /* RegisterViewButton.swift */; };
 		34F62BCF28BF53390052488C /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BCE28BF53390052488C /* RegistrationView.swift */; };
 		34F62BD328BF5A990052488C /* TextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BD228BF5A990052488C /* TextModifier.swift */; };
 		34F62BD528BF5B1D0052488C /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F62BD428BF5B1D0052488C /* TextFieldModifier.swift */; };
@@ -75,6 +76,7 @@
 		343318AC28C244590068A820 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		343DBE1C28C6044300BB728F /* UserSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsView.swift; sourceTree = "<group>"; };
 		344E038928CF8A01005B90FC /* ViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifier.swift; sourceTree = "<group>"; };
+		344E038B28D03CA1005B90FC /* RegisterViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewButton.swift; sourceTree = "<group>"; };
 		34F62BCE28BF53390052488C /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		34F62BD228BF5A990052488C /* TextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifier.swift; sourceTree = "<group>"; };
 		34F62BD428BF5B1D0052488C /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				342C5F9528C9AFAF00B6E65E /* ActionButton.swift */,
+				344E038B28D03CA1005B90FC /* RegisterViewButton.swift */,
 			);
 			path = RegisterComponents;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				342C5F9628C9AFAF00B6E65E /* ActionButton.swift in Sources */,
 				2E9885DB28C209EC00C73C6E /* WordContentView.swift in Sources */,
 				A46BE05D28C0667200BB542E /* Test.swift in Sources */,
+				344E038C28D03CA1005B90FC /* RegisterViewButton.swift in Sources */,
 				5F4E2CE528CF59EF00BBED23 /* LottieView.swift in Sources */,
 				A4B79E9228C269AC00C0A0D3 /* DropdownMenu.swift in Sources */,
 				34F62BD328BF5A990052488C /* TextModifier.swift in Sources */,

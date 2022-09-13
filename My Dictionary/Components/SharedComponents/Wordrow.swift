@@ -54,3 +54,27 @@ struct TopWord_Previews: PreviewProvider {
         
     }
 }
+
+struct WordRow_Button: View {
+    @EnvironmentObject var userVM: UserViewModel
+    @EnvironmentObject var wordVM: WordViewModel
+    @EnvironmentObject var viewRouting: ViewRouting
+    
+    var title: String
+    
+    @Binding var isLoading: Bool
+    @Binding var msg: String
+    
+    var body: some View {
+        Button(action: {
+            isLoading = true
+            wordVM.getWordDefinition(searchedWord: title) { msg, word in
+                self.msg = msg
+                isLoading = false
+            }
+        }, label: {
+            WordRow(title: title, userVM: userVM, msg: msg)
+        })
+        .frame(height: 60)
+    }
+}

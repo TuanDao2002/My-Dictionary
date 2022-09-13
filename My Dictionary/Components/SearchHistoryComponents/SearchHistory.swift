@@ -15,22 +15,12 @@ struct SearchHistory: View {
     @EnvironmentObject var viewRouting: ViewRouting
     
     @State var msg = ""
-    @State var word: Word?
     @Binding var isLoading: Bool
     
     var body: some View {
         VStack{
             ForEach(userVM.getUserSearchedWords(), id: \.self) { searchedWord in
-                Button(action: {
-                    isLoading = true
-                    wordVM.getWordDefinition(searchedWord: searchedWord) { msg, word in
-                        self.msg = msg
-                        self.word = word
-                        isLoading = false
-                    }
-                }, label: {
-                    WordRow(title: searchedWord, userVM: userVM, msg: msg)
-                }).frame(height: 60)
+                WordRow_Button(title: searchedWord, isLoading: $isLoading, msg: $msg)
             }
         }.onChange(of: msg, perform: { newValue in
             if msg == "Word found"{
@@ -40,11 +30,3 @@ struct SearchHistory: View {
         })
     }
 }
-
-//struct SearchHistory_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchHistory(isLoading: false)
-//            .environmentObject(UserViewModel.obj)
-//            .environmentObject(ViewRouting())
-//    }
-//}
