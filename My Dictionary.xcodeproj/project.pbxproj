@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E7BA14428C9812300B31DE0 /* playSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7BA14328C9812300B31DE0 /* playSound.swift */; };
+		2E7BA14428C9812300B31DE0 /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7BA14328C9812300B31DE0 /* PlaySound.swift */; };
 		2E9885DB28C209EC00C73C6E /* WordContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9885DA28C209EC00C73C6E /* WordContentView.swift */; };
 		2E9885E628C20D5800C73C6E /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9885E528C20D5800C73C6E /* SearchBar.swift */; };
 		2EFB6F1728BF68AB006FD046 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB6F1628BF68AB006FD046 /* MainView.swift */; };
@@ -60,7 +60,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2E7BA14328C9812300B31DE0 /* playSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playSound.swift; sourceTree = "<group>"; };
+		2E7BA14328C9812300B31DE0 /* PlaySound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
 		2E9885DA28C209EC00C73C6E /* WordContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordContentView.swift; sourceTree = "<group>"; };
 		2E9885E528C20D5800C73C6E /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		2EFB6F1628BF68AB006FD046 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -327,7 +327,7 @@
 			children = (
 				A479598A28C2150D0058BEF0 /* PostRequest.swift */,
 				A4DB226828C2F9B500FA14BA /* GetRequest.swift */,
-				2E7BA14328C9812300B31DE0 /* playSound.swift */,
+				2E7BA14328C9812300B31DE0 /* PlaySound.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -429,7 +429,7 @@
 				2EFB6F1728BF68AB006FD046 /* MainView.swift in Sources */,
 				A464978E28BE52DD004A5070 /* WordViewModel.swift in Sources */,
 				A479598B28C2150D0058BEF0 /* PostRequest.swift in Sources */,
-				2E7BA14428C9812300B31DE0 /* playSound.swift in Sources */,
+				2E7BA14428C9812300B31DE0 /* PlaySound.swift in Sources */,
 				34F62BCF28BF53390052488C /* RegistrationView.swift in Sources */,
 				A4B79E9628C269CF00C0A0D3 /* WordContentHeader.swift in Sources */,
 				2E9885E628C20D5800C73C6E /* SearchBar.swift in Sources */,
