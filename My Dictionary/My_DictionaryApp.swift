@@ -14,57 +14,25 @@ struct My_DictionaryApp: App {
     
     @State var isActive:Bool = false
     
-//    var body: some View {
-//        VStack {
-//            // 2.
-//            if self.isActive {
-//                // 3.
-//                MainView()
-//            } else {
-//                // 4.
-//                LottieView(name: "dictionary", loopMode: .playOnce)
-//            }
-//        }
-//        // 5.
-//        .onAppear {
-//            // 6.
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-//                // 7.
-//                withAnimation(.easeInOut){
-//                    self.isActive = true
-//                }
-//            }
-//        }
-//    }
     var body: some Scene {
         WindowGroup {
             VStack {
-                // 2.
                 if self.isActive {
-                    // 3.
                     rootView
                         .environmentObject(viewRouting)
                         .environmentObject(UserViewModel.obj)
                         .environmentObject(WordViewModel())
                 } else {
-                    // 4.
                     LottieView(name: "dictionary", loopMode: .playOnce)
                 }
             }
-            // 5.
             .onAppear {
-                // 6.
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
-                    // 7.
                     withAnimation(.easeInOut){
                         self.isActive = true
                     }
                 }
             }
-//            rootView
-//                .environmentObject(viewRouting)
-//                .environmentObject(UserViewModel.obj)
-//                .environmentObject(WordViewModel())
         }
     }
     
