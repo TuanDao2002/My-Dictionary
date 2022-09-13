@@ -54,7 +54,7 @@ struct My_DictionaryApp: App {
             // 5.
             .onAppear {
                 // 6.
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
                     // 7.
                     withAnimation(.easeInOut){
                         self.isActive = true
