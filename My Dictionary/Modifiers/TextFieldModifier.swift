@@ -12,7 +12,7 @@ struct TextFieldModifier: ViewModifier {
         content
             .textFieldStyle(PlainTextFieldStyle())
             .padding(.leading, 17)
-            .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 55)
+            .frame(height: 55)
             .accentColor(Color("Purple"))
             .font(.custom("SpaceGrotesk-Regular", size: 15))
             .foregroundColor(.white)

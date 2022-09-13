@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum Search {
+enum TextFieldFocus {
     case Search
 }
 
@@ -23,17 +23,20 @@ struct SearchBar: View {
     @State private var searchedClicked = false
     @State var word: Word?
     
-    @FocusState private var searchFieldFocus: Search?
+    
+    @FocusState var searchFieldFocus: TextFieldFocus?
     
     var body: some View {
         VStack{
             HStack {
                 TextField("Search", text: $input)
+//                    .frame(height: 55)
                     .padding(.horizontal, 50)
                     .opacity(searchBarTouched ? 1 : 0)
                     .modifier(TextFieldModifier())
+                    .focused($searchFieldFocus, equals: .Search)
+                
                     .background(Color("Hard-purple"))
-                    .accentColor(Color("Retro-Gray"))
                     .overlay(
                         HStack {
                             Image(systemName: "chevron.left")
@@ -58,7 +61,7 @@ struct SearchBar: View {
                                     }
                                 }
                         }
-                            .frame(maxWidth: .infinity)
+                            
                     )
                     .onTapGesture {
                         withAnimation (.linear(duration: 0.25)){
@@ -66,14 +69,31 @@ struct SearchBar: View {
 
                         }
                     }
+                    .onChange(of: searchBarTouched){
+                        newValue in
+                        if(newValue){
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                searchFieldFocus = .Search
+                            }
+                        }
+                    }
+                    .onSubmit {
+                        self.msg = "Loading..."
+                        searchedClicked = true
+                        wordVM.getWordDefinition(searchedWord: input) { msg, word in
+                            self.msg = msg
+                            self.word = word
+                        }
+                    }
             }
-            .padding(.vertical, 20)
+//            .padding(.vertical, 20)
             .overlay(
                 Text("Tap here to search")
                     .foregroundColor(Color("Retro-Gray"))
                     .disabled(searchBarTouched ? true : false)
                     .opacity(searchBarTouched ? 0 : 1)
             )
+            
             
             Button {
                 if msg == "Word found"{
@@ -93,9 +113,9 @@ struct SearchBar: View {
                 }
             }.opacity(searchedClicked && msg != "Please enter a word" && msg != "Please enter a valid English word" && msg != "Word not found" && msg != "Error" ? 1 : 0)
             
-            if (searchedClicked && msg != "Word found" && msg != "Loading...") {
-                Text(msg)
-            }
+//            if (searchedClicked && msg != "Word found" && msg != "Loading...") {
+//                Text(msg)
+//            }
         }
     }
 }

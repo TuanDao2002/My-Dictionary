@@ -47,7 +47,8 @@ struct WordContentNavigation: View {
             } label: {
                 if (userVM.isLogin()) {
                     Image(systemName: userVM.getUserFavoriteWords().contains(word?.word ?? "") ? "star.fill" : "star")
-                        .foregroundColor(Color("Hard-purple"))
+                        .padding(.top, 40)
+                        .foregroundColor(Color("Retro-Brown"))
                         .font(.system(.title2))
                         .overlay(labelOnTheLeft(check: isLoading, action: action))
                 }
@@ -67,7 +68,8 @@ func labelOnTheLeft(check: Bool, action: String) -> some View {
             Text(action)
                 .subText()
                 .fixedSize()
-                .foregroundColor(Color("Hard-purple"))
+                .padding(.top, 45)
+                .foregroundColor(Color("Retro-Brown"))
                 .padding(.trailing)
                 .offset(x: -proxy.size.width + 10)
                 .frame(width: proxy.size.width, alignment: .trailing)
