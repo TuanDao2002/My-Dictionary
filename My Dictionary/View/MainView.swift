@@ -69,24 +69,6 @@ struct MainView: View {
                     
                     Spacer()
                         .frame(height: (g.size.height/4))
-                    
-//                    //SEARCH HISTORY SECTION
-//                    HStack {
-//                        Spacer()
-//                        Button(action: {
-//                            // Change to WordListHistory view
-//                            viewRouting.state = .historyView
-//                        }, label: {
-//                            Text("Search history")
-//                                .underline()
-//                                .subText()
-//                            Image(systemName: "chevron.right")
-//                        })
-//                        .foregroundColor(Color("Retro-Gray"))
-//                        .modifier(Hide(check: searchBarTouched))
-//                        .modifier(Hide(check: !userVM.isLogin()))
-//                        
-//                    }
                     Spacer()
                     
                     

@@ -33,7 +33,6 @@ struct SearchBar: View {
                 TextField("", text: $input)
                 //                    .frame(height: 55)
                     .padding(.horizontal, 50)
-                
                     .modifier(Hide(check: !searchBarTouched))
                     .modifier(TextFieldModifier())
                     .focused($searchFieldFocus, equals: .Search)
@@ -106,7 +105,6 @@ struct SearchBar: View {
                     viewRouting.state = .historyView
                 }, label: {
                     Text("Search history")
-                        .underline()
                         .subText()
                     Image(systemName: "chevron.right")
                 })
@@ -115,29 +113,39 @@ struct SearchBar: View {
                 .modifier(Hide(check: !userVM.isLogin()))
                 
             }
-            .padding(.bottom, 50)
+            .padding(.bottom, 30)
             
-            Button {
-                if msg == "Word found"{
+            //DISPLAY WORD ON SEARCH OR MESSAGE
+            if msg == "Word found"{
+                Button {
                     viewRouting.state = .wordView
                     viewRouting.prevState = .mainView
+                } label: {
+                    WordRow(title: word?.word ?? msg, userVM: userVM, msg: msg)
                 }
-            } label: {
-                WordRow(title: word?.word ?? msg, userVM: userVM, msg: msg)
+                .frame(height: searchBarTouched ? nil : 0)
+                .opacity(input.isEmpty ? 0 : 1)
+                .onChange(of: input) { msg in
+                    if input.isEmpty{
+                        self.msg = ""
+                        word = nil
+                        searchedClicked = false
+                    }
+                }
+                .modifier(Hide(check: !searchedClicked))
+            } else {
+                HStack {
+                    Spacer()
+                    Text(msg)
+                        .subText()
+                    Spacer()
+                }
+                .frame(height: 65)
+                .background(.white)
+                .cornerRadius(10)
+                .modifier(Hide(check: !searchBarTouched))
+                .modifier(Hide(check: !searchedClicked))
             }
-            .frame(height: searchBarTouched ? nil : 0)
-            .opacity(input.isEmpty ? 0 : 1)
-            .onChange(of: input) { msg in
-                if input.isEmpty{
-                    self.msg = ""
-                    word = nil
-                    searchedClicked = false
-                }
-            }.opacity(searchedClicked && msg != "Please enter a word" && msg != "Please enter a valid English word" && msg != "Word not found" && msg != "Error" ? 1 : 0)
-            
-            //            if (searchedClicked && msg != "Word found" && msg != "Loading...") {
-            //                Text(msg)
-            //            }
         }
     }
 }
