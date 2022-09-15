@@ -10,6 +10,7 @@ import SwiftUI
 struct WordContentHeader: View {
     var word: Word?
     @State var soundButtonTouched = false
+    @State var isLoading = false
     @StateObject private var soundManager = SoundManager()
     
     @EnvironmentObject var wordVM: WordViewModel
@@ -20,6 +21,10 @@ struct WordContentHeader: View {
                 .modifier(LeftAlign())
             HStack(spacing: 5){
                 Image(systemName: "speaker.wave.2.fill").onTapGesture {
+                    isLoading = true
+                    withAnimation(Animation.easeInOut(duration: 1.5)) {
+                        isLoading = false
+                    }
                     soundManager.playSound(sound: word?.audio ?? "")
                     soundButtonTouched.toggle()
                     if soundButtonTouched{
@@ -30,8 +35,13 @@ struct WordContentHeader: View {
                     }
                 }
                 .font(.system(size: 30))
-                Text("\(word?.text ?? "")")
-                    .subtitle()
+                if isLoading {
+                    Text("Loading...")
+                        .subtitle()
+                } else {
+                    Text("\(word?.text ?? "")")
+                        .subtitle()
+                }
             }.opacity(word?.audio == "" ? 0 : 1)
         }
     }
