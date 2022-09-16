@@ -1,12 +1,18 @@
-//
-//  Word.swift
-//  My Dictionary
-//
-//  Created by Tuan Dao on 30/08/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 3
+  Author: Dao Kha Tuan
+  ID: s3877347
+  Created date: 30/08/2022
+  Last modified: 16/09/2002
+  Acknowledgement: Acknowledge the resources that you use here.
+*/
 
 import Foundation
 
+// Model to store information of a word
 struct Word: Codable {
     var word: String
     var text: String = ""

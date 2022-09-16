@@ -1,22 +1,23 @@
-//
-//  UserViewModel.swift
-//  My Dictionary
-//
-//  Created by Tuan Dao on 30/08/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 3
+  Author: Dao Kha Tuan
+  ID: s3877347
+  Created date: 30/08/2022
+  Last modified: 16/09/2002
+  Acknowledgement: Acknowledge the resources that you use here.
+*/
 
 import Foundation
 
 let api = "https://cosc2659dictionary.herokuapp.com/api"
 
+// ViewModel to fetch the data of users from API
 final class UserViewModel: ObservableObject {
-//    @Published var user: User?
     static let obj = UserViewModel()
-    
-//    private init() {
-//        self.user = getUser()
-//    }
-    
+
     // get the current user
     func getUser() -> User?{
         if let userData = UserDefaults.standard.data(forKey: "user") {
@@ -38,9 +39,7 @@ final class UserViewModel: ObservableObject {
         }
         do {
             let userData = try JSONEncoder().encode(user)
-            UserDefaults.standard.set(userData, forKey: "user")
-            
-//            self.user = user
+            UserDefaults.standard.set(userData, forKey: "user")            
         } catch {
             print(error.localizedDescription)
         }
