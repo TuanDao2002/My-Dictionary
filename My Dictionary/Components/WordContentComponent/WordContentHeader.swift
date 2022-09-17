@@ -37,6 +37,7 @@ struct WordContentHeader: View {
                     }
                 }
                 .font(.system(size: 30))
+                .foregroundColor(.black)
                 if isLoading {
                     Text("Loading...")
                         .subtitle()

@@ -89,8 +89,7 @@ struct SearchBar: View {
             }
             .overlay(
                 Text("Tap here to search")
-                    .subText()
-                    .foregroundColor(Color("Retro-Gray"))
+                    .subText2()
                     .disabled(searchBarTouched ? true : false)
                     .modifier(Hide(check: searchBarTouched))
             )
@@ -103,7 +102,7 @@ struct SearchBar: View {
                     viewRouting.state = .historyView
                 }, label: {
                     Text("Search history")
-                        .subText()
+                        .subText2()
                     Image(systemName: "chevron.right")
                 })
                 .foregroundColor(Color("Retro-Gray"))
@@ -139,7 +138,7 @@ struct SearchBar: View {
                     Spacer()
                 }
                 .frame(height: 65)
-                .background(.white)
+                .background(Color("Retro-Gray"))
                 .cornerRadius(10)
                 .modifier(Hide(check: !searchBarTouched))
                 .modifier(Hide(check: !searchedClicked))

@@ -20,12 +20,12 @@
         }
       ],
       "color" : {
-        "color-space" : "srgb",
+        "color-space" : "display-p3",
         "components" : {
           "alpha" : "1.000",
-          "blue" : "0.306",
-          "green" : "0.733",
-          "red" : "0.871"
+          "blue" : "0.297",
+          "green" : "0.578",
+          "red" : "0.664"
         }
       },
       "idiom" : "universal"

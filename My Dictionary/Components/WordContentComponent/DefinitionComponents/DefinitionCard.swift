@@ -17,6 +17,7 @@ struct DefinitionCard: View {
                 .padding(.horizontal, 13)
                 .padding(.vertical, 7)
                 .overlay(RoundedRectangle(cornerRadius: 50).stroke(.black, lineWidth: 1))
+                .foregroundColor(.black)
             HStack {
                 Text("\(definition.definition)")
                     .bodyText()

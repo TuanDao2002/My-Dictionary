@@ -42,7 +42,7 @@ struct WordRow: View {
         }
         .padding()
         .frame(maxHeight: 65)
-        .background(.white)
+        .background(Color("Retro-Gray"))
         .cornerRadius(10)
     }
 }

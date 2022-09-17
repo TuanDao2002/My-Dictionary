@@ -66,5 +66,11 @@ extension Text {
     
     func subText() -> some View{
         self.font(.custom("SpaceGrotesk-Regular", size: 17))
+            .foregroundColor(.black)
+    }
+    
+    func subText2() -> some View{
+        self.font(.custom("SpaceGrotesk-Regular", size: 17))
+            .foregroundColor(Color("Retro-Gray"))
     }
 }
