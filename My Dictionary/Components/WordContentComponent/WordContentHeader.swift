@@ -22,8 +22,10 @@ struct WordContentHeader: View {
             HStack(spacing: 5){
                 Image(systemName: "speaker.wave.2.fill").onTapGesture {
                     isLoading = true
-                    withAnimation(Animation.easeInOut(duration: 1.5)) {
-                        isLoading = false
+                    withAnimation() {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                            isLoading = false
+                        }
                     }
                     soundManager.playSound(sound: word?.audio ?? "")
                     soundButtonTouched.toggle()
