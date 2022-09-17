@@ -31,6 +31,7 @@ struct WordRow: View {
             Image(systemName: isFavorite ? "star.fill" : "star")
                 .foregroundColor(Color("Retro-Blue"))
                 .font(.system(.title2))
+                .opacity(userVM.isLogin() ? 1 : 0)
             Text(title.firstCapitalized)
                 .subText()
                 .foregroundColor(.black)
