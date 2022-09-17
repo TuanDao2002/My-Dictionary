@@ -36,8 +36,13 @@ struct WordContentHeader: View {
                         soundManager.audioPlayer?.pause()
                     }
                 }
-                .font(.system(size: 30))
-                .foregroundColor(.black)
+                .font(.system(size: 20))
+                .padding(.horizontal, 20)
+                .padding(.vertical, 10)
+                .foregroundColor(.white)
+                .overlay(RoundedRectangle(cornerRadius: 50).stroke(.black, lineWidth: 2))
+                    .background(Color("Retro-Brown-Light"))
+                    .cornerRadius(50)
                 if isLoading {
                     Text("Loading...")
                         .subtitle()

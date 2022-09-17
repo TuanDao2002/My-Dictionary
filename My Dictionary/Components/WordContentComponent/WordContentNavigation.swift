@@ -48,7 +48,7 @@ struct WordContentNavigation: View {
                 if (userVM.isLogin()) {
                     Image(systemName: userVM.getUserFavoriteWords().contains(word?.word ?? "") ? "star.fill" : "star")
                         .padding(.top, 40)
-                        .foregroundColor(Color("Retro-Brown"))
+                        .foregroundColor(Color("Retro-Brown-Light"))
                         .font(.system(.title2))
                         .overlay(labelOnTheLeft(check: isLoading, action: action))
                 }
