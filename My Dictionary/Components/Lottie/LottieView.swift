@@ -7,6 +7,7 @@
 import SwiftUI
 import Lottie
 
+// this view is used to display Lottie animation for the splash view
 struct LottieView: UIViewRepresentable {
     var name: String
     var loopMode: LottieLoopMode
