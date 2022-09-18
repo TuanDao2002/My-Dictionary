@@ -1,9 +1,14 @@
-//
-//  SearchBar.swift
-//  My Dictionary
-//
-//  Created by Bui Quang An on 02/09/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 3
+  Author: Bui Quang An
+  ID: s3877482
+  Created date: 02/09/2022
+  Last modified: 16/09/2002
+  Acknowledgement: Acknowledge the resources that you use here.
+*/
 
 import SwiftUI
 
@@ -14,6 +19,8 @@ enum TextFieldFocus {
 struct SearchBar: View {
     @Binding var input: String
     @Binding var searchBarTouched: Bool
+    
+    // Global object to change view of app
     
     @EnvironmentObject var userVM: UserViewModel
     @EnvironmentObject var wordVM: WordViewModel
@@ -29,6 +36,7 @@ struct SearchBar: View {
     var body: some View {
         VStack{
             HStack {
+//              Input field
                 TextField("", text: $input)
                     .padding(.horizontal, 50)
                     .modifier(Hide(check: !searchBarTouched))
@@ -38,6 +46,7 @@ struct SearchBar: View {
                     .background(Color("Hard-purple"))
                     .overlay(
                         HStack {
+//                          "Back" button
                             Image(systemName: "chevron.left")
                                 .foregroundColor(Color("Retro-Gray"))
                                 .padding()
@@ -49,6 +58,7 @@ struct SearchBar: View {
                                 }
                                 .modifier(Hide(check: !searchBarTouched))
                             Spacer()
+//                          "Search" button
                             Image(systemName: "magnifyingglass")
                                 .foregroundColor(Color("Retro-Gray"))
                                 .padding()
@@ -78,6 +88,7 @@ struct SearchBar: View {
                         }
                     }
                     .onSubmit {
+//                      Loading effect
                         self.msg = "Loading..."
                         searchedClicked = true
                         wordVM.getWordDefinition(searchedWord: input) { msg, word in

@@ -1,9 +1,14 @@
-//
-//  WordContentHeader.swift
-//  My Dictionary
-//
-//  Created by Bui Quang An on 02/09/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 3
+  Author: Bui Quang An
+  ID: s3877482
+  Created date: 02/09/2022
+  Last modified: 16/09/2002
+  Acknowledgement: Acknowledge the resources that you use here.
+*/
 
 import SwiftUI
 
@@ -16,10 +21,12 @@ struct WordContentHeader: View {
     @EnvironmentObject var wordVM: WordViewModel
     var body: some View {
         VStack(alignment: .leading){
+//          Display word title
             Text("\(word?.word.capitalized ?? "")")
                 .blackTitle()
                 .modifier(LeftAlign())
             HStack(spacing: 5){
+//              Audio button
                 Image(systemName: "speaker.wave.2.fill").onTapGesture {
                     isLoading = true
                     withAnimation() {
@@ -43,10 +50,12 @@ struct WordContentHeader: View {
                 .overlay(RoundedRectangle(cornerRadius: 50).stroke(.black, lineWidth: 2))
                     .background(Color("Retro-Brown-Light"))
                     .cornerRadius(50)
+//              Loading effect
                 if isLoading {
                     Text("Loading...")
                         .subtitle()
                 } else {
+//                  Pronounciation note
                     Text("\(word?.text ?? "")")
                         .subtitle()
                 }

@@ -52,7 +52,6 @@
 		A4B79E8E28C267AE00C0A0D3 /* DefinitionCardCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B79E8B28C267AE00C0A0D3 /* DefinitionCardCollection.swift */; };
 		A4B79E8F28C267AE00C0A0D3 /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B79E8C28C267AE00C0A0D3 /* Definition.swift */; };
 		A4B79E9028C267AE00C0A0D3 /* DefinitionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B79E8D28C267AE00C0A0D3 /* DefinitionCard.swift */; };
-		A4B79E9228C269AC00C0A0D3 /* DropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B79E9128C269AC00C0A0D3 /* DropdownMenu.swift */; };
 		A4B79E9528C269CF00C0A0D3 /* WordContentNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B79E9328C269CF00C0A0D3 /* WordContentNavigation.swift */; };
 		A4B79E9628C269CF00C0A0D3 /* WordContentHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B79E9428C269CF00C0A0D3 /* WordContentHeader.swift */; };
 		A4DB226728C2F98A00FA14BA /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB226628C2F98A00FA14BA /* Response.swift */; };
@@ -105,7 +104,6 @@
 		A4B79E8B28C267AE00C0A0D3 /* DefinitionCardCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefinitionCardCollection.swift; sourceTree = "<group>"; };
 		A4B79E8C28C267AE00C0A0D3 /* Definition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
 		A4B79E8D28C267AE00C0A0D3 /* DefinitionCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefinitionCard.swift; sourceTree = "<group>"; };
-		A4B79E9128C269AC00C0A0D3 /* DropdownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownMenu.swift; sourceTree = "<group>"; };
 		A4B79E9328C269CF00C0A0D3 /* WordContentNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordContentNavigation.swift; sourceTree = "<group>"; };
 		A4B79E9428C269CF00C0A0D3 /* WordContentHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordContentHeader.swift; sourceTree = "<group>"; };
 		A4DB226628C2F98A00FA14BA /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 			children = (
 				A4B79E9428C269CF00C0A0D3 /* WordContentHeader.swift */,
 				A4B79E9328C269CF00C0A0D3 /* WordContentNavigation.swift */,
-				A4B79E9128C269AC00C0A0D3 /* DropdownMenu.swift */,
 				343318AA28C244120068A820 /* DefinitionComponents */,
 			);
 			path = WordContentComponent;
@@ -421,7 +418,6 @@
 				344E038E28D04178005B90FC /* MainViewButton.swift in Sources */,
 				344E038C28D03CA1005B90FC /* RegisterViewButton.swift in Sources */,
 				5F4E2CE528CF59EF00BBED23 /* LottieView.swift in Sources */,
-				A4B79E9228C269AC00C0A0D3 /* DropdownMenu.swift in Sources */,
 				34F62BD328BF5A990052488C /* TextModifier.swift in Sources */,
 				2EFB6F1A28BF6AC5006FD046 /* Header.swift in Sources */,
 				344E038A28CF8A01005B90FC /* ViewModifier.swift in Sources */,
