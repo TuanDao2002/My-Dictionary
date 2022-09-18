@@ -1,13 +1,19 @@
-//
-//  Text.swift
-//  My Dictionary
-//
-//  Created by Phi Thai on 01/09/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 3
+  Author: Thai Manh Phi
+  ID: s3878070
+  Created date: 1/09/2022
+  Last modified: 18/09/2002
+  Acknowledgement: N/A
+*/
 
 import Foundation
 import SwiftUI
 
+//Extension for the Text of swiftUI for consistency betwen elements in the application
 extension Text {
     func customFont(size: Double) -> some View {
         self.font(.custom("SpaceGrotesk-Regular", size: size))

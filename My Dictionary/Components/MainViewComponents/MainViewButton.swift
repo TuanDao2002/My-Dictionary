@@ -1,12 +1,18 @@
-//
-//  MainViewButton.swift
-//  My Dictionary
-//
-//  Created by Phi Thai on 13/09/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 3
+  Author: Thai Manh Phi
+  ID: s3878070
+  Created date: 13/09/2022
+  Last modified: 18/09/2002
+  Acknowledgement: N/A
+*/
 
 import SwiftUI
 
+//View for the today word button
 struct TodayWordButton: View {
     @EnvironmentObject var viewRouting: ViewRouting
     @EnvironmentObject var userVM: UserViewModel

@@ -1,12 +1,18 @@
-//
-//  TextBubble.swift
-//  My Dictionary
-//
-//  Created by Phi Thai on 02/09/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 3
+  Author: Thai Manh Phi
+  ID: s3878070
+  Created date: 02/09/2022
+  Last modified: 18/09/2002
+  Acknowledgement: N/A
+*/
 
 import SwiftUI
 
+//Text bubble view for word content view
 struct TextBubble: View {
     var textArray: [String]
     var body: some View {
@@ -27,6 +33,7 @@ struct TextBubble: View {
     }
 }
 
+//Preview for text bubble view
 struct TextBubble_Previews: PreviewProvider {
     static var previews: some View {
         let textArray = ["hello", "hi", ":)))"]
